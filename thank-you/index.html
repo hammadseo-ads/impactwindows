@@ -53,12 +53,19 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-709144889');
+  gtag('config', 'AW-709144889');   // Google Ads
+  gtag('config', 'G-CG54K79DS0');   // GA4 — Quote Landing
 </script>
 <!-- Event snippet for Submit lead form (4) conversion page -->
 <script>
   gtag('event', 'conversion', {
       'send_to': 'AW-709144889/lfHxCI3ZmdIcELniktIC',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+  // GA4 lead event (scoped to the GA4 property only)
+  gtag('event', 'generate_lead', {
+      'send_to': 'G-CG54K79DS0',
       'value': 1.0,
       'currency': 'USD'
   });
