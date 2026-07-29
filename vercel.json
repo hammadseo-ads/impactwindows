@@ -7,6 +7,14 @@
     { "source": "/thank-you/", "destination": "/thank-you/index.html" },
     { "source": "/hurricane-windows", "destination": "/hurricane-windows/index.html" },
     { "source": "/hurricane-windows/", "destination": "/hurricane-windows/index.html" },
+    { "source": "/impact-doors", "destination": "/impact-doors/index.html" },
+    { "source": "/impact-doors/", "destination": "/impact-doors/index.html" },
+    { "source": "/impact-windows", "destination": "/impact-windows/index.html" },
+    { "source": "/impact-windows/", "destination": "/impact-windows/index.html" },
+    { "source": "/replacement-windows", "destination": "/replacement-windows/index.html" },
+    { "source": "/replacement-windows/", "destination": "/replacement-windows/index.html" },
+    { "source": "/window-company", "destination": "/window-company/index.html" },
+    { "source": "/window-company/", "destination": "/window-company/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
