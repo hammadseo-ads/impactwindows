@@ -5,6 +5,8 @@
   "rewrites": [
     { "source": "/thank-you", "destination": "/thank-you/index.html" },
     { "source": "/thank-you/", "destination": "/thank-you/index.html" },
+    { "source": "/hurricane-windows", "destination": "/hurricane-windows/index.html" },
+    { "source": "/hurricane-windows/", "destination": "/hurricane-windows/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
