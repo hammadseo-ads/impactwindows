@@ -1331,6 +1331,10 @@ function toggleFloatingForm(){
     // Record the landing URL on first page of the session, and again whenever a
     // click ID arrives — an ad click is a fresh entry point worth capturing.
     if(click || !sessionStorage.getItem('usahi_landing')) sessionStorage.setItem('usahi_landing',location.href);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','utm_creative','utm_matchtype','utm_device'].forEach(function(k){
+      var v=p.get(k);
+      if(v) localStorage.setItem('usahi_'+k, v);
+    });
   }catch(e){}
 })();
 function captureAttribution(){
