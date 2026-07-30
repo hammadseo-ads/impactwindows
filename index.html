@@ -1386,6 +1386,7 @@ function handleSFSubmit(e){
   // No preventDefault beyond this point: the form POSTs to Salesforce, which saves
   // the lead and redirects the visitor to retURL (/thank-you/). Show a brief
   // "Sending" state on the button while that round-trip happens.
+  sendToSheet(form);
   const btn=form.querySelector('button[type="submit"]');
   btn.disabled=true;
   btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...';
@@ -1648,5 +1649,6 @@ document.head.appendChild(mobileStyle);
 
 <!-- CallRail dynamic number insertion -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/609637261/da99578ab198e251ef67/12/swap.js"></script>
+<script src="/assets/js/sheet-webhook.js"></script>
 </body>
 </html>
