@@ -16,6 +16,7 @@ function sendToSheet(form){
       message: get('00N5a00000DWvKF'),
       gclid: ls('usahi_gclid'),
       campaign_id: ls('usahi_campaignid'),
+      campaign_name: ls('usahi_campaign'),
       adgroup_id: ls('usahi_adgroupid'),
       keyword: ls('usahi_keyword'),
       matchtype: ls('usahi_matchtype'),

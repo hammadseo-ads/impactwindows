@@ -1437,7 +1437,7 @@ function toggleFloatingForm(){
     if(click || !sessionStorage.getItem('usahi_landing')) sessionStorage.setItem('usahi_landing',location.href);
     // Optional Google Ads ValueTrack params — populated only once a Final URL
     // suffix is configured in the ad account. Harmless no-ops until then.
-    ['campaignid','adgroupid','keyword','matchtype','device','network'].forEach(function(k){
+    ['campaignid','campaign','adgroupid','keyword','matchtype','device','network'].forEach(function(k){
       var v=p.get(k);
       if(v) localStorage.setItem('usahi_'+k, v);
     });
