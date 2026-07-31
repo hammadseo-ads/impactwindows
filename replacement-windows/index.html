@@ -472,6 +472,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .floating-form h3{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;margin-bottom:4px}
 .floating-form .form-sub{font-size:13px;color:var(--gray);margin-bottom:20px}
 .form-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--gray)}
+#quoteCard{scroll-margin-top:96px}
 
 /* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(30px);transition:all .6s cubic-bezier(.4,0,.2,1)}
@@ -543,7 +544,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </ul>
     <div class="nav-cta">
       <a href="tel:8664813679" class="nav-phone"><i class="fas fa-phone-volume"></i> (866) 481-3679</a>
-      <a href="#get-quote" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
+      <a href="#quoteCard" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
     </div>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </div>
@@ -563,7 +564,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> Free replacement windows quote &bull; $0 down financing</li>
         </ul>
         <div class="hero-btns">
-          <a href="#get-quote" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
+          <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
           <a href="tel:8664813679" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
         </div>
         <div class="hero-offers">
@@ -636,7 +637,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
         </ul>
       </div>
-      <div class="inline-form-card reveal">
+      <div class="inline-form-card reveal" id="quoteCard">
         <h3>Request Your Free Replacement Windows Quote</h3>
         <p class="sub">No obligation. A specialist will contact you shortly.</p>
         <form id="quoteForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
@@ -1270,7 +1271,7 @@ window.addEventListener('resize', function(){
     <p>Call us now or fill out the form above. Our replacement windows specialists are standing by.</p>
     <a href="tel:8664813679" class="cta-phone"><i class="fas fa-phone-volume"></i> (866) 481-3679</a>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="#get-quote" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule Free Estimate</a>
+      <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule Free Estimate</a>
       <a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener" class="btn btn-outline-white"><i class="fas fa-location-dot"></i> Visit Showroom</a>
     </div>
   </div>
@@ -1308,7 +1309,7 @@ window.addEventListener('resize', function(){
           <li><a href="#projects">Our Projects</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#team">Our Team</a></li>
-          <li><a href="#get-quote">Free Estimate</a></li>
+          <li><a href="#quoteCard">Free Estimate</a></li>
         </ul>
       </div>
       <div>
@@ -1571,7 +1572,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'&&modal.classList.contains('open')) collapse();
   });
-  modal.querySelectorAll('a[href="#get-quote"]').forEach(function(a){
+  modal.querySelectorAll('a[href="#quoteCard"]').forEach(function(a){
     a.addEventListener('click',collapse);
   });
   // swipe the sheet down to collapse it
@@ -1738,7 +1739,7 @@ document.head.appendChild(mobileStyle);
             <div class="offer-tile-amount">75% Off</div>
             <div class="offer-tile-kicker">Hurricane windows &amp; doors installation</div>
             <p class="offer-tile-desc">Save 75% on installation when you upgrade this season.</p>
-            <a href="#get-quote" class="btn btn-primary offer-tile-cta">Claim My Offer</a>
+            <a href="#quoteCard" class="btn btn-primary offer-tile-cta">Claim My Offer</a>
           </div>
         </div>
         <div class="offer-tile is-grant">
@@ -1750,12 +1751,12 @@ document.head.appendChild(mobileStyle);
             <div class="offer-tile-amount">Up to $10,000</div>
             <div class="offer-tile-kicker">My Safe Florida Home grant</div>
             <p class="offer-tile-desc">State grant funding toward hurricane protection for your home.</p>
-            <a href="#get-quote" class="btn btn-primary offer-tile-cta">Check My Eligibility</a>
+            <a href="#quoteCard" class="btn btn-primary offer-tile-cta">Check My Eligibility</a>
           </div>
         </div>
       </div>
       <div class="offer-modal-action">
-        <a href="#get-quote" class="btn btn-primary">Get My Free Estimate</a>
+        <a href="#quoteCard" class="btn btn-primary">Get My Free Estimate</a>
       </div>
       <p class="offer-modal-foot">Discount applies to installation; restrictions apply. Grant subject to eligibility and available program funding.</p>
     </div>
