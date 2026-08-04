@@ -15,6 +15,10 @@
     { "source": "/replacement-windows/", "destination": "/replacement-windows/index.html" },
     { "source": "/window-company", "destination": "/window-company/index.html" },
     { "source": "/window-company/", "destination": "/window-company/index.html" },
+    { "source": "/storm-windows", "destination": "/storm-windows/index.html" },
+    { "source": "/storm-windows/", "destination": "/storm-windows/index.html" },
+    { "source": "/usahi", "destination": "/usahi/index.html" },
+    { "source": "/usahi/", "destination": "/usahi/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

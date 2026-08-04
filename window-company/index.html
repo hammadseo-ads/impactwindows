@@ -356,6 +356,30 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .offer-modal-foot{padding:11px 20px 18px;font-size:9.5px;text-align:left}
 }
 
+/* OFFERS SECTION — inline version of the offer popup */
+.offers-section{padding:84px 0;background:linear-gradient(160deg,#1a4570 0%,#245b8f 100%)}
+.offers-head{text-align:center;max-width:680px;margin:0 auto 44px}
+.inline-form-text .hero-btns{margin:32px 0 0}
+.offers-head h2{font-family:'Poppins',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:12px}
+.offers-head p{font-size:17px;color:rgba(255,255,255,.8)}
+.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto}
+.osec-tile{background:var(--white);border:none;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.22)}
+.osec-tile-media{position:relative;height:210px;overflow:hidden;flex-shrink:0}
+.osec-tile-media img{width:100%;height:100%;object-fit:cover;display:block}
+.osec-tile-badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.96);color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:50px}
+.osec-tile.is-grant .osec-tile-badge{color:var(--primary)}
+.osec-tile-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.osec-tile-amount{font-family:'Poppins',sans-serif;font-size:clamp(28px,3vw,36px);font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.5px}
+.osec-tile-kicker{font-size:15px;font-weight:800;color:var(--dark);margin-top:8px;line-height:1.35}
+.osec-tile-desc{font-size:14px;color:var(--gray);line-height:1.6;margin-top:10px;flex:1}
+.osec-tile-cta{margin-top:20px;width:100%;justify-content:center;padding:13px 18px;font-size:14.5px}
+.offers-foot{text-align:center;font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.5;margin-top:26px}
+@media(max-width:720px){
+  .offers-section{padding:56px 0}
+  .offers-grid{grid-template-columns:1fr;gap:20px}
+  .osec-tile-media{height:170px}
+}
+
 /* TESTING VIDEOS */
 .testing-section{padding:80px 0;background:var(--white)}
 .testing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
@@ -519,6 +543,38 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .nav-logo img{height:34px}
   .top-bar{font-size:11px}
 }
+
+/* HERO — navy photo wash, same language as the closing CTA band */
+.hero{position:relative;padding:64px 0 56px;background-color:#102e4d;color:var(--white);overflow:hidden;border-bottom:none}
+.hero::before{content:'';position:absolute;inset:0;background:url('/assets/homes/web-38.jpg') 62% center/cover no-repeat;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,30,52,.96) 0%,rgba(12,38,64,.90) 32%,rgba(16,46,77,.52) 62%,rgba(16,46,77,.22) 100%);z-index:1}
+.hero>*{position:relative;z-index:2}
+.hero .hero-text h1{color:var(--white);text-shadow:0 2px 18px rgba(0,0,0,.28)}
+.hero .hero-text h1 span{color:var(--accent-light)}
+.hero .hero-sub{color:rgba(255,255,255,.86)}
+.hero .hero-checklist li{color:rgba(255,255,255,.94)}
+.hero .hero-checklist li .check-icon{background:rgba(255,255,255,.14)}
+.hero .hero-checklist li .check-icon i{color:var(--accent-light)}
+.hero .hero-offer{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.26);color:rgba(255,255,255,.9)}
+.hero .hero-offer strong{color:var(--white)}
+.hero .hero-offer i{color:var(--accent-light)}
+.hero .hero-offer:hover{background:rgba(255,255,255,.2)}
+.hero .hero-stats{border-top-color:rgba(255,255,255,.24)}
+.hero .hero-stat:not(:last-child)::after{background:rgba(255,255,255,.24)}
+.hero .hero-stat .stat-num{color:var(--white)}
+.hero .hero-stat .stat-num span{color:var(--accent-light)}
+.hero .hero-stat .stat-label{color:rgba(255,255,255,.72)}
+.hero .hero-statewide{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.hero .hero-statewide i{color:var(--accent-light)}
+.hero .hero-statewide span{color:var(--white)}
+.hero .hero-trust-item{color:rgba(255,255,255,.8)}
+.hero .hero-trust-sep{background:rgba(255,255,255,.24)}
+.hero .inline-form-card{background:var(--white);border:none;box-shadow:0 30px 80px rgba(0,0,0,.38)}
+
+/* STATS STRIP — moved out of the hero so the hero photo has room to breathe */
+.stats-strip{padding:38px 0 42px;background:var(--white);border-bottom:1px solid #f1f5f9}
+.stats-strip .hero-stats{margin-top:0;border-top:none;padding-top:0;max-width:780px;margin-left:auto;margin-right:auto}
+.stats-strip .hero-statewide{max-width:780px;margin:24px auto 0}
 </style>
 </head>
 <body>
@@ -563,79 +619,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <li><span class="check-icon"><i class="fas fa-headset"></i></span> Dedicated project manager on every job</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> Free window company quote &bull; $0 down financing</li>
         </ul>
-        <div class="hero-btns">
-          <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
-          <a href="tel:8664813679" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
-        </div>
         <div class="hero-offers">
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="stat-num">15<span>+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-num">2M<span>+</span></div>
-            <div class="stat-label">Windows Installed</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-num">25K<span>+</span></div>
-            <div class="stat-label">Happy Customers</div>
-          </div>
-        </div>
-        <div class="hero-statewide">
-          <i class="fas fa-map-location-dot"></i>
-          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
-        </div>
-      </div>
-      <div class="hero-video-side">
-        <div class="yt-crop">
-          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
-          <i class="fas fa-pause"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-logos">
-      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
-      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
-      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
-      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
-      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
-      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
-      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
-    </div>
-  </div>
-</div>
-
-<!-- QUOTE FORM -->
-<section class="inline-form-section" id="get-quote">
-  <div class="container">
-    <div class="inline-form-wrap">
-      <div class="inline-form-text reveal">
-        <span class="section-label">Free Estimate</span>
-        <h2>Get Your Free Window Company Quote Today</h2>
-        <p>Your quote from our window company is free, itemised, and yours to keep &mdash; no obligation and no pressure. Installation starts at just $5/month per window, $0 down, with 100% financing through our accredited lending partners.</p>
-        <ul class="inline-form-features">
-          <li><i class="fas fa-check-circle"></i> Category 5 rated hurricane protection</li>
-          <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
-          <li><i class="fas fa-check-circle"></i> Insurance premium reduction</li>
-          <li><i class="fas fa-check-circle"></i> UV protection for your furnishings</li>
-          <li><i class="fas fa-check-circle"></i> Sound reduction up to 50%</li>
-          <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
-        </ul>
       </div>
       <div class="inline-form-card reveal" id="quoteCard">
         <h3>Request Your Free Quote From Our Window Company</h3>
@@ -673,6 +660,81 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <div class="sms-consent"><input type="checkbox" id="emailConsent" name="00NQQ00000LZdDh" value="1"><label for="emailConsent">By checking this box, you agree to receive marketing emails from USA Home Improvement. You can unsubscribe at any time.</label></div>
           <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
         </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
+      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="container">
+<div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">2M<span>+</span></div>
+            <div class="stat-label">Windows Installed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">25K<span>+</span></div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+        </div>
+<div class="hero-statewide">
+          <i class="fas fa-map-location-dot"></i>
+          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
+        </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="inline-form-section" id="get-quote">
+  <div class="container">
+    <div class="inline-form-wrap">
+      <div class="inline-form-text reveal">
+        <span class="section-label">See It for Yourself</span>
+        <h2>See Exactly How Our Window Company Works</h2>
+        <p>Every job is handled by our own in-house crews &mdash; no subcontractors, no shortcuts. Watch how our team measures, sets and seals each window, then get an itemised quote starting at just $5/month per window, $0 down, with 100% financing through our accredited lending partners.</p>
+        <ul class="inline-form-features">
+          <li><i class="fas fa-check-circle"></i> Category 5 rated hurricane protection</li>
+          <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
+          <li><i class="fas fa-check-circle"></i> Insurance premium reduction</li>
+          <li><i class="fas fa-check-circle"></i> UV protection for your furnishings</li>
+          <li><i class="fas fa-check-circle"></i> Sound reduction up to 50%</li>
+          <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
+        </ul>
+        <div class="hero-btns">
+          <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
+          <a href="tel:8664813679" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
+        </div>
+      </div>
+      <div class="hero-video-side">
+        <div class="yt-crop">
+          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -767,6 +829,45 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </section>
+
+<!-- OFFERS -->
+<section class="offers-section" id="offers">
+  <div class="container">
+    <div class="offers-head reveal">
+      <h2>Two Ways to Save on Hurricane Protection</h2>
+      <p>Claim either offer with your free, no-obligation estimate.</p>
+    </div>
+    <div class="offers-grid reveal">
+        <div class="osec-tile">
+          <div class="osec-tile-media">
+            <img src="/assets/homes/22A.jpg" alt="">
+            <span class="osec-tile-badge">Limited Time</span>
+          </div>
+          <div class="osec-tile-body">
+            <div class="osec-tile-amount">75% Off</div>
+            <div class="osec-tile-kicker">Hurricane windows &amp; doors installation</div>
+            <p class="osec-tile-desc">Save 75% on installation when you upgrade this season.</p>
+            <a href="#quoteCard" class="btn btn-primary osec-tile-cta">Claim My Offer</a>
+          </div>
+        </div>
+        <div class="osec-tile is-grant">
+          <div class="osec-tile-media">
+            <img src="/assets/homes/5A.jpg" alt="">
+            <span class="osec-tile-badge">State of Florida</span>
+          </div>
+          <div class="osec-tile-body">
+            <div class="osec-tile-amount">Up to $10,000</div>
+            <div class="osec-tile-kicker">My Safe Florida Home grant</div>
+            <p class="osec-tile-desc">State grant funding toward hurricane protection for your home.</p>
+            <a href="#quoteCard" class="btn btn-primary osec-tile-cta">Check My Eligibility</a>
+          </div>
+        </div>
+      
+    </div>
+    <p class="offers-foot">Discount applies to installation; restrictions apply. Grant subject to eligibility and available program funding.</p>
+  </div>
+</section>
+
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
