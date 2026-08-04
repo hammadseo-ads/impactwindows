@@ -570,11 +570,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .hero .hero-trust-item{color:rgba(255,255,255,.8)}
 .hero .hero-trust-sep{background:rgba(255,255,255,.24)}
 .hero .inline-form-card{background:var(--white);border:none;box-shadow:0 30px 80px rgba(0,0,0,.38)}
-
-/* STATS STRIP — moved out of the hero so the hero photo has room to breathe */
-.stats-strip{padding:38px 0 42px;background:var(--white);border-bottom:1px solid #f1f5f9}
-.stats-strip .hero-stats{margin-top:0;border-top:none;padding-top:0;max-width:780px;margin-left:auto;margin-right:auto}
-.stats-strip .hero-statewide{max-width:780px;margin:24px auto 0}
 </style>
 </head>
 <body>
@@ -622,6 +617,24 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
         <div class="hero-offers">
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">2M<span>+</span></div>
+            <div class="stat-label">Windows Installed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-num">25K<span>+</span></div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+        </div>
+        <div class="hero-statewide">
+          <i class="fas fa-map-location-dot"></i>
+          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
         </div>
       </div>
       <div class="inline-form-card reveal" id="quoteCard">
@@ -679,31 +692,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </div>
-
-<!-- STATS STRIP -->
-<section class="stats-strip">
-  <div class="container">
-<div class="hero-stats">
-          <div class="hero-stat">
-            <div class="stat-num">15<span>+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-num">2M<span>+</span></div>
-            <div class="stat-label">Windows Installed</div>
-          </div>
-          <div class="hero-stat">
-            <div class="stat-num">25K<span>+</span></div>
-            <div class="stat-label">Happy Customers</div>
-          </div>
-        </div>
-<div class="hero-statewide">
-          <i class="fas fa-map-location-dot"></i>
-          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
-        </div>
-  </div>
-</section>
-
 <!-- QUOTE FORM -->
 <section class="inline-form-section" id="get-quote">
   <div class="container">
