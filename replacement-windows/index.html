@@ -1547,6 +1547,23 @@ function toggleFloatingForm(){
       var v=p.get(k);
       if(v) localStorage.setItem('usahi_'+k, v);
     });
+    // Campaign / ad group / keyword arrive under several different names
+    // depending on the campaign type and tracking template, so take the first
+    // one present. These feed the matching columns in the Google Sheet.
+    function firstOf(){
+      for(var i=0;i<arguments.length;i++){ var v=p.get(arguments[i]); if(v) return v; }
+      return '';
+    }
+    var ids={
+      campaignid: firstOf('campaignid','campaign_id','gad_campaignid','hsa_cam','utm_id'),
+      adgroupid : firstOf('adgroupid','ad_group_id','hsa_grp'),
+      keyword   : firstOf('keyword','utm_keyword','hsa_kw','utm_term'),
+      matchtype : firstOf('matchtype','utm_matchtype','hsa_mt'),
+      device    : firstOf('device','utm_device')
+    };
+    Object.keys(ids).forEach(function(k){
+      if(ids[k]) localStorage.setItem('usahi_'+k, ids[k]);
+    });
   }catch(e){}
 })();
 
