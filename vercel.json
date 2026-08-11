@@ -19,6 +19,10 @@
     { "source": "/storm-windows/", "destination": "/storm-windows/index.html" },
     { "source": "/usahi", "destination": "/usahi/index.html" },
     { "source": "/usahi/", "destination": "/usahi/index.html" },
+    { "source": "/es", "destination": "/es/index.html" },
+    { "source": "/es/", "destination": "/es/index.html" },
+    { "source": "/es/gracias", "destination": "/es/gracias/index.html" },
+    { "source": "/es/gracias/", "destination": "/es/gracias/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
