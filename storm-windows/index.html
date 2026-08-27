@@ -48,6 +48,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<!-- Phone-click conversion tracking (Meta, TikTok, GA4) -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"]'):null;
+  if(!a)return;
+  if(window.fbq)fbq('track','Contact');
+  if(window.ttq)ttq.track('Contact');
+  if(window.gtag)gtag('event','phone_call_click',{transport_type:'beacon'});
+});
+</script>
 <title>Storm-Proof Windows &amp; Doors Florida | Free Estimate | USA Home Improvement</title>
 <meta name="description" content="Protect your Florida home with storm-proof impact windows and doors. Licensed and insured installation, free estimates, $0 down and 100% financing options. Call (866) 481-3679.">
 <meta name="keywords" content="storm windows, storm proof windows, storm windows company, storm windows contractor, storm windows estimate, storm windows financing, storm windows installation, storm windows quote, impact windows, impact doors, impact door, hurricane windows, USA Home Improvement, USAHI">

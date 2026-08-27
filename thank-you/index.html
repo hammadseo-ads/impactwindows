@@ -84,6 +84,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<!-- Phone-click conversion tracking (Meta, TikTok, GA4) -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"]'):null;
+  if(!a)return;
+  if(window.fbq)fbq('track','Contact');
+  if(window.ttq)ttq.track('Contact');
+  if(window.gtag)gtag('event','phone_call_click',{transport_type:'beacon'});
+});
+</script>
 <!-- Event snippet for Submit lead form (4) conversion page -->
 <script>
   gtag('event', 'conversion', {
@@ -97,6 +107,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       'value': 1.0,
       'currency': 'USD'
   });
+  // Meta + TikTok lead conversion (only fires on this post-submit page)
+  if (window.fbq) fbq('track', 'Lead');
+  if (window.ttq) ttq.track('SubmitForm');
 </script>
 
 <style>

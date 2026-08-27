@@ -48,6 +48,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<!-- Phone-click conversion tracking (Meta, TikTok, GA4) -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"]'):null;
+  if(!a)return;
+  if(window.fbq)fbq('track','Contact');
+  if(window.ttq)ttq.track('Contact');
+  if(window.gtag)gtag('event','phone_call_click',{transport_type:'beacon'});
+});
+</script>
 <title>Impact Doors Florida | Installation &amp; Free Quote | USA Home Improvement</title>
 <meta name="description" content="Licensed impact doors company serving Florida homes. Get a free residential impact doors estimate — $0 down, 100% financing, Category 5 rated. Call (866) 481-3679.">
 <meta name="keywords" content="impact doors, impact doors company, impact doors contractor, impact doors estimate, impact doors financing, impact doors installation, impact doors quote, impact doors residential, USA Home Improvement, USAHI">
