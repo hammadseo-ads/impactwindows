@@ -706,7 +706,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <!-- standard "description" is this org's Web Form Description field -->
           <input type="hidden" name="description" value="Website Quote Form">
           <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.\-]?)?\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone Number *" required></div>
+          <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
           <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
           <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
           <div class="form-group">
@@ -1498,7 +1498,7 @@ window.addEventListener('resize', function(){
     <!-- standard "description" is this org's Web Form Description field -->
     <input type="hidden" name="description" value="Website Floating Form">
     <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-    <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.\-]?)?\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone *" required></div>
+    <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone *" required></div>
     <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email *" required></div>
     <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
     <div class="form-group">
@@ -1628,12 +1628,10 @@ function handleZapSubmit(e){
   var phoneEl=form.querySelector('input[name="phone"]');
   var emailEl=form.querySelector('input[name="email"]');
   var digits=(phoneEl.value||'').replace(/\D/g,'');
-  if(digits.length===11 && digits.charAt(0)==='1') digits=digits.slice(1);
-  if(digits.length!==10){ phoneEl.setCustomValidity('Please enter a valid 10-digit US phone number, e.g. (954) 228-8636.'); phoneEl.reportValidity(); return false; }
+  if(digits.length<7){ phoneEl.setCustomValidity('Please enter a valid phone number.'); phoneEl.reportValidity(); return false; }
   phoneEl.setCustomValidity('');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((emailEl.value||'').trim())){ emailEl.setCustomValidity('Please enter a valid email address, e.g. name@example.com.'); emailEl.reportValidity(); return false; }
   emailEl.setCustomValidity('');
-  phoneEl.value='('+digits.slice(0,3)+') '+digits.slice(3,6)+'-'+digits.slice(6);
   if(typeof captureAttribution==='function'){ try{ captureAttribution(); }catch(err){} }
   sendToZapier(form);
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
@@ -1648,8 +1646,12 @@ function sendToZapier(form){
     function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
     var landing=''; try{ landing=sessionStorage.getItem('usahi_landing')||''; }catch(e){}
     var d=new Date();
+    var _full=(((form.querySelector('.sf-fullname')||{}).value)||get('full_name')||'').trim().replace(/\s+/g,' ');
+    var _p=_full.split(' ');
     var payload={
-      full_name:(form.querySelector('.sf-fullname')||{}).value||get('full_name'),
+      full_name:_full,
+      first_name:_p.length>1?_p[0]:'',
+      last_name:_p.length>1?_p.slice(1).join(' '):_full,
       email:get('email'),
       phone:get('phone'),
       zip_code:get('zip'),
