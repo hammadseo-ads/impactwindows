@@ -23,6 +23,8 @@
     { "source": "/es/", "destination": "/es/index.html" },
     { "source": "/es/gracias", "destination": "/es/gracias/index.html" },
     { "source": "/es/gracias/", "destination": "/es/gracias/index.html" },
+    { "source": "/zap-test", "destination": "/zap-test/index.html" },
+    { "source": "/zap-test/", "destination": "/zap-test/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
