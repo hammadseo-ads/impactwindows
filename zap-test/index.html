@@ -211,6 +211,17 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .sms-consent{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:12px;color:var(--gray);line-height:1.4}
 .sms-consent input[type="checkbox"]{margin-top:2px;min-width:16px;min-height:16px;accent-color:var(--primary);cursor:pointer}
 .sms-consent label{cursor:pointer}
+.install-choice{display:flex;flex-direction:column;gap:8px}
+.install-opt{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;cursor:pointer;font-size:14px;color:#374151;transition:all .2s}
+.install-opt input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
+.install-opt strong{color:var(--dark)}
+.install-opt:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+@media(max-width:600px){
+  .install-opt{padding:11px 13px;font-size:13px}
+  .form-group{margin-bottom:10px}
+  .form-group textarea{height:54px}
+  .sms-consent{margin-bottom:9px;font-size:11px;line-height:1.35}
+}
 
 /* BEFORE/AFTER */
 .ba-section{padding:80px 0;background:var(--light)}
@@ -710,15 +721,18 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
           <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
           <div class="form-group">
-            <select name="00N5a00000DXmGJ" required>
-              <option value="" disabled selected>What are you interested in?</option>
-              <option value="Storm Windows">Storm Windows/Impact Windows</option>
-              <option value="Impact Doors">Impact Doors</option>
-              <option value="Windows &amp; Doors">Windows & Doors</option>
-              <option value="Roofing">Roofing</option>
-              <option value="HVAC / AC">HVAC / AC</option>
+            <select name="call_time">
+              <option value="" disabled selected>Preferred time to call?</option>
+              <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+              <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
+              <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
+              <option value="Anytime">Anytime</option>
             </select>
           </div>
+          <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows &mdash; <strong>with</strong> installation</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows &mdash; <strong>without</strong> installation</span></label>
+            </div>
           <div class="form-group"><textarea name="00N5a00000DWvKF" placeholder="Tell us about your project (optional)"></textarea></div>
           <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
           <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
@@ -1502,15 +1516,18 @@ window.addEventListener('resize', function(){
     <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email *" required></div>
     <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
     <div class="form-group">
-      <select name="00N5a00000DXmGJ" required>
-        <option value="" disabled selected>Service Needed</option>
-        <option value="Storm Windows">Storm Windows/Impact Windows</option>
-        <option value="Impact Doors">Impact Doors</option>
-        <option value="Windows &amp; Doors">Windows & Doors</option>
-        <option value="Roofing">Roofing</option>
-        <option value="HVAC / AC">HVAC / AC</option>
+      <select name="call_time">
+        <option value="" disabled selected>Preferred time to call?</option>
+        <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+        <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
+        <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
+        <option value="Anytime">Anytime</option>
       </select>
     </div>
+    <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows &mdash; <strong>with</strong> installation</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows &mdash; <strong>without</strong> installation</span></label>
+            </div>
     <div class="sms-consent"><input type="checkbox" id="smsConsentFloat" name="00NQQ00000IECjh" value="1"><label for="smsConsentFloat">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
     <div class="sms-consent"><input type="checkbox" id="smsServicesConsentFloat" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsentFloat">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
     <button type="submit" class="form-submit">Get My Free Quote</button>
@@ -1635,19 +1652,23 @@ function handleZapSubmit(e){
   if(typeof captureAttribution==='function'){ try{ captureAttribution(); }catch(err){} }
   sendToZapier(form);
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
-  var gracias = location.pathname.indexOf('/es/')!==-1 ? '/es/gracias/' : '/thank-you/';
-  setTimeout(function(){ location.href=gracias; }, 600);
+  var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+  var _base = location.pathname.indexOf('/es/')!==-1 ? '/es/gracias/' : '/thank-you/';
+  var _dest = (_inst==='without') ? _base+'?noconv=1' : _base;  // without-installation: no Google Ads conversion
+  setTimeout(function(){ location.href=_dest; }, 600);
   return false;
 }
 function sendToZapier(form){
   try{
     function get(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value:''; }
-    function chk(n){ var el=form.querySelector('[name="'+n+'"]'); return el?(el.checked?'Yes':'No'):''; }
+    function chk(n){ var el=form.querySelector('[name="'+n+'"]'); return el?(el.checked?'on':''):''; }
     function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
     var landing=''; try{ landing=sessionStorage.getItem('usahi_landing')||''; }catch(e){}
     var d=new Date();
     var _full=(((form.querySelector('.sf-fullname')||{}).value)||get('full_name')||'').trim().replace(/\s+/g,' ');
     var _p=_full.split(' ');
+    var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+    var _serviceType=_inst==='with'?'Impact Windows with installation':(_inst==='without'?'Impact Windows without installation':'');
     var payload={
       full_name:_full,
       first_name:_p.length>1?_p[0]:'',
@@ -1655,9 +1676,11 @@ function sendToZapier(form){
       email:get('email'),
       phone:get('phone'),
       zip_code:get('zip'),
-      service_type:get('00N5a00000DXmGJ')||get('service_type'),
-      consent_sms:chk('00NQQ00000IECjh'),
-      consent_promo:chk('00NQQ00000LZdDh'),
+      service_type:_serviceType,
+      installation:_inst,
+      call_time:get('call_time'),
+      consent_sms:chk('00NQQ00000IECyD'),      // service-related SMS (snippet: consent_sms)
+      consent_promo:chk('00NQQ00000IECjh'),    // marketing texts (snippet: consent_promo)
       source:get('source'),
       lead_source:get('lead_source'),
       page_url:location.href,

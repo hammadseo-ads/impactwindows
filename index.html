@@ -58,8 +58,8 @@ document.addEventListener('click',function(e){
   if(window.gtag)gtag('event','phone_call_click',{transport_type:'beacon'});
 });
 </script>
-<title>Impact Windows & Doors | USA Home Improvement | Top Choice in South Florida</title>
-<meta name="description" content="Protect your home with hurricane-rated impact windows & doors. 15+ years serving South Florida. $0 down, 100% financing. Free estimate. Call (866) 481-3679.">
+<title>Impact Window & Door Installation | USA Home Improvement | South Florida</title>
+<meta name="description" content="Professional impact window & door installation across South Florida. Hurricane-rated protection, lower energy & insurance costs. $0 down, 100% financing. Free estimate. Call (866) 481-3679.">
 <meta name="keywords" content="impact windows, impact doors, hurricane windows, hurricane protection, South Florida windows, window replacement, energy efficient windows, USA Home Improvement, USAHI">
 <meta name="author" content="USA Home Improvement">
 <meta name="robots" content="noindex, nofollow">
@@ -521,6 +521,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .footer-grid{grid-template-columns:1fr 1fr}
   .ig-grid{grid-template-columns:repeat(3,1fr)}
   .services-grid{grid-template-columns:repeat(2,1fr)}
+  /* On stacked (tablet/mobile) layouts the left copy repeats the form — hide it, show only the form. Desktop keeps it. */
+  .inline-form-text{display:none}
 }
 @media(max-width:768px){
   .nav-links{display:none}
@@ -549,6 +551,39 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .service-card .svc-overlay{padding:16px 18px;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.78) 100%)}
   .service-card h4{font-size:17px;margin-bottom:2px}
   .service-card p{font-size:12px;line-height:1.45}
+  /* --- mobile hero + trust density (home) --- */
+  .hero-btns{flex-wrap:nowrap;gap:8px;margin-bottom:18px}
+  .hero-btns .btn{flex:1;padding:13px 8px;font-size:12.5px;justify-content:center;white-space:nowrap;gap:6px}
+  .hero-offers{gap:8px;margin-bottom:16px;flex-wrap:nowrap}
+  .hero-offer{flex:1;justify-content:center;padding:8px;font-size:11px;gap:5px;text-align:center}
+  .hero-offer i{font-size:11px}
+  .hero-stats{margin-top:22px;padding-top:20px}
+  .trust-bar{padding:18px 0}
+  .trust-logos{gap:14px 18px}
+  .trust-logos img{height:20px!important}
+  .trust-text{font-size:11px;gap:5px}
+  /* --- global mobile density: smaller headings, tighter section spacing --- */
+  .section-title{font-size:23px;line-height:1.2;margin-bottom:10px}
+  .section-subtitle{font-size:14px;line-height:1.5}
+  .section-label{font-size:11px;letter-spacing:1.5px;margin-bottom:8px}
+  .team-section,.why-section,.testing-section,.testimonials-section,.ig-section,.financing-section,.map-section{padding:48px 0}
+  .cta-section{padding:54px 0}
+  .cta-section p{font-size:15px;margin-bottom:22px}
+  .why-feature h4{font-size:16px}
+  .why-feature p{font-size:13px}
+  .fin-card h4{font-size:16px}
+  .fin-card p{font-size:13px}
+  /* "The USAHI Family" video overlay heading — was too large */
+  .team-video-overlay h3{font-size:16px}
+  /* "See All Reviews on Google" button was wrapping into a giant pill */
+  .review-summary{padding:26px 18px}
+  .review-summary .btn{padding:13px 16px;font-size:13.5px;white-space:nowrap}
+  .review-score{font-size:52px}
+  /* form section: left copy is hidden on mobile, so kill the big empty padding around the form */
+  .inline-form-section{padding:22px 0 30px}
+  .inline-form-card{padding:22px 18px}
+  .inline-form-card h3{font-size:21px}
+  .inline-form-card .sub{margin-bottom:16px}
 }
 @media(max-width:480px){
   .project-grid{grid-template-columns:1fr}
@@ -576,7 +611,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <li><a href="#before-after">Before & After</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -593,8 +627,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
-        <h1>Protect Your Home with <span>Impact Windows</span> & Doors</h1>
-        <p class="hero-sub">Hurricane-rated protection that saves you money on energy & insurance. Licensed, insured, and backed by 15+ years of expertise across South Florida.</p>
+        <h1>Expert <span>Impact Window &amp; Door</span> Installation</h1>
+        <p class="hero-sub">Full-service, professional installation of hurricane-rated impact windows &amp; doors -protecting your home while lowering your energy &amp; insurance costs. Licensed, insured, and trusted across South Florida for 15+ years.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 hurricane-rated impact protection</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down, as low as $5/month per window</li>
@@ -664,8 +698,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <div class="inline-form-wrap">
       <div class="inline-form-text reveal">
         <span class="section-label">Free Estimate</span>
-        <h2>Get Your Free Impact Window Quote Today</h2>
-        <p>Starting at just $5/month per window installed. $0 down with 100% financing available through our accredited lending partners.</p>
+        <h2>Get Your Free Impact Window &amp; Door Installation Quote</h2>
+        <p>Professional installation starting at just $5/month per window. $0 down with 100% financing available through our accredited lending partners.</p>
         <ul class="inline-form-features">
           <li><i class="fas fa-check-circle"></i> Hurricane-rated impact protection</li>
           <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
@@ -858,19 +892,67 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
-<!-- BEHIND THE SCENES — local video background -->
-<section class="bts-section">
-  <div class="bts-bg">
-    <div class="yt-crop-bg">
-      <iframe id="btsYT" src="https://www.youtube.com/embed/R4PJXYcVSco?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=R4PJXYcVSco&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from homeowners across South Florida.</p>
     </div>
-  </div>
-  <div class="bts-overlay"></div>
-  <div class="container bts-content reveal">
-    <span class="section-label" style="color:var(--accent-light)">Behind the Scenes</span>
-    <h2>See How We Build Quality Into Every Installation</h2>
-    <p>From precision measurements to the final seal -every step follows our rigorous quality standards to ensure your windows last a lifetime.</p>
-    <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Video</a>
+    <div class="scroller">
+    <div class="testimonial-scroll" style="margin-top:40px">
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"USAHI replaced all 18 windows in our home. The crew was professional, clean, and finished ahead of schedule. Our energy bill dropped 30% the very next month!"</p>
+        <div class="author-info"><div class="name">Maria R.</div><div class="location">Miami-Dade County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"From the first consultation to the final walk-through, USAHI was outstanding. The impact windows look amazing and we feel so much safer during hurricane season."</p>
+        <div class="author-info"><div class="name">James & Linda P.</div><div class="location">Broward County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Best investment we ever made. The noise reduction alone is worth it -we live near a busy road and the difference is night and day. Highly recommend!"</p>
+        <div class="author-info"><div class="name">Carlos M.</div><div class="location">Palm Beach County</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"The $0 down financing made it possible for us. We got top-of-the-line ES Windows installed and pay less than our old cable bill. Incredible value."</p>
+        <div class="author-info"><div class="name">Stephanie W.</div><div class="location">Hallandale Beach</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Our insurance company gave us a significant discount after we had USAHI install impact windows throughout our home. The project manager kept us informed every step of the way."</p>
+        <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
+      </div>
+    </div>
+      <button class="scroll-arrow prev" aria-label="Previous reviews"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next reviews"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="scroller">
+    <div class="testimonial-photos-grid">
+      <img src="assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
+      <img src="assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
+      <img src="assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg" alt="Happy customer" onclick="openLightbox('testimonials',2)">
+      <img src="assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg" alt="Happy customer" onclick="openLightbox('testimonials',3)">
+      <img src="assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',4)">
+      <img src="assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',5)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',6)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',7)">
+      <img src="assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg" alt="Happy customer" onclick="openLightbox('testimonials',8)">
+      <img src="assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',9)">
+      <img src="assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg" alt="Happy customer" onclick="openLightbox('testimonials',10)">
+      <img src="assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg" alt="Happy customer" onclick="openLightbox('testimonials',11)">
+      <img src="assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg" alt="Happy customer" onclick="openLightbox('testimonials',12)">
+      <img src="assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
+      <img src="assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
+      <img src="assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
+    </div>
+      <button class="scroll-arrow prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </div>
 </section>
 
@@ -960,126 +1042,9 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Our Services</span>
-      <h2 class="section-title">Complete Home Improvement Solutions</h2>
-    </div>
-    <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
-      <img src="assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <img src="assets/homes/web-2.jpg" alt="Impact Windows">
-        <div class="svc-overlay">
-          <h4>Impact Windows</h4>
-          <p>Hurricane-rated windows from ES Windows & Tecnoglass. Energy-efficient, noise-reducing & UV-blocking.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="assets/services/impact-doors.jpg" alt="Impact Doors">
-        <div class="svc-overlay">
-          <h4>Impact Doors</h4>
-          <p>Sliding glass, French, entry & accordion impact doors. Complete your home's hurricane protection.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="assets/services/roofing.png" alt="Roofing">
-        <div class="svc-overlay">
-          <h4>Roofing</h4>
-          <p>Full roof replacement & repair. Shingle, tile & flat roof systems with warranty coverage.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="assets/services/ac-service.jpg" alt="HVAC / AC">
-        <div class="svc-overlay">
-          <h4>HVAC / AC</h4>
-          <p>Rheem-authorized dealer. Installation, repair & maintenance for complete climate comfort.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="assets/services/painting.png" alt="Painting">
-        <div class="svc-overlay">
-          <h4>Painting</h4>
-          <p>Interior & exterior painting. Sherwin-Williams certified for lasting, beautiful results.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="assets/services/attic-insulation.png" alt="Attic Insulation">
-        <div class="svc-overlay">
-          <h4>Attic Insulation</h4>
-          <p>Reduce energy costs & improve comfort with professional attic insulation services.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Services section removed per request (Aug 2026) -->
 
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-title">What Our Customers Say</h2>
-      <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from homeowners across South Florida.</p>
-    </div>
-    <div class="scroller">
-    <div class="testimonial-scroll" style="margin-top:40px">
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"USAHI replaced all 18 windows in our home. The crew was professional, clean, and finished ahead of schedule. Our energy bill dropped 30% the very next month!"</p>
-        <div class="author-info"><div class="name">Maria R.</div><div class="location">Miami-Dade County</div></div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"From the first consultation to the final walk-through, USAHI was outstanding. The impact windows look amazing and we feel so much safer during hurricane season."</p>
-        <div class="author-info"><div class="name">James & Linda P.</div><div class="location">Broward County</div></div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"Best investment we ever made. The noise reduction alone is worth it -we live near a busy road and the difference is night and day. Highly recommend!"</p>
-        <div class="author-info"><div class="name">Carlos M.</div><div class="location">Palm Beach County</div></div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"The $0 down financing made it possible for us. We got top-of-the-line ES Windows installed and pay less than our old cable bill. Incredible value."</p>
-        <div class="author-info"><div class="name">Stephanie W.</div><div class="location">Hallandale Beach</div></div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"Our insurance company gave us a significant discount after we had USAHI install impact windows throughout our home. The project manager kept us informed every step of the way."</p>
-        <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
-      </div>
-    </div>
-      <button class="scroll-arrow prev" aria-label="Previous reviews"><i class="fas fa-chevron-left"></i></button>
-      <button class="scroll-arrow next" aria-label="Next reviews"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <div class="scroller">
-    <div class="testimonial-photos-grid">
-      <img src="assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
-      <img src="assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
-      <img src="assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg" alt="Happy customer" onclick="openLightbox('testimonials',2)">
-      <img src="assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg" alt="Happy customer" onclick="openLightbox('testimonials',3)">
-      <img src="assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',4)">
-      <img src="assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',5)">
-      <img src="assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',6)">
-      <img src="assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',7)">
-      <img src="assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg" alt="Happy customer" onclick="openLightbox('testimonials',8)">
-      <img src="assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',9)">
-      <img src="assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg" alt="Happy customer" onclick="openLightbox('testimonials',10)">
-      <img src="assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg" alt="Happy customer" onclick="openLightbox('testimonials',11)">
-      <img src="assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg" alt="Happy customer" onclick="openLightbox('testimonials',12)">
-      <img src="assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
-      <img src="assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
-      <img src="assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
-    </div>
-      <button class="scroll-arrow prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
-      <button class="scroll-arrow next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </div>
-</section>
+<!-- Testimonials moved up into the old Behind-the-Scenes position -->
 
 <!-- INSTAGRAM — video-only cards, no embed, no captions -->
 <section class="ig-section" id="instagram">

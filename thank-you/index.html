@@ -96,11 +96,15 @@ document.addEventListener('click',function(e){
 </script>
 <!-- Event snippet for Submit lead form (4) conversion page -->
 <script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-709144889/lfHxCI3ZmdIcELniktIC',
-      'value': 1.0,
-      'currency': 'USD'
-  });
+  // Google Ads conversion — suppressed when the URL carries ?noconv=1
+  // (e.g. "without installation" leads: sent to Zapier but not counted in Google Ads).
+  if (new URLSearchParams(location.search).get('noconv') !== '1') {
+    gtag('event', 'conversion', {
+        'send_to': 'AW-709144889/lfHxCI3ZmdIcELniktIC',
+        'value': 1.0,
+        'currency': 'USD'
+    });
+  }
   // GA4 lead event (scoped to the GA4 property only)
   gtag('event', 'generate_lead', {
       'send_to': 'G-CG54K79DS0',
