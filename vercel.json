@@ -25,6 +25,8 @@
     { "source": "/es/gracias/", "destination": "/es/gracias/index.html" },
     { "source": "/zap-test", "destination": "/zap-test/index.html" },
     { "source": "/zap-test/", "destination": "/zap-test/index.html" },
+    { "source": "/get-estimate", "destination": "/get-estimate/index.html" },
+    { "source": "/get-estimate/", "destination": "/get-estimate/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
