@@ -112,7 +112,15 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:clamp(27px,4.6vw,42px);font-weight:800;line-height:1.14}
 .hero h1 span{color:var(--accent)}
 .hero-sub{color:var(--muted);font-size:15.5px;margin-top:12px}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.hero-video-row{max-width:880px;margin:0 auto 34px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hero-copy h2{font-family:'Poppins';font-size:clamp(22px,2.6vw,28px);font-weight:800;line-height:1.2;margin-bottom:18px;color:var(--dark)}
+.hero-checklist{list-style:none;display:grid;gap:13px;margin-bottom:20px}
+.hero-checklist li{display:flex;align-items:flex-start;gap:12px;font-size:15px;font-weight:500;color:#374151;line-height:1.4}
+.hero-checklist li i{color:var(--accent);font-size:16px;margin-top:2px;flex-shrink:0;width:20px;text-align:center}
+.hero-copy-note{font-size:15px;color:var(--muted);font-weight:600}
+.hero-copy-note i{color:var(--navy);margin-right:6px}
+.hero-copy-note a{color:var(--navy);font-weight:800}
 .video-wrap{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000}
 /* Scale the video up + block pointer events so YouTube's title bar, logo and
    "More videos" overlay are cropped off and hover/pause chrome never appears. */
@@ -344,6 +352,8 @@ body.quote-open .offer-modal.peek{display:none}
 
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-copy{display:none}
+  .hero-video-row{margin-bottom:20px}
   .ba-grid{grid-template-columns:1fr}
   .proj-grid,.rev-grid,.ti-grid{grid-template-columns:1fr 1fr}
   .testing-grid{grid-template-columns:1fr}
@@ -381,11 +391,24 @@ body.quote-open .offer-modal.peek{display:none}
       <h1>Impact Window &amp; Door <span>Installation</span></h1>
       <p class="hero-sub">Licensed South Florida installers &bull; $0 down, 100% financing &bull; hurricane-rated protection that lowers your energy &amp; insurance costs.</p>
     </div>
-    <div class="hero-grid">
+    <div class="hero-video-row">
       <div class="video-wrap">
         <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?enablejsapi=1&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&cc_load_policy=0" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         <button class="sound-toggle big" onclick="toggleYTVideoSound('heroYT',this)" aria-label="Turn sound on or off"><i class="fas fa-volume-xmark"></i></button>
         <button class="video-pause-btn" id="heroPauseBtn" onclick="toggleYTPause('heroYT','heroPauseBtn')" aria-label="Play or pause video"><i class="fas fa-pause"></i></button>
+      </div>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h2>Protect Your Home &amp; Cut Your Bills</h2>
+        <ul class="hero-checklist">
+          <li><i class="fas fa-shield-halved"></i> Category 5 hurricane-rated impact protection</li>
+          <li><i class="fas fa-dollar-sign"></i> $0 down, as low as $5/month per window</li>
+          <li><i class="fas fa-bolt"></i> Lower energy bills &amp; insurance premiums</li>
+          <li><i class="fas fa-certificate"></i> Licensed CGC1526707 &bull; BBB A+ Rated</li>
+          <li><i class="fas fa-industry"></i> Factory-direct ES Windows &amp; Tecnoglass pricing</li>
+        </ul>
+        <p class="hero-copy-note"><i class="fas fa-phone-volume"></i> Prefer to talk? Call <a href="tel:8664813679">(866) 481-3679</a></p>
       </div>
       <div class="form-card" id="quoteCard">
         <h3>Get Your Free Quote</h3>
