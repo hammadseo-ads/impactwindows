@@ -827,7 +827,7 @@ function sendToZapier(form){
       consent_promo:chk('00NQQ00000IECjh'),    // marketing texts (snippet: consent_promo)
       source:get('source'),
       lead_source:get('lead_source'),
-      page_url:location.href,
+      page_url:location.origin+location.pathname,   // clean URL, no query string (everything before "?")
       language:(location.pathname.indexOf('/es/')!==-1)?'es_ES':'en_US',
       date:d.toISOString().slice(0,10),
       time:d.toTimeString().slice(0,8),
