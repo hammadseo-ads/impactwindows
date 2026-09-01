@@ -813,6 +813,12 @@ function sendToZapier(form){
     var _p=_full.split(' ');
     var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
     var _serviceType=_inst==='with'?'Impact Windows or Doors with installation':(_inst==='without'?'Impact Windows or Doors without installation':'');
+    // If the visit came from ChatGPT (utm_source or referrer), override lead source to "ChatGPT"
+    var _utmSrc=(ls('usahi_utm_source')||'').toLowerCase();
+    var _ref=(document.referrer||'').toLowerCase();
+    var _isAI=/chatgpt|openai/.test(_utmSrc)||/chatgpt|openai/.test(_ref);
+    var _leadSource=_isAI?'ChatGPT':get('lead_source');
+    var _source=_isAI?'ChatGPT':get('source');
     var payload={
       full_name:_full,
       first_name:_p.length>1?_p[0]:'',
@@ -825,8 +831,8 @@ function sendToZapier(form){
       call_time:get('call_time'),
       consent_sms:chk('00NQQ00000IECyD'),      // service-related SMS (snippet: consent_sms)
       consent_promo:chk('00NQQ00000IECjh'),    // marketing texts (snippet: consent_promo)
-      source:get('source'),
-      lead_source:get('lead_source'),
+      source:_source,
+      lead_source:_leadSource,
       page_url:location.origin+location.pathname,   // clean URL, no query string (everything before "?")
       language:(location.pathname.indexOf('/es/')!==-1)?'es_ES':'en_US',
       date:d.toISOString().slice(0,10),
