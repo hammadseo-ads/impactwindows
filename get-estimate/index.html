@@ -156,6 +156,17 @@ a{text-decoration:none;color:inherit}
 .form-submit:hover{filter:brightness(1.05)}
 .form-legal{font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
 .form-legal a{color:var(--navy);text-decoration:underline;font-weight:600}
+/* 2-step form (desktop only) — mobile shows everything as one form */
+.form-continue{display:none;width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;align-items:center;justify-content:center;gap:8px;margin-top:4px;transition:.2s}
+.form-continue:hover{background:var(--navy-d)}
+.form-back{display:none;background:none;border:none;color:var(--muted);font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;align-items:center;gap:6px;margin-bottom:10px;padding:0}
+.form-back:hover{color:var(--navy)}
+@media(min-width:901px){
+  .form-continue{display:flex}
+  .form-back{display:inline-flex}
+  #quoteForm.step-1 .fstep-2{display:none}
+  #quoteForm.step-2 .fstep-1{display:none}
+}
 
 /* trust strip */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:16px 0}
@@ -438,30 +449,36 @@ body.quote-open .offer-modal.peek{display:none}
       <div class="form-card" id="quoteCard">
         <h3>Get Your Free Quote</h3>
         <p class="form-sub">Takes 60 seconds. No obligation. A specialist will contact you shortly.</p>
-        <form id="quoteForm" onsubmit="return handleZapSubmit(event)">
+        <form id="quoteForm" class="step-1" onsubmit="return handleZapSubmit(event)">
           <input type="hidden" name="lead_source" value="Google Ads">
           <input type="hidden" name="source" value="Google Ads">
-          <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
-          <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
-          <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
-          <div class="form-group">
-            <select name="call_time">
-              <option value="" disabled selected>Preferred time to call?</option>
-              <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
-              <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
-              <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
-              <option value="Anytime">Anytime</option>
-            </select>
+          <div class="fstep fstep-1">
+            <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+            <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
+            <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
+            <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
+            <button type="button" class="form-continue">Continue <i class="fas fa-arrow-right"></i></button>
           </div>
-          <div class="form-group install-choice">
-            <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows or Doors &mdash; <strong>with</strong> installation</span></label>
-            <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows or Doors &mdash; <strong>without</strong> installation</span></label>
+          <div class="fstep fstep-2">
+            <button type="button" class="form-back"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="form-group">
+              <select name="call_time">
+                <option value="" disabled selected>Preferred time to call?</option>
+                <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+                <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
+                <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
+                <option value="Anytime">Anytime</option>
+              </select>
+            </div>
+            <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows or Doors &mdash; <strong>with</strong> installation</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows or Doors &mdash; <strong>without</strong> installation</span></label>
+            </div>
+            <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+            <p class="form-legal">View our <a href="https://usahomeimprovement.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://usahomeimprovement.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a> to learn more about how we collect, use, and protect your information.</p>
           </div>
-          <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
-          <p class="form-legal">View our <a href="https://usahomeimprovement.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://usahomeimprovement.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a> to learn more about how we collect, use, and protect your information.</p>
         </form>
       </div>
     </div>
@@ -875,6 +892,19 @@ function sendToZapier(form){
     else{ fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data,keepalive:true}).catch(function(){}); }
   }catch(e){}
 }
+
+// 2-STEP FORM (desktop only) — Continue validates step 1, Back returns
+document.querySelectorAll('.form-continue').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var form=btn.closest('form');
+    var fields=form.querySelectorAll('.fstep-1 input');
+    for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return; } }
+    form.classList.remove('step-1'); form.classList.add('step-2');
+  });
+});
+document.querySelectorAll('.form-back').forEach(function(b){
+  b.addEventListener('click',function(){ var form=b.closest('form'); form.classList.remove('step-2'); form.classList.add('step-1'); });
+});
 
 // BEFORE/AFTER SLIDERS
 document.querySelectorAll('[data-ba]').forEach(function(item){
