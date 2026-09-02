@@ -1410,6 +1410,10 @@ function captureAttribution(){
     set('00NQQ000009my4j', gclid);                  // GCLID
     set('url',             pageUrl.slice(0,80));    // Website (field maxlength is 80)
     set('00NQQ00000IJMVV', landing.slice(0,255));   // Page Link
+    // ChatGPT traffic (utm_source/referrer) overrides Lead Source
+    var _utm=''; try{ _utm=(localStorage.getItem('usahi_utm_source')||'').toLowerCase(); }catch(e){}
+    var _ref=(document.referrer||'').toLowerCase();
+    if(/chatgpt|openai/.test(_utm)||/chatgpt|openai/.test(_ref)) set('lead_source','chatgpt');
   });
 }
 document.addEventListener('DOMContentLoaded',captureAttribution);
