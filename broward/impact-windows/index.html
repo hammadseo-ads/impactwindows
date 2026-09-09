@@ -102,9 +102,9 @@ document.addEventListener('click',function(e){
 :root{
 --primary:#245b8f;
 --primary-dark:#1a4570;
---accent:#e2474e;
---accent-light:#e96b71;
---accent-soft:rgba(226,71,78,.08);
+--accent:#d83a2e;
+--accent-light:#ea5a4c;
+--accent-soft:rgba(216,58,46,.08);
 --dark:#0a0a0a;
 --gray:#6b7280;
 --light:#f8fafc;
@@ -122,8 +122,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .section-title{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:16px}
 .section-subtitle{font-size:18px;color:var(--gray);max-width:640px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s;border:none;text-decoration:none}
-.btn-primary{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(226,71,78,.3)}
-.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(226,71,78,.4)}
+.btn-primary{background:var(--accent);color:var(--white);box-shadow:0 4px 20px rgba(216,58,46,.3)}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(216,58,46,.4)}
 .btn-outline-dark{background:transparent;color:var(--dark);border:2px solid #d1d5db}
 .btn-outline-dark:hover{border-color:var(--primary);color:var(--primary)}
 .btn-dark{background:var(--primary);color:var(--white)}
@@ -171,7 +171,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .hero-stat .stat-num{font-family:'Poppins',sans-serif;font-size:clamp(28px,3vw,40px);font-weight:900;color:var(--primary);line-height:1.1}
 .hero-stat .stat-num span{color:var(--accent)}
 .hero-stat .stat-label{font-size:13px;font-weight:600;color:var(--gray);margin-top:4px}
-.hero-statewide{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;padding:14px 20px;background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));border-radius:10px;border:1px solid rgba(226,71,78,.1)}
+.hero-statewide{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;padding:14px 20px;background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));border-radius:10px;border:1px solid rgba(216,58,46,.1)}
 .hero-statewide i{color:var(--accent);font-size:18px}
 .hero-statewide span{font-size:14px;font-weight:600;color:var(--dark)}
 .hero-video-side{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:9/10;box-shadow:var(--shadow-lg)}
@@ -327,8 +327,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 /* HERO OFFER CHIPS */
 .hero-offers{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
-.hero-offer{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:50px;background:var(--accent-soft);border:1px solid rgba(226,71,78,.18);text-decoration:none;font-size:13.5px;color:#374151;transition:all .25s}
-.hero-offer:hover{background:rgba(226,71,78,.12);transform:translateY(-2px)}
+.hero-offer{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:50px;background:var(--accent-soft);border:1px solid rgba(216,58,46,.18);text-decoration:none;font-size:13.5px;color:#374151;transition:all .25s}
+.hero-offer:hover{background:rgba(216,58,46,.12);transform:translateY(-2px)}
 .hero-offer i{color:var(--accent);font-size:14px}
 .hero-offer strong{color:var(--dark);font-weight:800}
 
@@ -583,7 +583,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .hero>*{position:relative;z-index:2}
 .hero .hero-grid{align-items:start}
 .hero .hero-text h1{color:var(--white);text-shadow:0 2px 18px rgba(0,0,0,.28)}
-.hero .hero-text h1 span{color:#ef8288}
+.hero .hero-text h1 span{color:#d83a2e}
 .hero .hero-sub{color:rgba(255,255,255,.93)}
 .hero .hero-checklist li{color:rgba(255,255,255,.98)}
 .hero .hero-checklist li .check-icon{background:rgba(255,255,255,.14)}
@@ -633,7 +633,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <li><a href="#before-after">Before & After</a></li>
       <li><a href="#why-us">Why Us</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#offers">Offers</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -714,7 +714,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .iws-section{padding:72px 0;background:var(--white)}
 .iws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
 .iws-card{border:1px solid #eef2f7;border-radius:var(--radius);padding:26px;background:var(--white);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
-.iws-card:hover{transform:translateY(-4px);border-color:rgba(226,71,78,.35);box-shadow:0 14px 34px rgba(16,46,77,.12)}
+.iws-card:hover{transform:translateY(-4px);border-color:rgba(216,58,46,.35);box-shadow:0 14px 34px rgba(16,46,77,.12)}
 .fin-card,.team-card,.testimonial-card{transition:transform .25s,box-shadow .25s}
 .fin-card:hover,.team-card:hover,.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 
@@ -1897,7 +1897,7 @@ document.head.appendChild(mobileStyle);
 .m-cta.show{transform:none}
 .m-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:12px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;text-decoration:none}
 .m-cta .m-call{background:var(--white);color:var(--primary);border:1.5px solid var(--primary)}
-.m-cta .m-quote{background:var(--accent);color:var(--white);box-shadow:0 6px 18px rgba(226,71,78,.32)}
+.m-cta .m-quote{background:var(--accent);color:var(--white);box-shadow:0 6px 18px rgba(216,58,46,.32)}
 @media(max-width:900px){.m-cta{display:flex}body{padding-bottom:78px}}
 </style>
 <div class="m-cta" id="mCta">
@@ -1958,7 +1958,7 @@ document.head.appendChild(mobileStyle);
 /* -------------------------------------------------------------
    3. Upar wala chhota label ab ek narm chip hai, lakeer ki jagah dot.
    ------------------------------------------------------------- */
-.section-label{background:var(--accent-soft);border:1px solid rgba(226,71,78,.16);
+.section-label{background:var(--white);border:1px solid rgba(216,58,46,.28);
   padding:7px 14px;border-radius:99px;font-size:12px;letter-spacing:1.4px;gap:7px}
 .section-label::before{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
@@ -1983,7 +1983,7 @@ document.head.appendChild(mobileStyle);
    6. hwi ke number ab saada murabba nahi - accent gradient tile.
    ------------------------------------------------------------- */
 .hwi-num{background:linear-gradient(135deg,var(--accent),var(--accent-light));
-  color:var(--white);box-shadow:0 6px 16px rgba(226,71,78,.28)}
+  color:var(--white);box-shadow:0 6px 16px rgba(216,58,46,.28)}
 
 /* -------------------------------------------------------------
    7. Raaye ke card par bara quote nishan, halka aur peeche.
@@ -1991,7 +1991,7 @@ document.head.appendChild(mobileStyle);
 .testimonial-card{position:relative;overflow:hidden}
 .testimonial-card::after{content:'\201C';position:absolute;top:-30px;right:16px;
   font-family:Georgia,'Times New Roman',serif;font-size:120px;line-height:1;
-  color:rgba(226,71,78,.09);pointer-events:none}
+  color:rgba(216,58,46,.09);pointer-events:none}
 .testimonial-card > *{position:relative;z-index:1}
 
 /* -------------------------------------------------------------
@@ -2014,7 +2014,7 @@ document.head.appendChild(mobileStyle);
 .iws-ico{width:46px;height:46px;border-radius:13px;
   background:linear-gradient(135deg,var(--accent),var(--accent-light));
   color:var(--white);font-size:18px;margin-bottom:17px;
-  box-shadow:0 8px 18px rgba(226,71,78,.26)}
+  box-shadow:0 8px 18px rgba(216,58,46,.26)}
 
 .iws-card h3{font-size:18px;margin-bottom:10px;letter-spacing:-.2px}
 .iws-card p{font-size:14.5px;line-height:1.7}
@@ -2028,7 +2028,7 @@ document.head.appendChild(mobileStyle);
 .iws-chip{display:inline-block;padding:8px 15px;border-radius:99px;font-size:13.5px;
   font-weight:600;color:#41506a;background:var(--white);border:1px solid #e4ecf4;
   transition:border-color .2s,color .2s,transform .2s}
-.iws-chip:hover{border-color:rgba(226,71,78,.4);color:var(--accent);transform:translateY(-2px)}
+.iws-chip:hover{border-color:rgba(216,58,46,.4);color:var(--accent);transform:translateY(-2px)}
 .iws-areas{margin-top:42px}
 .iws-areas h3{margin-bottom:4px}
 
@@ -2111,7 +2111,7 @@ document.head.appendChild(mobileStyle);
 .offers-section::after,.cta-section::after{
   content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
-    radial-gradient(58% 62% at 84% 8%, rgba(226,71,78,.11), transparent 62%),
+    radial-gradient(58% 62% at 84% 8%, rgba(216,58,46,.11), transparent 62%),
     radial-gradient(48% 55% at 8% 96%, rgba(255,255,255,.05), transparent 60%)}
 
 /* content lakeeron ke upar rahe */
@@ -2248,19 +2248,19 @@ document.head.appendChild(mobileStyle);
 .hero .hero-stat .stat-num{color:var(--primary)}
 .hero .hero-stat .stat-label{color:#4b5563}
 .hero .hero-statewide{background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));
-  border-color:rgba(226,71,78,.14)}
+  border-color:rgba(216,58,46,.14)}
 .hero .hero-statewide span{color:#334155}
 .hero .hero-trust-item{color:#64748b}
 .hero .hero-trust-sep{background:#dbe4ee}
 .hero .hero-offer{background:var(--white);border:1px solid #e4ecf4;color:#334155;
   box-shadow:0 8px 22px rgba(16,46,77,.10)}
-.hero .hero-offer:hover{background:var(--white);border-color:rgba(226,71,78,.35);
+.hero .hero-offer:hover{background:var(--white);border-color:rgba(216,58,46,.35);
   transform:translateY(-3px);box-shadow:0 14px 32px rgba(16,46,77,.16)}
 
 /* rating ki patti bhi ab halke ground par */
 .hero-rating{background:var(--white);border:1px solid #e4ecf4;
   box-shadow:0 4px 14px rgba(16,46,77,.08)}
-.hero-rating:hover{background:var(--white);border-color:rgba(226,71,78,.34)}
+.hero-rating:hover{background:var(--white);border-color:rgba(216,58,46,.34)}
 .hero-rating b{color:var(--dark)}
 .hr-sep{color:#94a3b8}
 .hr-count{color:#475569}
@@ -2311,7 +2311,7 @@ document.head.appendChild(mobileStyle);
 
 <!-- HERO COLOURS FROM usahomeimprovement.com -->
 <style>
-/* Hero ke H1 ka rangeen hissa #ef8288 tha - halka gulaabi, jo navy
+/* Hero ke H1 ka rangeen hissa #d83a2e tha - halka gulaabi, jo navy
    background ke liye bana tha. Safed par uska contrast 2.56 rah gaya
    tha (hadd 4.5). Asli site par ye #d83a2e hai, jo safed par 4.6 deta
    hai. Baqi rang bhi wahin se: unwan kaala, matn #333. */
@@ -2323,6 +2323,24 @@ document.head.appendChild(mobileStyle);
 .hero .hero-stat .stat-label{color:#333}
 .hero-rating b{color:#000}
 .hr-count{color:#333}
+</style>
+
+<!-- LABEL CHIP ON DARK BANDS -->
+<style>
+/* Chip ka background safed kar dene se gehre band par label ka contrast
+   3.46 rah gaya. Un do band par chip shafaf safed hai aur matn safed. */
+.cta-section .section-label,
+.offers-section .section-label{
+  background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.30);
+  color:var(--white)!important}
+/* bts ka band video par hai - roshan video par shafaf safed chip ka
+   contrast 4.16 tak gir sakta tha, is liye yahan chip gehra hai. */
+.bts-section .section-label{
+  background:rgba(0,0,0,.38);border-color:rgba(255,255,255,.26);
+  color:var(--white)!important}
+.bts-section .section-label::before,
+.cta-section .section-label::before,
+.offers-section .section-label::before{background:var(--white)}
 </style>
 </body>
 </html>
