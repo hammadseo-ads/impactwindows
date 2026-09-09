@@ -771,6 +771,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <div class="reveal">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">Impact Windows Services in Broward County</h2>
+      <p class="section-subtitle">Everything from the first measurement to the county sign-off, handled by our own team. No subcontractors on your job.</p>
       <div class="iws-grid">
 
         <div class="iws-card">
@@ -819,10 +820,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
       <div class="iws-areas">
         <h3>Broward County areas we cover</h3>
-        <p>Fort Lauderdale &bull; Hollywood &bull; Pembroke Pines &bull; Coral Springs &bull;
-           Miramar &bull; Pompano Beach &bull; Davie &bull; Plantation &bull; Sunrise &bull;
-           Weston &bull; Deerfield Beach &bull; Coconut Creek &bull; Tamarac &bull; Margate
-           &bull; Lauderhill &bull; Oakland Park &bull; Dania Beach &bull; Parkland</p>
+        <div class="iws-chips"><span class="iws-chip">Fort Lauderdale</span><span class="iws-chip">Hollywood</span><span class="iws-chip">Pembroke Pines</span><span class="iws-chip">Coral Springs</span><span class="iws-chip">Miramar</span><span class="iws-chip">Pompano Beach</span><span class="iws-chip">Davie</span><span class="iws-chip">Plantation</span><span class="iws-chip">Sunrise</span><span class="iws-chip">Weston</span><span class="iws-chip">Deerfield Beach</span><span class="iws-chip">Coconut Creek</span><span class="iws-chip">Tamarac</span><span class="iws-chip">Margate</span><span class="iws-chip">Lauderhill</span><span class="iws-chip">Oakland Park</span><span class="iws-chip">Dania Beach</span><span class="iws-chip">Parkland</span></div>
       </div>
     </div>
   </div>
@@ -1358,8 +1356,9 @@ window.addEventListener('resize', function(){
 <section class="services-section" id="services">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Our Services</span>
-      <h2 class="section-title">Complete Home Improvement Solutions</h2>
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Premium Home Improvement Florida Services</h2>
+      <p class="section-subtitle" style="margin:0 auto">Our team is ready to help you lower your bills and protect the whole house, not just the windows.</p>
     </div>
     <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
       <img src="/assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
@@ -1369,42 +1368,42 @@ window.addEventListener('resize', function(){
         <img src="/assets/homes/web-2.jpg" alt="Impact Windows">
         <div class="svc-overlay">
           <h4>Impact Windows</h4>
-          <p>Hurricane-rated windows from ES Windows & Tecnoglass. Energy-efficient, noise-reducing & UV-blocking.</p>
+          <p>Lower energy bills with hurricane-tested windows built from ES heat-strengthened glass, engineered for South Florida weather.</p>
         </div>
       </div>
       <div class="service-card reveal">
         <img src="/assets/services/impact-doors.jpg" alt="Impact Doors">
         <div class="svc-overlay">
           <h4>Impact Doors</h4>
-          <p>Sliding glass, French, entry & accordion impact doors. Complete your home's hurricane protection.</p>
+          <p>Seal every corner of the home, patio and garage included, with storm-resistant doors secured against forced wind entry.</p>
         </div>
       </div>
       <div class="service-card reveal">
         <img src="/assets/services/roofing.png" alt="Roofing">
         <div class="svc-overlay">
           <h4>Roofing</h4>
-          <p>Full roof replacement & repair. Shingle, tile & flat roof systems with warranty coverage.</p>
+          <p>Durable roof replacement designed to take the worst of Florida weather, with warranty coverage on every system.</p>
         </div>
       </div>
       <div class="service-card reveal">
         <img src="/assets/services/ac-service.jpg" alt="HVAC / AC">
         <div class="svc-overlay">
           <h4>HVAC / AC</h4>
-          <p>Rheem-authorized dealer. Installation, repair & maintenance for complete climate comfort.</p>
+          <p>Rheem-authorised dealer. Installation, repair and maintenance for complete climate comfort all year.</p>
         </div>
       </div>
       <div class="service-card reveal">
         <img src="/assets/services/painting.png" alt="Painting">
         <div class="svc-overlay">
           <h4>Painting</h4>
-          <p>Interior & exterior painting. Sherwin-Williams certified for lasting, beautiful results.</p>
+          <p>Salt-air resistant interior and exterior paint in UV- and humidity-resistant finishes, made for coastal homes.</p>
         </div>
       </div>
       <div class="service-card reveal">
         <img src="/assets/services/attic-insulation.png" alt="Attic Insulation">
         <div class="svc-overlay">
           <h4>Attic Insulation</h4>
-          <p>Reduce energy costs & improve comfort with professional attic insulation services.</p>
+          <p>A higher R-value through the attic, so Florida summers cost less to cool and the house holds its temperature.</p>
         </div>
       </div>
     </div>
@@ -2126,6 +2125,37 @@ document.head.appendChild(mobileStyle);
   .section-title{padding-bottom:16px}
   .section-title::after{width:46px;height:3px}
   .testimonial-card::after{font-size:88px;top:-22px}
+}
+</style>
+
+<!-- SERVICES SECTION POLISH -->
+<style>
+/* Icon tile pehle halka gulaabi murabba tha - dhula hua lagta tha.
+   Ab accent gradient par safed icon, taake nazar pehle isi par pare. */
+.iws-ico{width:46px;height:46px;border-radius:13px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  color:var(--white);font-size:18px;margin-bottom:17px;
+  box-shadow:0 8px 18px rgba(226,71,78,.26)}
+
+.iws-card h3{font-size:18px;margin-bottom:10px;letter-spacing:-.2px}
+.iws-card p{font-size:14.5px;line-height:1.7}
+.iws-grid{gap:20px;margin-top:34px}
+
+/* section ka intro jumla */
+.iws-section .section-subtitle{margin-bottom:6px}
+
+/* shehron ki chips - pehle bullet wala paragraph tha */
+.iws-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.iws-chip{display:inline-block;padding:8px 15px;border-radius:99px;font-size:13.5px;
+  font-weight:600;color:#41506a;background:var(--white);border:1px solid #e4ecf4;
+  transition:border-color .2s,color .2s,transform .2s}
+.iws-chip:hover{border-color:rgba(226,71,78,.4);color:var(--accent);transform:translateY(-2px)}
+.iws-areas{margin-top:42px}
+.iws-areas h3{margin-bottom:4px}
+
+@media(max-width:560px){
+  .iws-chip{padding:7px 13px;font-size:13px}
+  .iws-ico{width:42px;height:42px;font-size:17px}
 }
 </style>
 </body>
