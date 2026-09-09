@@ -261,8 +261,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .team-section{padding:80px 0;background:var(--light)}
 .team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:16/7}
 .team-video-wrap video{width:100%;height:100%;object-fit:cover}
-.yt-crop-fill{position:absolute;inset:-60px -10px;overflow:hidden;pointer-events:none}
-.yt-crop-fill iframe{width:calc(100% + 20px);height:calc(100% + 120px);border:none;position:absolute;top:-60px;left:-10px}
+.yt-crop-fill{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.yt-crop-fill iframe{width:108%;height:116%;border:none;position:absolute;top:-8%;left:-4%}
 .yt-crop-fill+.sound-toggle,.yt-crop-fill+.sound-toggle+.video-pause-btn,.yt-crop-fill~.sound-toggle,.yt-crop-fill~.video-pause-btn{pointer-events:auto;z-index:20}
 .team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
 @media(max-width:768px){
@@ -651,7 +651,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <div class="hero-grid">
       <div class="hero-text">
         <h1><span>Impact Windows</span> for Broward Homes</h1>
-        <p class="hero-sub">Built for South Florida and fitted by our own crews, never subcontractors. Lower power bills, quieter rooms, and floors that stop fading.</p>
+        <p class="hero-sub">Hurricane-rated protection that lowers your energy and insurance bills. Licensed, insured, and fitted by our own crews &mdash; 15+ years across South Florida.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 impact glass, engineered for daily use</li>
           <li><span class="check-icon"><i class="fas fa-user-tie"></i></span> One dedicated project manager, start to finish</li>
@@ -2207,6 +2207,22 @@ document.head.appendChild(mobileStyle);
 
 .ba-section,.projects-section,.why-section,.team-section,.ig-section,
 .map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
+</style>
+
+<!-- MOBILE VISIBILITY FIXES -->
+<style>
+@media(max-width:600px){
+  /* Overlay ka andhera 42% se shuru hota tha, lekin unwan 47% par baithta
+     hai - yaani text roshan tasveer par para tha aur parha nahi jata tha.
+     Ab andhera pehle shuru hota hai aur neeche zyada gehra hai. */
+  .svc-overlay{background:linear-gradient(180deg,
+    rgba(0,0,0,.06) 0%, rgba(0,0,0,.48) 30%, rgba(0,0,0,.93) 100%)}
+  .svc-overlay p{color:rgba(255,255,255,.94)}
+
+  /* Reel ka crop 60px upar aur 60px neeche ka pakka tha - bare card ke
+     liye bana tha. Mobile ke 480px card me wo video ka chauthai hissa
+     kaat deta tha. Ab aadha crop. */
+}
 </style>
 </body>
 </html>
