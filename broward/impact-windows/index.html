@@ -685,42 +685,16 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
         </div>
       </div>
-      <div class="inline-form-card reveal" id="quoteCard">
-        <h3>Request Your Free Impact Windows Quote</h3>
-        <p class="sub">No obligation. A specialist will contact you shortly.</p>
-        <form id="quoteForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
-          <input type="hidden" name="oid" value="00D0b000000vM4y">
-          <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
-          <input type="hidden" name="lead_source" value="Google Ads">
-          <input type="hidden" name="company" value="Homeowner (Web Lead)">
-          <input type="hidden" name="first_name" value="">
-          <input type="hidden" name="last_name" value="">
-          <!-- Attribution — filled by captureAttribution() on load -->
-          <input type="hidden" name="00NQQ000009my4j" value="">
-          <input type="hidden" name="url" value="">
-          <input type="hidden" name="00NQQ00000IJMVV" value="">
-          <input type="hidden" name="00NQQ00000IJMTt" value="Website Quote Form">
-          <!-- standard "description" is this org's Web Form Description field -->
-          <input type="hidden" name="description" value="Website Quote Form">
-          <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone Number *" required></div>
-          <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
-          <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
-          <div class="form-group">
-            <select name="00N5a00000DXmGJ" required>
-              <option value="" disabled selected>What are you interested in?</option>
-              <option value="Impact Windows">Impact Windows</option>
-              <option value="Impact Doors">Impact Doors</option>
-              <option value="Windows &amp; Doors">Windows & Doors</option>
-              <option value="Roofing">Roofing</option>
-              <option value="HVAC / AC">HVAC / AC</option>
-            </select>
-          </div>
-          <div class="form-group"><textarea name="00N5a00000DWvKF" placeholder="Tell us about your project (optional)"></textarea></div>
-          <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
-        </form>
+      <div class="hero-video-side">
+        <div class="yt-crop">
+          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -781,54 +755,107 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
           <a href="tel:8664813679" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
         </div>
       </div>
-      <div class="hero-video-side">
-        <div class="yt-crop">
-          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
-          <i class="fas fa-pause"></i>
-        </button>
+      <div class="inline-form-card reveal" id="quoteCard">
+        <h3>Request Your Free Impact Windows Quote</h3>
+        <p class="sub">No obligation. A specialist will contact you shortly.</p>
+        <form id="quoteForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
+          <input type="hidden" name="oid" value="00D0b000000vM4y">
+          <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
+          <input type="hidden" name="lead_source" value="Google Ads">
+          <input type="hidden" name="company" value="Homeowner (Web Lead)">
+          <input type="hidden" name="first_name" value="">
+          <input type="hidden" name="last_name" value="">
+          <!-- Attribution — filled by captureAttribution() on load -->
+          <input type="hidden" name="00NQQ000009my4j" value="">
+          <input type="hidden" name="url" value="">
+          <input type="hidden" name="00NQQ00000IJMVV" value="">
+          <input type="hidden" name="00NQQ00000IJMTt" value="Website Quote Form">
+          <!-- standard "description" is this org's Web Form Description field -->
+          <input type="hidden" name="description" value="Website Quote Form">
+          <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+          <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone Number *" required></div>
+          <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
+          <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
+          <div class="form-group">
+            <select name="00N5a00000DXmGJ" required>
+              <option value="" disabled selected>What are you interested in?</option>
+              <option value="Impact Windows">Impact Windows</option>
+              <option value="Impact Doors">Impact Doors</option>
+              <option value="Windows &amp; Doors">Windows & Doors</option>
+              <option value="Roofing">Roofing</option>
+              <option value="HVAC / AC">HVAC / AC</option>
+            </select>
+          </div>
+          <div class="form-group"><textarea name="00N5a00000DWvKF" placeholder="Tell us about your project (optional)"></textarea></div>
+          <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+          <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
+          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BEFORE / AFTER -->
-<section class="ba-section" id="before-after">
+<section class="testimonials-section">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Transformations</span>
-      <h2 class="section-title">See the Difference Impact Windows Make</h2>
-      <p class="section-subtitle" style="margin:0 auto">Drag the slider to see real impact window installation results on Florida homes &mdash; before and after.</p>
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">What Our Impact Windows Customers Say</h2>
+      <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from Florida homeowners who trusted us with their impact windows.</p>
     </div>
-    <div class="ba-grid">
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before1.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after1.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
+    <div class="scroller">
+    <div class="testimonial-scroll" style="margin-top:40px">
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"USAHI replaced all 18 windows in our home. The crew was professional, clean, and finished ahead of schedule. Our energy bill dropped 30% the very next month!"</p>
+        <div class="author-info"><div class="name">Maria R.</div><div class="location">Miami-Dade County</div></div>
       </div>
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before2.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after2.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"From the first consultation to the final walk-through, USAHI was outstanding. The impact windows look amazing and we feel so much safer during hurricane season."</p>
+        <div class="author-info"><div class="name">James & Linda P.</div><div class="location">Broward County</div></div>
       </div>
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before3.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after3.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Best investment we ever made. The noise reduction alone is worth it -we live near a busy road and the difference is night and day. Highly recommend!"</p>
+        <div class="author-info"><div class="name">Carlos M.</div><div class="location">Palm Beach County</div></div>
       </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"The $0 down financing made it possible for us. We got top-of-the-line ES Windows installed and pay less than our old cable bill. Incredible value."</p>
+        <div class="author-info"><div class="name">Stephanie W.</div><div class="location">Hallandale Beach</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="quote">"Our insurance company gave us a significant discount after we had USAHI install impact windows throughout our home. The project manager kept us informed every step of the way."</p>
+        <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
+      </div>
+    </div>
+      <button class="scroll-arrow prev" aria-label="Previous reviews"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next reviews"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="scroller">
+    <div class="testimonial-photos-grid">
+      <img src="/assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
+      <img src="/assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
+      <img src="/assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg" alt="Happy customer" onclick="openLightbox('testimonials',2)">
+      <img src="/assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg" alt="Happy customer" onclick="openLightbox('testimonials',3)">
+      <img src="/assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',4)">
+      <img src="/assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',5)">
+      <img src="/assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',6)">
+      <img src="/assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',7)">
+      <img src="/assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg" alt="Happy customer" onclick="openLightbox('testimonials',8)">
+      <img src="/assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',9)">
+      <img src="/assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg" alt="Happy customer" onclick="openLightbox('testimonials',10)">
+      <img src="/assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg" alt="Happy customer" onclick="openLightbox('testimonials',11)">
+      <img src="/assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg" alt="Happy customer" onclick="openLightbox('testimonials',12)">
+      <img src="/assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
+      <img src="/assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
+      <img src="/assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
+    </div>
+      <button class="scroll-arrow prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -937,65 +964,38 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 <!-- TEAM -->
 <!-- TESTIMONIALS -->
-<section class="testimonials-section">
+<section class="ba-section" id="before-after">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-title">What Our Impact Windows Customers Say</h2>
-      <p class="section-subtitle" style="margin:0 auto">500+ five-star reviews from Florida homeowners who trusted us with their impact windows.</p>
+      <span class="section-label">Transformations</span>
+      <h2 class="section-title">See the Difference Impact Windows Make</h2>
+      <p class="section-subtitle" style="margin:0 auto">Drag the slider to see real impact window installation results on Florida homes &mdash; before and after.</p>
     </div>
-    <div class="scroller">
-    <div class="testimonial-scroll" style="margin-top:40px">
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"USAHI replaced all 18 windows in our home. The crew was professional, clean, and finished ahead of schedule. Our energy bill dropped 30% the very next month!"</p>
-        <div class="author-info"><div class="name">Maria R.</div><div class="location">Miami-Dade County</div></div>
+    <div class="ba-grid">
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before1.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after1.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
       </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"From the first consultation to the final walk-through, USAHI was outstanding. The impact windows look amazing and we feel so much safer during hurricane season."</p>
-        <div class="author-info"><div class="name">James & Linda P.</div><div class="location">Broward County</div></div>
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before2.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after2.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
       </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"Best investment we ever made. The noise reduction alone is worth it -we live near a busy road and the difference is night and day. Highly recommend!"</p>
-        <div class="author-info"><div class="name">Carlos M.</div><div class="location">Palm Beach County</div></div>
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before3.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after3.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Before</span>
+        <span class="ba-label after">After</span>
       </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"The $0 down financing made it possible for us. We got top-of-the-line ES Windows installed and pay less than our old cable bill. Incredible value."</p>
-        <div class="author-info"><div class="name">Stephanie W.</div><div class="location">Hallandale Beach</div></div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="quote">"Our insurance company gave us a significant discount after we had USAHI install impact windows throughout our home. The project manager kept us informed every step of the way."</p>
-        <div class="author-info"><div class="name">Robert & Anne G.</div><div class="location">Fort Lauderdale</div></div>
-      </div>
-    </div>
-      <button class="scroll-arrow prev" aria-label="Previous reviews"><i class="fas fa-chevron-left"></i></button>
-      <button class="scroll-arrow next" aria-label="Next reviews"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <div class="scroller">
-    <div class="testimonial-photos-grid">
-      <img src="/assets/testimonials/PHOTO-2025-07-08-14-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',0)">
-      <img src="/assets/testimonials/PHOTO-2025-06-30-10-57-34.jpg" alt="Happy customer" onclick="openLightbox('testimonials',1)">
-      <img src="/assets/testimonials/PHOTO-2025-06-20-16-26-05.jpg" alt="Happy customer" onclick="openLightbox('testimonials',2)">
-      <img src="/assets/testimonials/PHOTO-2025-06-06-12-16-49.jpg" alt="Happy customer" onclick="openLightbox('testimonials',3)">
-      <img src="/assets/testimonials/PHOTO-2025-05-27-09-55-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',4)">
-      <img src="/assets/testimonials/PHOTO-2025-05-14-17-40-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',5)">
-      <img src="/assets/testimonials/PHOTO-2025-05-09-16-18-17.jpg" alt="Happy customer" onclick="openLightbox('testimonials',6)">
-      <img src="/assets/testimonials/PHOTO-2025-05-09-14-27-19.jpg" alt="Happy customer" onclick="openLightbox('testimonials',7)">
-      <img src="/assets/testimonials/PHOTO-2025-05-09-11-32-18.jpg" alt="Happy customer" onclick="openLightbox('testimonials',8)">
-      <img src="/assets/testimonials/PHOTO-2025-05-07-16-31-36.jpg" alt="Happy customer" onclick="openLightbox('testimonials',9)">
-      <img src="/assets/testimonials/PHOTO-2025-04-03-16-30-59.jpg" alt="Happy customer" onclick="openLightbox('testimonials',10)">
-      <img src="/assets/testimonials/PHOTO-2025-04-03-15-27-01.jpg" alt="Happy customer" onclick="openLightbox('testimonials',11)">
-      <img src="/assets/testimonials/PHOTO-2025-03-27-18-14-20.jpg" alt="Happy customer" onclick="openLightbox('testimonials',12)">
-      <img src="/assets/testimonials/PHOTO-2025-03-21-11-36-56.jpg" alt="Happy customer" onclick="openLightbox('testimonials',13)">
-      <img src="/assets/testimonials/PHOTO-2025-03-12-15-21-25.jpg" alt="Happy customer" onclick="openLightbox('testimonials',14)">
-      <img src="/assets/testimonials/PHOTO-2025-02-25-12-10-55.jpg" alt="Happy customer" onclick="openLightbox('testimonials',15)">
-    </div>
-      <button class="scroll-arrow prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
-      <button class="scroll-arrow next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -2233,6 +2233,55 @@ document.head.appendChild(mobileStyle);
   .ig-scroller .scroll-arrow.next{right:2px}
   .ig-scroller .scroll-arrow[disabled]{opacity:.35;pointer-events:none}
 }
+</style>
+
+<!-- HERO LIGHT THEME + NEW GROUNDS -->
+<style>
+/* Hero ab safed hai (jaisa /get-estimate/ par). Uska navy background aur
+   upar chadhi tasveer dono hata di gayi hain, aur jo bhi text safed tha
+   wo ab gehra hai - warna kuch nazar hi na aata. */
+.hero{background:linear-gradient(180deg,#eaf3fb,#fff 62%)!important;
+  color:var(--dark);border-bottom:1px solid #eef2f7}
+.hero::before,.hero::after{content:none!important;display:none!important}
+
+.hero .hero-text h1{color:var(--dark);text-shadow:none}
+.hero .hero-sub{color:#4b5563}
+.hero .hero-checklist li{color:#334155}
+.hero .hero-checklist li .check-icon{background:var(--accent-soft)}
+.hero .hero-stats{border-top-color:#dbe4ee}
+.hero .hero-stat:not(:last-child)::after{background:#dbe4ee}
+.hero .hero-stat .stat-num{color:var(--primary)}
+.hero .hero-stat .stat-label{color:#4b5563}
+.hero .hero-statewide{background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));
+  border-color:rgba(226,71,78,.14)}
+.hero .hero-statewide span{color:#334155}
+.hero .hero-trust-item{color:#64748b}
+.hero .hero-trust-sep{background:#dbe4ee}
+.hero .hero-offer{background:var(--white);border:1px solid #e4ecf4;color:#334155;
+  box-shadow:0 8px 22px rgba(16,46,77,.10)}
+.hero .hero-offer:hover{background:var(--white);border-color:rgba(226,71,78,.35);
+  transform:translateY(-3px);box-shadow:0 14px 32px rgba(16,46,77,.16)}
+
+/* rating ki patti bhi ab halke ground par */
+.hero-rating{background:var(--white);border:1px solid #e4ecf4;
+  box-shadow:0 4px 14px rgba(16,46,77,.08)}
+.hero-rating:hover{background:var(--white);border-color:rgba(226,71,78,.34)}
+.hero-rating b{color:var(--dark)}
+.hr-sep{color:#94a3b8}
+.hr-count{color:#475569}
+
+/* video ab hero me hai */
+.hero .hero-video-side{box-shadow:0 18px 50px rgba(16,46,77,.16)}
+
+/* form ab neeche wale section me hai */
+.inline-form-section .inline-form-card{background:var(--white);border:1px solid #e4ecf4;
+  box-shadow:0 18px 50px rgba(16,46,77,.10)}
+
+/* Sections ki adla badli se zameenon ki baari toot gayi thi - dobara tay */
+.testimonials-section,.projects-section,.financing-section,
+.hwi-section,.ig-section,.faq-section{background:var(--white)}
+.inline-form-section,.testing-section,.ba-section,.why-section,
+.team-section,.map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
 </style>
 </body>
 </html>
