@@ -280,15 +280,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .team-card p{font-size:13px;color:var(--gray)}
 
 /* BEHIND THE SCENES — local video background */
-.bts-section{position:relative;padding:100px 0;overflow:hidden;min-height:450px}
-.bts-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.bts-bg video,.bts-bg iframe{width:100%;height:100%;object-fit:cover;border:none}
-.bts-bg .yt-crop-bg{position:absolute;inset:-80px -20px;pointer-events:none}
-.bts-bg .yt-crop-bg iframe{width:calc(100% + 40px);height:calc(100% + 160px);position:absolute;top:-80px;left:-20px;border:none}
-.bts-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(36,91,143,.9),rgba(0,0,0,.8))}
-.bts-content{position:relative;z-index:2;text-align:center;color:var(--white)}
-.bts-content h2{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;margin-bottom:16px}
-.bts-content p{font-size:18px;opacity:.85;max-width:600px;margin:0 auto 32px}
 
 /* WHY CHOOSE US */
 .why-section{padding:80px 0;background:var(--light)}
@@ -1036,12 +1027,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   color:var(--white)!important}
 /* bts ka band video par hai - roshan video par shafaf safed chip ka
    contrast 4.16 tak gir sakta tha, is liye yahan chip gehra hai. */
-.bts-section .section-label{
-  background:rgba(0,0,0,.38);border-color:rgba(255,255,255,.26);
-  color:var(--white)!important}
-.bts-section .section-label::before,
-.cta-section .section-label::before,
-.offers-section .section-label::before{background:var(--white)}
 </style>
 <style>
 @media(max-width:600px){
@@ -1693,21 +1678,7 @@ window.addEventListener('resize', function(){
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="bts-section">
-  <div class="bts-bg">
-    <div class="yt-crop-bg">
-      <iframe id="btsYT" src="https://www.youtube.com/embed/_zEJOPZcwT0?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=_zEJOPZcwT0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  </div>
-  <div class="bts-overlay"></div>
-  <div class="container bts-content reveal">
-    <span class="section-label" style="color:var(--accent-light)">Behind the Scenes</span>
-    <h2>See How We Build Quality Into Every Impact Windows Installation</h2>
-    <p>From precision measurements to the final seal -every step follows our rigorous quality standards to ensure your windows last a lifetime.</p>
-    <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Video</a>
-  </div>
-</section>
+
 
 <!-- INSTAGRAM -->
 <section class="ig-section" id="instagram">
@@ -1956,7 +1927,7 @@ window.addEventListener('resize', function(){
 var ytPlayers={};
 var ytMutedState={};
 var ytPausedState={};
-var ytIDs=['heroYT','teamYT','btsYT','whyYT','test1YT','test2YT','ig1YT','ig2YT','ig3YT'];
+var ytIDs=['heroYT','teamYT','whyYT','test1YT','test2YT','ig1YT','ig2YT','ig3YT'];
 function onYouTubeIframeAPIReady(){
   ytIDs.forEach(function(id){
     var el=document.getElementById(id);
