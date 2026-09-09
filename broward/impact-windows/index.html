@@ -42,7 +42,6 @@ fbq('track', 'PageView');
 var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
 ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-
   ttq.load('DA7ED1RC77U2R5U1MIFG');
   ttq.page();
 }(window, document, 'ttq');
@@ -492,17 +491,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .review-badge .badge-detail{font-size:12px;color:var(--gray)}
 
 /* INSTAGRAM — video only, no captions */
-.ig-section{padding:80px 0;background:var(--white)}
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.ig-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-height:500px;box-shadow:var(--shadow);cursor:pointer;transition:all .3s}
-.ig-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.ig-card video{width:100%;height:100%;object-fit:cover}
-.ig-card .ig-overlay{pointer-events:auto;z-index:10}
-.ig-card .ig-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6) 100%);display:flex;align-items:flex-end;padding:20px;transition:background .3s}
-.ig-card:hover .ig-overlay{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%)}
-.ig-card .ig-overlay span{color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
-.ig-card .ig-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.ig-card .ig-play i{color:var(--accent);font-size:20px;margin-left:3px}
 
 /* CTA */
 .cta-section{position:relative;padding:92px 0;background-color:var(--primary);color:var(--white);text-align:center;overflow:hidden}
@@ -549,7 +537,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:1024px){
   .hero-grid,.why-grid,.inline-form-wrap,.map-grid,.testing-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  
   .services-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
@@ -569,7 +557,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   body.quote-open .offer-modal.peek{display:none}
   .lightbox-nav.prev{left:8px}
   .lightbox-nav.next{right:8px}
-  .ig-grid{grid-template-columns:1fr 1fr 1fr}
+  
   .hero-video-side{aspect-ratio:16/9}
   .services-grid{grid-template-columns:1fr 1fr}
 }
@@ -582,7 +570,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 }
 @media(max-width:480px){
   .project-grid{grid-template-columns:1fr}
-  .ig-grid{grid-template-columns:1fr}
+  
   .nav-phone{font-size:14px}
   .nav-logo img{height:34px}
   .top-bar{font-size:11px}
@@ -771,51 +759,38 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <div class="reveal">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">Impact Windows Services in Broward County</h2>
-      <p class="section-subtitle">Everything from the first measurement to the county sign-off, handled by our own team. No subcontractors on your job.</p>
+      <p class="section-subtitle">A licensed impact windows contractor buying direct from the factory, so your impact windows quote carries no middleman and no subcontractors.</p>
       <div class="iws-grid">
-
         <div class="iws-card">
           <div class="iws-ico"><i class="fas fa-screwdriver-wrench"></i></div>
           <h3>Impact Windows Installation</h3>
-          <p>Our own crews handle measuring, permitting, installation and the final county
-             inspection. No subcontractors, and one project manager from first visit to sign-off.</p>
+          <p>Our own crews measure, permit, install and clear the county inspection.</p>
         </div>
-
+        <div class="iws-card">
+          <div class="iws-ico"><i class="fas fa-arrows-rotate"></i></div>
+          <h3>Replacement Windows</h3>
+          <p>Old or fogged units out, ES semi-tempered impact glass in.</p>
+        </div>
+        <div class="iws-card">
+          <div class="iws-ico"><i class="fas fa-door-open"></i></div>
+          <h3>Impact Doors</h3>
+          <p>Sliding, French, entry and accordion &mdash; patio and garage sealed too.</p>
+        </div>
         <div class="iws-card">
           <div class="iws-ico"><i class="fas fa-house-chimney-window"></i></div>
           <h3>Residential Impact Windows</h3>
-          <p>Built to the exact size of every opening for single-family homes, townhouses and
-             condos. Impact windows for residential properties only &mdash; that is all we install.</p>
+          <p>Single-family homes, townhouses and condos. Outside noise down by up to half.</p>
         </div>
-
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-clipboard-list"></i></div>
-          <h3>Free Impact Windows Estimate</h3>
-          <p>An itemised impact windows estimate at your home, window by window, with no
-             obligation and no pressure. You keep the numbers whether you buy or not.</p>
-        </div>
-
         <div class="iws-card">
           <div class="iws-ico"><i class="fas fa-hand-holding-dollar"></i></div>
           <h3>Impact Windows Financing</h3>
-          <p>$0 down and 100% impact windows financing from $5/month per window through
-             Ygrene, Service Finance and GoodLeap. Approval before the work starts.</p>
+          <p>$0 down, 100% financing, from $5 a month per window.</p>
         </div>
-
         <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-certificate"></i></div>
-          <h3>Licensed Impact Windows Contractor</h3>
-          <p>Licence CGC1526707, BBB A+ rated, insured, and 15+ years in South Florida. Check
-             the licence number before you let any impact windows contractor quote you.</p>
+          <div class="iws-ico"><i class="fas fa-clipboard-list"></i></div>
+          <h3>Free Impact Windows Estimate</h3>
+          <p>Itemised at your home, window by window, at direct manufacturer pricing.</p>
         </div>
-
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3>Fast Impact Windows Quote</h3>
-          <p>Send the form and a specialist calls the same day. Most homeowners have a written
-             impact windows quote within 24 hours of the visit.</p>
-        </div>
-
       </div>
 
       <div class="iws-areas">
@@ -988,7 +963,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </section>
-
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
@@ -1218,9 +1192,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <span class="section-label">Installation</span>
       <h2 class="section-title">Professional Impact Windows Installation in Broward County</h2>
       <div class="hwi-body">
-        <p>Impact glass is only half the equation. If the frame is not anchored correctly into the opening and sealed to code, the window will not deliver the energy savings, noise reduction, or storm protection it is rated for. That is why choosing the right impact windows contractor matters just as much as choosing the right glass.</p>
-        <p>As a licensed impact windows company, we fit residential impact windows on Broward County homes &mdash; single-family houses, townhouses and condos from Fort Lauderdale to Weston &mdash; and we handle the entire job in-house: measurement, permitting, installation, and final inspection. You get one dedicated project manager as your single point of contact for the whole project, so nothing gets lost between trades.</p>
-        <p>Because we buy direct from manufacturers including ES Windows and Tecnoglass, you get factory pricing on Low-E impact glass that blocks up to 99% of UV rays, cuts outside noise by up to 50%, and typically lowers both your energy bills and your homeowner's insurance premium.</p>
+        <p>Impact glass only performs if the frame is anchored into the opening and sealed to code. We handle the measurement, the permits, the installation and the final inspection in house, with one project manager from the first visit to sign-off.</p>
       </div>
       <div class="hwi-steps">
         <div class="hwi-step">
@@ -1318,40 +1290,6 @@ window.addEventListener('resize', function(){
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="ig-section" id="instagram">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">See Us in Action</span>
-      <h2 class="section-title">Behind the Scenes with USAHI</h2>
-      <p class="section-subtitle" style="margin:0 auto">Watch our team at work, real projects, and the quality that sets us apart.</p>
-    </div>
-    <div class="ig-grid reveal">
-      <div class="ig-card">
-        <div class="yt-crop-fill">
-          <iframe id="ig1YT" src="https://www.youtube.com/embed/PDJ4-XPZsVk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=PDJ4-XPZsVk&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.instagram.com/reel/DLp06-dtDLq/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
-      </div>
-      <div class="ig-card">
-        <div class="yt-crop-fill">
-          <iframe id="ig2YT" src="https://www.youtube.com/embed/bwei20LoFcM?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=bwei20LoFcM&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.instagram.com/reel/DJjt1cQO6bl/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
-      </div>
-      <div class="ig-card">
-        <div class="yt-crop-fill">
-          <iframe id="ig3YT" src="https://www.youtube.com/embed/iyWiSK3SzWw?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=iyWiSK3SzWw&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.instagram.com/reel/DGgaj1_vuei/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- INSTAGRAM — video-only cards, no embed, no captions -->
 <section class="services-section" id="services">
   <div class="container">
@@ -1360,9 +1298,7 @@ window.addEventListener('resize', function(){
       <h2 class="section-title">Premium Home Improvement Florida Services</h2>
       <p class="section-subtitle" style="margin:0 auto">Our team is ready to help you lower your bills and protect the whole house, not just the windows.</p>
     </div>
-    <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
-      <img src="/assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
-    </div>
+    
     <div class="services-grid">
       <div class="service-card reveal">
         <img src="/assets/homes/web-2.jpg" alt="Impact Windows">
@@ -2156,6 +2092,36 @@ document.head.appendChild(mobileStyle);
 @media(max-width:560px){
   .iws-chip{padding:7px 13px;font-size:13px}
   .iws-ico{width:42px;height:42px;font-size:17px}
+}
+</style>
+
+<!-- MOBILE DENSITY -->
+<style>
+@media(max-width:600px){
+  /* tasveer wale cards mobile par bhi do column - ye page ki sab se
+     lambi cheez thi (projects 2604px, services 2335px) */
+  .project-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+  .services-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+  .project-card .photo-count{font-size:11px;padding:5px 9px}
+  .svc-overlay h4{font-size:15px}
+  .svc-overlay p{font-size:12px;line-height:1.45}
+
+  /* har section 80px upar + 80px neeche leta tha - 17 sections par
+     ye akela 2700px ban jata hai */
+  .iws-section,.inline-form-section,.ba-section,.testing-section,
+  .projects-section,.testimonials-section,.financing-section,.why-section,
+  .hwi-section,.team-section,.services-section,.map-section,.faq-section{
+    padding-top:46px;padding-bottom:46px}
+  .offers-section,.cta-section{padding-top:52px;padding-bottom:52px}
+
+  .iws-card{padding:22px 20px}
+  .iws-grid{gap:14px;margin-top:26px}
+  .iws-areas{margin-top:30px}
+  .iws-chips{gap:7px}
+  .iws-chip{padding:6px 12px;font-size:12.5px}
+  .map-wrap{height:300px}
+  .testing-card{max-height:420px}
+  .team-grid{gap:14px;margin-top:24px}
 }
 </style>
 </body>
