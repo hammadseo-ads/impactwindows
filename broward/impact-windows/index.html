@@ -1091,10 +1091,22 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 </style>
 
 <style>
-/* Crop nisbat se hai (8%), aur team wali video chhoti hai - us par sirf
-   20px kata tha, jab ke YouTube ka title/channel wala patta us se lamba
-   hai. Is ek video par thora aur crop, taake har naap par chhup jaye. */
-.team-video-wrap .yt-crop-fill iframe{top:calc(-8% - 24px);height:calc(116% + 48px)}
+/* YouTube ka title/channel wala patta upar aata hai. Pehle isay crop se
+   chhupaya tha, magar crop barhane se video zoom ho jati hai aur naap
+   ajeeb lagta hai. Ab video ko haath nahi lagate: upar ek halka saya
+   daal dete hain jo us patte ko dhak leta hai. Saya buttons ke neeche
+   rehta hai aur click bhi nahi rokta. */
+.team-video-wrap,.why-video,.testing-card,.ig-card{position:relative}
+.team-video-wrap::before,.why-video::before,
+.testing-card::before,.ig-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:62px;z-index:6;
+  pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 38%, rgba(0,0,0,.42) 70%, rgba(0,0,0,0) 100%)}
+@media(max-width:600px){
+  .team-video-wrap::before,.why-video::before,
+  .testing-card::before,.ig-card::before{height:52px}
+}
 </style>
 </head>
 <body>
