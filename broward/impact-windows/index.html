@@ -2072,6 +2072,10 @@ document.head.appendChild(mobileStyle);
 .section-title{position:relative;padding-bottom:20px}
 .section-title::after{content:'';position:absolute;left:0;bottom:0;width:58px;height:4px;
   border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
+/* Jis wrapper par center laga hai, lakeer bhi wahin center. Ye usi inline
+   style ko pakadta hai jo heading ko center karta hai, is liye aage koi naya
+   section banaye to wo bhi khud theek rahega. */
+[style*="text-align:center"] .section-title::after{left:50%;transform:translateX(-50%)}
 
 /* -------------------------------------------------------------
    3. Upar wala chhota label ab ek narm chip hai, lakeer ki jagah dot.
