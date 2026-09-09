@@ -2342,5 +2342,22 @@ document.head.appendChild(mobileStyle);
 .cta-section .section-label::before,
 .offers-section .section-label::before{background:var(--white)}
 </style>
+
+<!-- MOBILE: HERO TIGHTER, FORM FIRST IN SECTION 2 -->
+<style>
+@media(max-width:600px){
+  /* Rating ke upar 64px ki jagah thi - navbar ke foran baad itni khali
+     jagah zaroorat se zyada thi. */
+  .hero{padding-top:24px;padding-bottom:34px}
+  .hero-grid{gap:28px}
+
+  /* Section 2: form pehle, uske baad matn. Grid me seedhi jagah dena
+     order se zyada pakka hai; order bhi rakha hua hai. */
+  .inline-form-wrap{grid-template-rows:auto auto}
+  .inline-form-section .inline-form-card{grid-row:1;order:-1}
+  .inline-form-section .inline-form-text{grid-row:2;order:0}
+  .inline-form-wrap{gap:28px}
+}
+</style>
 </body>
 </html>
