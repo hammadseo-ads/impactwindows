@@ -2051,5 +2051,78 @@ document.head.appendChild(mobileStyle);
   check();
 })();
 </script>
+
+<!-- DESIGN PASS -->
+<style>
+/* -------------------------------------------------------------
+   1. Cards apne section ke rang par gum na hon.
+      Background badalne se do jagah safed card safed zameen par aa
+      gaya tha, aur why-feature ka hover apne hi section ke rang ka
+      tha - yaani hover nazar hi nahi aata tha.
+   ------------------------------------------------------------- */
+.iws-section .iws-card,
+.hwi-section .hwi-step{background:var(--light);border-color:#e4ecf4}
+.why-section .why-feature:hover{background:var(--white);border-color:#dbe4ee}
+
+/* -------------------------------------------------------------
+   2. Har section ke unwan ke neeche ek chhoti accent lakeer.
+      Poore page par ek hi nishani, jis se section shuru hona saaf
+      mehsoos hota hai.
+   ------------------------------------------------------------- */
+.section-title{position:relative;padding-bottom:20px}
+.section-title::after{content:'';position:absolute;left:0;bottom:0;width:58px;height:4px;
+  border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-light))}
+
+/* -------------------------------------------------------------
+   3. Upar wala chhota label ab ek narm chip hai, lakeer ki jagah dot.
+   ------------------------------------------------------------- */
+.section-label{background:var(--accent-soft);border:1px solid rgba(226,71,78,.16);
+  padding:7px 14px;border-radius:99px;font-size:12px;letter-spacing:1.4px;gap:7px}
+.section-label::before{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* -------------------------------------------------------------
+   4. Halke sections ab bilkul flat nahi - upar se neeche zara sa
+      gehra hote hain. Farq mamooli hai, magar zameen chapti nahi lagti.
+   ------------------------------------------------------------- */
+.inline-form-section,.testing-section,.testimonials-section,
+.why-section,.team-section,.services-section,.faq-section{
+  background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
+
+/* -------------------------------------------------------------
+   5. Card ke upar accent ki patli dhaar, hover par poori kholti hai.
+   ------------------------------------------------------------- */
+.iws-card,.hwi-step,.fin-card{position:relative;overflow:hidden}
+.iws-card::before,.hwi-step::before,.fin-card::before{content:'';position:absolute;
+  top:0;left:0;height:3px;width:0;border-radius:0 99px 99px 0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));transition:width .3s ease}
+.iws-card:hover::before,.hwi-step:hover::before,.fin-card:hover::before{width:100%}
+
+/* -------------------------------------------------------------
+   6. hwi ke number ab saada murabba nahi - accent gradient tile.
+   ------------------------------------------------------------- */
+.hwi-num{background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  color:var(--white);box-shadow:0 6px 16px rgba(226,71,78,.28)}
+
+/* -------------------------------------------------------------
+   7. Raaye ke card par bara quote nishan, halka aur peeche.
+   ------------------------------------------------------------- */
+.testimonial-card{position:relative;overflow:hidden}
+.testimonial-card::after{content:'\201C';position:absolute;top:-30px;right:16px;
+  font-family:Georgia,'Times New Roman',serif;font-size:120px;line-height:1;
+  color:rgba(226,71,78,.09);pointer-events:none}
+.testimonial-card > *{position:relative;z-index:1}
+
+/* -------------------------------------------------------------
+   8. Steps aur cards ke beech saans lene ki jagah.
+   ------------------------------------------------------------- */
+.hwi-step{padding:30px 28px}
+.iws-card{padding:28px 26px}
+
+@media(max-width:560px){
+  .section-title{padding-bottom:16px}
+  .section-title::after{width:46px;height:3px}
+  .testimonial-card::after{font-size:88px;top:-22px}
+}
+</style>
 </body>
 </html>
