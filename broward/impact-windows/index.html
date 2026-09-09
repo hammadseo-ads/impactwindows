@@ -590,7 +590,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 /* HERO — navy photo wash, same language as the closing CTA band */
 .hero{position:relative;padding:64px 0 56px;background-color:#102e4d;color:var(--white);overflow:hidden;border-bottom:none}
-.hero::before{content:'';position:absolute;inset:0;background:url('/assets/homes/5A.jpg') 58% center/cover no-repeat;z-index:0}
+.hero::before{content:'';position:absolute;inset:0;background:url('/assets/homes/32A.jpg') center 45%/cover no-repeat;z-index:0}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,27,47,.97) 0%,rgba(10,34,58,.93) 38%,rgba(14,43,72,.70) 56%,rgba(16,46,77,.34) 80%,rgba(16,46,77,.18) 100%);z-index:1}
 .hero>*{position:relative;z-index:2}
 .hero .hero-grid{align-items:start}
@@ -690,7 +690,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
         </div>
         <div class="hero-statewide">
           <i class="fas fa-map-location-dot"></i>
-          <span>Fort Lauderdale &bull; Hollywood &bull; Pembroke Pines &bull; Coral Springs &bull; Pompano Beach</span>
+          <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
         </div>
       </div>
       <div class="inline-form-card reveal" id="quoteCard">
@@ -752,7 +752,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 <style>
 .iws-section{padding:72px 0;background:var(--white)}
 .iws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-.iws-card{border:1px solid #eef2f7;border-radius:var(--radius);padding:26px;background:var(--white);box-shadow:var(--shadow)}
+.iws-card{border:1px solid #eef2f7;border-radius:var(--radius);padding:26px;background:var(--white);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
+.iws-card:hover{transform:translateY(-4px);border-color:rgba(226,71,78,.35);box-shadow:0 14px 34px rgba(16,46,77,.12)}
 .iws-ico{width:42px;height:42px;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:15px}
 .iws-card h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:9px}
 .iws-card p{font-size:15px;line-height:1.65;color:var(--gray)}
@@ -2008,5 +2009,44 @@ document.head.appendChild(mobileStyle);
 <!-- CallRail dynamic number insertion -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/609637261/da99578ab198e251ef67/12/swap.js"></script>
 <script src="/assets/js/sheet-webhook.js"></script>
+
+<!-- MOBILE STICKY CTA -->
+<style>
+.m-cta{position:fixed;left:0;right:0;bottom:0;z-index:1100;display:none;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid #e8eef4;box-shadow:0 -6px 24px rgba(10,30,55,.10);transform:translateY(115%);transition:transform .3s ease}
+.m-cta.show{transform:none}
+.m-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:12px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;text-decoration:none}
+.m-cta .m-call{background:var(--white);color:var(--primary);border:1.5px solid var(--primary)}
+.m-cta .m-quote{background:var(--accent);color:var(--white);box-shadow:0 6px 18px rgba(226,71,78,.32)}
+@media(max-width:900px){.m-cta{display:flex}body{padding-bottom:78px}}
+</style>
+<div class="m-cta" id="mCta">
+  <a class="m-call" href="tel:8664813679"><i class="fas fa-phone"></i> Call Now</a>
+  <a class="m-quote" href="#quoteCard"><i class="fas fa-clipboard-list"></i> Free Quote</a>
+</div>
+<script>
+(function(){
+  var bar  = document.getElementById('mCta'); if(!bar) return;
+  var hero = document.querySelector('.hero');
+  if(!hero) return;
+
+  function show(on){ bar.classList.toggle('show', on); }
+
+  function check(){ show(hero.getBoundingClientRect().bottom < 0); }
+
+  // Do tareeqe, jaan boojh kar. Is page par body ka apna overflow hai, is liye
+  // scroll event kis cheez par aata hai ye pakka nahi. Observer aksar behtar hai
+  // lekin har haal me chalega bhi ye nahi kaha ja sakta - is liye dono.
+  if('IntersectionObserver' in window){
+    try{
+      new IntersectionObserver(function(e){ show(!e[0].isIntersecting); },
+                               {threshold:0}).observe(hero);
+    }catch(err){}
+  }
+  window.addEventListener('scroll', check, {passive:true});
+  document.addEventListener('scroll', check, {passive:true});
+  window.addEventListener('resize', check);
+  check();
+})();
+</script>
 </body>
 </html>
