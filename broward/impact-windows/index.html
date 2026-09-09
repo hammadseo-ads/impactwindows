@@ -754,52 +754,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:900px){.iws-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.iws-grid{grid-template-columns:1fr}.iws-section{padding:52px 0}}
 </style>
-<section class="iws-section" id="services-broward">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">What We Do</span>
-      <h2 class="section-title">Impact Windows Services in Broward County</h2>
-      <p class="section-subtitle">A licensed impact windows contractor buying direct from the factory, so your impact windows quote carries no middleman and no subcontractors.</p>
-      <div class="iws-grid">
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-screwdriver-wrench"></i></div>
-          <h3>Impact Windows Installation</h3>
-          <p>Our own crews measure, permit, install and clear the county inspection.</p>
-        </div>
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-arrows-rotate"></i></div>
-          <h3>Replacement Windows</h3>
-          <p>Old or fogged units out, ES semi-tempered impact glass in.</p>
-        </div>
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-door-open"></i></div>
-          <h3>Impact Doors</h3>
-          <p>Sliding, French, entry and accordion &mdash; patio and garage sealed too.</p>
-        </div>
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-house-chimney-window"></i></div>
-          <h3>Residential Impact Windows</h3>
-          <p>Single-family homes, townhouses and condos. Outside noise down by up to half.</p>
-        </div>
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-hand-holding-dollar"></i></div>
-          <h3>Impact Windows Financing</h3>
-          <p>$0 down, 100% financing, from $5 a month per window.</p>
-        </div>
-        <div class="iws-card">
-          <div class="iws-ico"><i class="fas fa-clipboard-list"></i></div>
-          <h3>Free Impact Windows Estimate</h3>
-          <p>Itemised at your home, window by window, at direct manufacturer pricing.</p>
-        </div>
-      </div>
 
-      <div class="iws-areas">
-        <h3>Broward County areas we cover</h3>
-        <div class="iws-chips"><span class="iws-chip">Fort Lauderdale</span><span class="iws-chip">Hollywood</span><span class="iws-chip">Pembroke Pines</span><span class="iws-chip">Coral Springs</span><span class="iws-chip">Miramar</span><span class="iws-chip">Pompano Beach</span><span class="iws-chip">Davie</span><span class="iws-chip">Plantation</span><span class="iws-chip">Sunrise</span><span class="iws-chip">Weston</span><span class="iws-chip">Deerfield Beach</span><span class="iws-chip">Coconut Creek</span><span class="iws-chip">Tamarac</span><span class="iws-chip">Margate</span><span class="iws-chip">Lauderhill</span><span class="iws-chip">Oakland Park</span><span class="iws-chip">Dania Beach</span><span class="iws-chip">Parkland</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- QUOTE FORM -->
 <section class="inline-form-section" id="get-quote">
@@ -1193,7 +1148,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <span class="section-label">Installation</span>
       <h2 class="section-title">Professional Impact Windows Installation in Broward County</h2>
       <div class="hwi-body">
-        <p>Impact glass only performs if the frame is anchored into the opening and sealed to code. We handle the measurement, the permits, the installation and the final inspection in house, with one project manager from the first visit to sign-off.</p>
+        <p>Impact glass only performs if the frame is anchored into the opening and sealed to code. We handle the measurement, the permits, the installation and the final inspection in house, with one project manager from the first visit to sign-off &mdash; on residential impact windows and replacement windows alike, from single-family houses to condos.</p>
       </div>
       <div class="hwi-steps">
         <div class="hwi-step">
@@ -1387,6 +1342,10 @@ window.addEventListener('resize', function(){
     <div class="reveal" style="text-align:center">
       <span class="section-label">Find Us</span>
       <h2 class="section-title">Visit Our Showroom</h2>
+      <p class="section-subtitle" style="margin:0 auto">Serving every city in Broward County.</p>
+      <div class="iws-areas" style="border:0;margin-top:22px">
+        <div class="iws-chips"><span class="iws-chip">Fort Lauderdale</span><span class="iws-chip">Hollywood</span><span class="iws-chip">Pembroke Pines</span><span class="iws-chip">Coral Springs</span><span class="iws-chip">Miramar</span><span class="iws-chip">Pompano Beach</span><span class="iws-chip">Davie</span><span class="iws-chip">Plantation</span><span class="iws-chip">Sunrise</span><span class="iws-chip">Weston</span><span class="iws-chip">Deerfield Beach</span><span class="iws-chip">Coconut Creek</span><span class="iws-chip">Tamarac</span><span class="iws-chip">Margate</span><span class="iws-chip">Lauderhill</span><span class="iws-chip">Oakland Park</span><span class="iws-chip">Dania Beach</span><span class="iws-chip">Parkland</span></div>
+      </div>
     </div>
     <div class="map-grid reveal">
       <div class="map-wrap">
@@ -2225,6 +2184,29 @@ document.head.appendChild(mobileStyle);
   .testimonial-card{min-width:0;width:82vw;max-width:none;padding:22px}
   .testimonial-scroll{padding-bottom:6px}
 }
+</style>
+
+<!-- SERVICES MOBILE FIX -->
+<style>
+@media(max-width:600px){
+  /* Do column par card 158x118px ka reh gaya tha aur uski tafseel ko
+     139px chahiye the - text card ke andar kat raha tha. */
+  .services-grid{grid-template-columns:1fr;gap:16px}
+  .svc-overlay h4{font-size:18px}
+  .svc-overlay p{font-size:13.5px;line-height:1.55}
+  .iws-areas{margin-top:24px}
+}
+</style>
+
+<!-- SECTION GROUNDS (aakhri lafz) -->
+<style>
+/* Ek hi jagah se tay, taake aage koi section hatne par dobara na uljhe.
+   Tarteeb: trust-bar halka hai, is liye us ke baad safed se shuru. */
+.inline-form-section,.testing-section,.testimonials-section,
+.financing-section,.hwi-section,.services-section,.faq-section{background:var(--white)}
+
+.ba-section,.projects-section,.why-section,.team-section,.ig-section,
+.map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
 </style>
 </body>
 </html>
