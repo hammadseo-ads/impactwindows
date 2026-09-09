@@ -259,14 +259,14 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 /* TEAM */
 .team-section{padding:80px 0;background:var(--light)}
-.team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:9/16}
+.team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:16/7}
 .team-video-wrap video{width:100%;height:100%;object-fit:cover}
 .yt-crop-fill{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .yt-crop-fill iframe{width:108%;height:116%;border:none;position:absolute;top:-8%;left:-4%}
 .yt-crop-fill+.sound-toggle,.yt-crop-fill+.sound-toggle+.video-pause-btn,.yt-crop-fill~.sound-toggle,.yt-crop-fill~.video-pause-btn{pointer-events:auto;z-index:20}
 .team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
 @media(max-width:768px){
-  .team-video-wrap{aspect-ratio:9/16}
+  .team-video-wrap{aspect-ratio:4/3}
   .team-video-overlay{padding:16px 20px;background:linear-gradient(transparent,rgba(36,91,143,.82))}
   .team-video-overlay h3{font-size:19px;margin-bottom:0}
   .team-video-overlay p{display:none}
@@ -2217,12 +2217,10 @@ document.head.appendChild(mobileStyle);
 /* Ye do container 16/9 aur 16/7 ke the. Videos ab vertical Shorts hain,
    is liye un ke daayen baayen kaali pattiyan aa rahi thin. Ab container
    khud vertical hai aur video poora bharti hai. */
-.why-section .why-video,
-.team-section .team-video-wrap{width:300px;max-width:100%;
+.why-section .why-video{width:300px;max-width:100%;
   justify-self:center;margin-left:auto;margin-right:auto}
 @media(max-width:600px){
-  .why-section .why-video,
-  .team-section .team-video-wrap{width:272px}
+  .why-section .why-video{width:272px}
 }
 
 /* Reels ki qatar bagal me scroll hoti thi lekin koi nishani nahi thi -
