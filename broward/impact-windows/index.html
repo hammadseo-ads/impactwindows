@@ -1089,6 +1089,13 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:600px){
     }
 </style>
+
+<style>
+/* Crop nisbat se hai (8%), aur team wali video chhoti hai - us par sirf
+   20px kata tha, jab ke YouTube ka title/channel wala patta us se lamba
+   hai. Is ek video par thora aur crop, taake har naap par chhup jaye. */
+.team-video-wrap .yt-crop-fill iframe{top:calc(-8% - 24px);height:calc(116% + 48px)}
+</style>
 </head>
 <body>
 
