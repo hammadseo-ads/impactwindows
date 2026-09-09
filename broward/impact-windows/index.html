@@ -416,7 +416,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .osec-tile-kicker{font-size:15px;font-weight:800;color:var(--dark);margin-top:8px;line-height:1.35}
 .osec-tile-desc{font-size:14px;color:var(--gray);line-height:1.6;margin-top:10px;flex:1}
 .osec-tile-cta{margin-top:20px;width:100%;justify-content:center;padding:13px 18px;font-size:14.5px}
-.offers-foot{text-align:center;font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.5;margin-top:26px}
+.offers-foot{text-align:center;font-size:12px;color:rgba(255,255,255,.78);line-height:1.5;margin-top:26px}
 @media(max-width:720px){
   .offers-section{padding:56px 0}
   .offers-grid{grid-template-columns:1fr;gap:20px}
@@ -977,6 +977,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 </div>
 
 <!-- TEAM -->
+<!-- TESTIMONIALS -->
 <section class="testimonials-section">
   <div class="container">
     <div class="reveal" style="text-align:center">
@@ -1287,6 +1288,40 @@ window.addEventListener('resize', function(){
     <h2>See How We Build Quality Into Every Impact Windows Installation</h2>
     <p>From precision measurements to the final seal -every step follows our rigorous quality standards to ensure your windows last a lifetime.</p>
     <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Video</a>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="ig-section" id="instagram">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">See Us in Action</span>
+      <h2 class="section-title">Behind the Scenes with USAHI</h2>
+      <p class="section-subtitle" style="margin:0 auto">Watch our team at work, real projects, and the quality that sets us apart.</p>
+    </div>
+    <div class="ig-grid reveal">
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig1YT" src="https://www.youtube.com/embed/PDJ4-XPZsVk?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=PDJ4-XPZsVk&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.instagram.com/reel/DLp06-dtDLq/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig2YT" src="https://www.youtube.com/embed/bwei20LoFcM?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=bwei20LoFcM&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.instagram.com/reel/DJjt1cQO6bl/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig3YT" src="https://www.youtube.com/embed/iyWiSK3SzWw?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=iyWiSK3SzWw&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.instagram.com/reel/DGgaj1_vuei/" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-instagram"></i> View on Instagram</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2122,6 +2157,62 @@ document.head.appendChild(mobileStyle);
   .map-wrap{height:300px}
   .testing-card{max-height:420px}
   .team-grid{gap:14px;margin-top:24px}
+}
+</style>
+
+<!-- INSTAGRAM STYLES -->
+<style>
+.ig-section{padding:80px 0;background:var(--white)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.ig-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;
+  max-height:500px;box-shadow:var(--shadow);cursor:pointer;transition:transform .3s,box-shadow .3s}
+.ig-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ig-card video{width:100%;height:100%;object-fit:cover}
+.ig-card .ig-overlay{position:absolute;inset:0;pointer-events:auto;z-index:10;
+  background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.6) 100%);
+  display:flex;align-items:flex-end;padding:20px;transition:background .3s}
+.ig-card:hover .ig-overlay{background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%)}
+.ig-card .ig-overlay span{color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.ig-card .ig-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.ig-card .ig-play i{color:var(--accent);font-size:20px;margin-left:3px}
+
+@media(max-width:600px){
+  .ig-section{padding:46px 0}
+  /* teen reels ek ke neeche ek 1300px le leti thin - ab ek qatar me
+     bagal me scroll hoti hain */
+  .ig-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+    margin-top:26px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .ig-grid::-webkit-scrollbar{display:none}
+  .ig-card{flex:0 0 72vw;scroll-snap-align:start;max-height:none}
+}
+</style>
+
+<!-- NAVY BAND PATTERN -->
+<style>
+/* Neele sections bilkul saade the. Ab patli tirchi lakeeren aur ek narm
+   roshni - itni halki ke text ke saamne na aayein, sirf zameen jeevit lage. */
+.offers-section,.cta-section{position:relative;overflow:hidden}
+
+.offers-section::before,.cta-section::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:repeating-linear-gradient(115deg,
+    rgba(255,255,255,.045) 0 1px, transparent 1px 44px)}
+
+.offers-section::after,.cta-section::after{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(58% 62% at 84% 8%, rgba(226,71,78,.11), transparent 62%),
+    radial-gradient(48% 55% at 8% 96%, rgba(255,255,255,.05), transparent 60%)}
+
+/* content lakeeron ke upar rahe */
+.offers-section > .container,.cta-section > .container{position:relative;z-index:1}
+
+@media(max-width:600px){
+  .offers-section::before,.cta-section::before{
+    background-image:repeating-linear-gradient(115deg,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 30px)}
 }
 </style>
 </body>
