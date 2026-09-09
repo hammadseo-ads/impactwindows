@@ -658,14 +658,9 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
         <p class="hero-sub">Hurricane-rated protection that lowers your energy and insurance bills. Licensed, insured, and fitted by our own crews &mdash; 15+ years across South Florida.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 impact glass, engineered for daily use</li>
-          <li><span class="check-icon"><i class="fas fa-user-tie"></i></span> One dedicated project manager, start to finish</li>
           <li><span class="check-icon"><i class="fas fa-certificate"></i></span> Licensed CGC1526707 &bull; BBB A+ Rated</li>
-          <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> Direct from ES Windows &amp; Tecnoglass &bull; $0 down financing</li>
+          <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down financing &bull; direct manufacturer pricing</li>
         </ul>
-        <div class="hero-offers">
-          <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
-          <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
-        </div>
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="stat-num">15<span>+</span></div>
@@ -2282,6 +2277,36 @@ document.head.appendChild(mobileStyle);
 .hwi-section,.ig-section,.faq-section{background:var(--white)}
 .inline-form-section,.testing-section,.ba-section,.why-section,
 .team-section,.map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
+</style>
+
+<!-- HERO WHITE (main page jaisa) + SECTION 2 SHORT ON MOBILE -->
+<style>
+/* Main page ka hero bilkul safed hai aur uske baad wala band halka slate.
+   Wahi yahan: hero safed, agla section halka - farq nazar aata rahe. */
+.hero{background:var(--white)!important;border-bottom:none}
+.inline-form-section{background:var(--light)!important}
+
+/* rang bhi main page se: heading kaali, description grey, points slate */
+.hero .hero-text h1{color:var(--dark)}
+.hero .hero-sub{color:#6b7280}
+.hero .hero-checklist li{color:#374151}
+.hero .hero-stat .stat-label{color:#4b5563}
+
+@media(max-width:600px){
+  /* Section 2 mobile par sirf unwan aur chhote points - lamba paragraph
+     aur do button yahan zaroorat se zyada the, form neeche maujood hai. */
+  .inline-form-section .inline-form-text > p{display:none}
+  .inline-form-section .hero-btns{display:none}
+  .inline-form-features li{font-size:14px;line-height:1.45;padding:7px 0}
+  .inline-form-section h2{font-size:23px;line-height:1.25}
+  .inline-form-section{padding:40px 0}
+
+  /* hero bhi thora aur chusta */
+  .hero-checklist li{font-size:14px;line-height:1.45}
+  .hero-stats{margin-top:22px;padding-top:20px}
+  .hero-statewide{margin-top:18px;padding:11px 14px}
+  .hero-statewide span{font-size:12.5px}
+}
 </style>
 </body>
 </html>
