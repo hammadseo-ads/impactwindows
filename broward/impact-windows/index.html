@@ -651,7 +651,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     <div class="hero-grid">
       <div class="hero-text">
         <h1><span>Impact Windows</span> for Broward Homes</h1>
-        <p class="hero-sub">Built for South Florida weather and fitted by our own crews, never subcontractors. Your windows cut the power bill, shut out street noise and stop the sun fading your floors &mdash; every day of the year, not just in a storm. Insurance premiums typically come down too.</p>
+        <p class="hero-sub">Built for South Florida and fitted by our own crews, never subcontractors. Lower power bills, quieter rooms, and floors that stop fading.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 impact glass, engineered for daily use</li>
           <li><span class="check-icon"><i class="fas fa-user-tie"></i></span> One dedicated project manager, start to finish</li>
@@ -2155,7 +2155,7 @@ document.head.appendChild(mobileStyle);
   .iws-chips{gap:7px}
   .iws-chip{padding:6px 12px;font-size:12.5px}
   .map-wrap{height:300px}
-  .testing-card{max-height:420px}
+  .testing-card{max-height:none;width:272px;justify-self:center}
   .team-grid{gap:14px;margin-top:24px}
 }
 </style>
@@ -2213,6 +2213,17 @@ document.head.appendChild(mobileStyle);
   .offers-section::before,.cta-section::before{
     background-image:repeating-linear-gradient(115deg,
       rgba(255,255,255,.045) 0 1px, transparent 1px 30px)}
+}
+</style>
+
+<!-- MOBILE FIXES -->
+<style>
+@media(max-width:600px){
+  /* Card ki min-width 340px aur width 400px thi, screen 375px ki hai -
+     pehla card hamesha kata hua nazar aata tha. Ab screen ke hisab se,
+     aur agla card thora jhankta hai taake pata chale scroll hota hai. */
+  .testimonial-card{min-width:0;width:82vw;max-width:none;padding:22px}
+  .testimonial-scroll{padding-bottom:6px}
 }
 </style>
 </body>
