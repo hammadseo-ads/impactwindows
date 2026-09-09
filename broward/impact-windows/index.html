@@ -259,14 +259,14 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 /* TEAM */
 .team-section{padding:80px 0;background:var(--light)}
-.team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:16/7}
+.team-video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px;aspect-ratio:9/16}
 .team-video-wrap video{width:100%;height:100%;object-fit:cover}
 .yt-crop-fill{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .yt-crop-fill iframe{width:108%;height:116%;border:none;position:absolute;top:-8%;left:-4%}
 .yt-crop-fill+.sound-toggle,.yt-crop-fill+.sound-toggle+.video-pause-btn,.yt-crop-fill~.sound-toggle,.yt-crop-fill~.video-pause-btn{pointer-events:auto;z-index:20}
 .team-video-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(36,91,143,.9));padding:40px;color:var(--white)}
 @media(max-width:768px){
-  .team-video-wrap{aspect-ratio:4/3}
+  .team-video-wrap{aspect-ratio:9/16}
   .team-video-overlay{padding:16px 20px;background:linear-gradient(transparent,rgba(36,91,143,.82))}
   .team-video-overlay h3{font-size:19px;margin-bottom:0}
   .team-video-overlay p{display:none}
@@ -293,7 +293,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 /* WHY CHOOSE US */
 .why-section{padding:80px 0;background:var(--light)}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
-.why-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-lg)}
+.why-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/16;box-shadow:var(--shadow-lg)}
 .why-video video{width:100%;height:100%;object-fit:cover}
 .why-video .sound-toggle,.why-video .video-pause-btn{pointer-events:auto;z-index:20}
 .why-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);cursor:pointer;transition:background .3s}
@@ -1258,7 +1258,8 @@ window.addEventListener('resize', function(){
       <h2 class="section-title">Behind the Scenes with USAHI</h2>
       <p class="section-subtitle" style="margin:0 auto">Watch our team at work, real projects, and the quality that sets us apart.</p>
     </div>
-    <div class="ig-grid reveal">
+    <div class="scroller ig-scroller">
+      <div class="ig-grid reveal">
       <div class="ig-card">
         <div class="yt-crop-fill">
           <iframe id="ig1YT" src="https://www.youtube.com/embed/kS3fPi6-vBI?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=kS3fPi6-vBI&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -1281,64 +1282,13 @@ window.addEventListener('resize', function(){
         <a href="https://www.youtube.com/shorts/OrIHJR8W7ok" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Watch on YouTube</span></a>
       </div>
     </div>
-  </div>
+  
+      <button class="scroll-arrow prev" aria-label="Previous reel"><i class="fas fa-chevron-left"></i></button>
+      <button class="scroll-arrow next" aria-label="Next reel"><i class="fas fa-chevron-right"></i></button>
+    </div></div>
 </section>
 
-<!-- INSTAGRAM — video-only cards, no embed, no captions -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">What We Do</span>
-      <h2 class="section-title">Premium Home Improvement Florida Services</h2>
-      <p class="section-subtitle" style="margin:0 auto">Our team is ready to help you lower your bills and protect the whole house, not just the windows.</p>
-    </div>
-    
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <img src="/assets/homes/web-2.jpg" alt="Impact Windows">
-        <div class="svc-overlay">
-          <h4>Impact Windows</h4>
-          <p>Lower energy bills with hurricane-tested windows built from ES heat-strengthened glass, engineered for South Florida weather.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/impact-doors.jpg" alt="Impact Doors">
-        <div class="svc-overlay">
-          <h4>Impact Doors</h4>
-          <p>Seal every corner of the home, patio and garage included, with storm-resistant doors secured against forced wind entry.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/roofing.png" alt="Roofing">
-        <div class="svc-overlay">
-          <h4>Roofing</h4>
-          <p>Durable roof replacement designed to take the worst of Florida weather, with warranty coverage on every system.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/ac-service.jpg" alt="HVAC / AC">
-        <div class="svc-overlay">
-          <h4>HVAC / AC</h4>
-          <p>Rheem-authorised dealer. Installation, repair and maintenance for complete climate comfort all year.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/painting.png" alt="Painting">
-        <div class="svc-overlay">
-          <h4>Painting</h4>
-          <p>Salt-air resistant interior and exterior paint in UV- and humidity-resistant finishes, made for coastal homes.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/attic-insulation.png" alt="Attic Insulation">
-        <div class="svc-overlay">
-          <h4>Attic Insulation</h4>
-          <p>A higher R-value through the attic, so Florida summers cost less to cool and the house holds its temperature.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- FINANCING -->
 <section class="map-section" id="reviews">
@@ -1769,7 +1719,7 @@ document.addEventListener('DOMContentLoaded',function(){
 // Animated by hand: scrollBy({behavior:'smooth'}) is unreliable and fights
 // scroll-snap:mandatory, so snapping is suspended for the duration instead.
 document.querySelectorAll('.scroller').forEach(function(wrap){
-  var rail=wrap.querySelector('.testimonial-scroll, .testimonial-photos-grid');
+  var rail=wrap.querySelector('.testimonial-scroll, .testimonial-photos-grid, .ig-grid');
   if(!rail) return;
   var prev=wrap.querySelector('.scroll-arrow.prev'), next=wrap.querySelector('.scroll-arrow.next');
   var busy=false;
@@ -2209,8 +2159,9 @@ document.head.appendChild(mobileStyle);
 .inline-form-section,.testing-section,.testimonials-section,
 .financing-section,.hwi-section,.services-section,.faq-section{background:var(--white)}
 
-.ba-section,.projects-section,.why-section,.team-section,.ig-section,
+.ba-section,.projects-section,.why-section,.team-section,
 .map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
+.ig-section{background:var(--white)}
 </style>
 
 <!-- MOBILE VISIBILITY FIXES -->
@@ -2254,6 +2205,35 @@ document.head.appendChild(mobileStyle);
 
   /* Review card thora aur chaura, taake kata hua na lage */
   .testimonial-card{width:88vw}
+}
+</style>
+
+<!-- PHOTO CROP + VERTICAL VIDEO + REEL ARROWS -->
+<style>
+/* Review ki tasveerein beech se crop ho rahi thin, is liye logon ke sar
+   kat rahe the. /get-estimate/ par isi ka hal upar se crop karna hai. */
+.testimonial-photos-grid img{object-position:top center}
+
+/* Ye do container 16/9 aur 16/7 ke the. Videos ab vertical Shorts hain,
+   is liye un ke daayen baayen kaali pattiyan aa rahi thin. Ab container
+   khud vertical hai aur video poora bharti hai. */
+.why-section .why-video,
+.team-section .team-video-wrap{width:300px;max-width:100%;
+  justify-self:center;margin-left:auto;margin-right:auto}
+@media(max-width:600px){
+  .why-section .why-video,
+  .team-section .team-video-wrap{width:272px}
+}
+
+/* Reels ki qatar bagal me scroll hoti thi lekin koi nishani nahi thi -
+   is liye teesra card kata hua lagta tha. Wahi teer jo raay walon par hain. */
+.ig-scroller{position:relative}
+.ig-scroller .scroll-arrow{display:none}
+@media(max-width:900px){
+  .ig-scroller .scroll-arrow{display:flex}
+  .ig-scroller .scroll-arrow.prev{left:2px}
+  .ig-scroller .scroll-arrow.next{right:2px}
+  .ig-scroller .scroll-arrow[disabled]{opacity:.35;pointer-events:none}
 }
 </style>
 </body>
