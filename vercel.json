@@ -3,43 +3,164 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/thank-you", "destination": "/thank-you/index.html" },
-    { "source": "/thank-you/", "destination": "/thank-you/index.html" },
-    { "source": "/hurricane-windows", "destination": "/hurricane-windows/index.html" },
-    { "source": "/hurricane-windows/", "destination": "/hurricane-windows/index.html" },
-    { "source": "/impact-doors", "destination": "/impact-doors/index.html" },
-    { "source": "/impact-doors/", "destination": "/impact-doors/index.html" },
-    { "source": "/impact-windows", "destination": "/impact-windows/index.html" },
-    { "source": "/impact-windows/", "destination": "/impact-windows/index.html" },
-    { "source": "/replacement-windows", "destination": "/replacement-windows/index.html" },
-    { "source": "/replacement-windows/", "destination": "/replacement-windows/index.html" },
-    { "source": "/window-company", "destination": "/window-company/index.html" },
-    { "source": "/window-company/", "destination": "/window-company/index.html" },
-    { "source": "/storm-windows", "destination": "/storm-windows/index.html" },
-    { "source": "/storm-windows/", "destination": "/storm-windows/index.html" },
-    { "source": "/usahi", "destination": "/usahi/index.html" },
-    { "source": "/usahi/", "destination": "/usahi/index.html" },
-    { "source": "/es", "destination": "/es/index.html" },
-    { "source": "/es/", "destination": "/es/index.html" },
-    { "source": "/es/gracias", "destination": "/es/gracias/index.html" },
-    { "source": "/es/gracias/", "destination": "/es/gracias/index.html" },
-    { "source": "/zap-test", "destination": "/zap-test/index.html" },
-    { "source": "/zap-test/", "destination": "/zap-test/index.html" },
-    { "source": "/get-estimate", "destination": "/get-estimate/index.html" },
-    { "source": "/get-estimate/", "destination": "/get-estimate/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you/index.html"
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/thank-you/index.html"
+    },
+    {
+      "source": "/hurricane-windows",
+      "destination": "/hurricane-windows/index.html"
+    },
+    {
+      "source": "/hurricane-windows/",
+      "destination": "/hurricane-windows/index.html"
+    },
+    {
+      "source": "/impact-doors",
+      "destination": "/impact-doors/index.html"
+    },
+    {
+      "source": "/impact-doors/",
+      "destination": "/impact-doors/index.html"
+    },
+    {
+      "source": "/impact-windows",
+      "destination": "/impact-windows/index.html"
+    },
+    {
+      "source": "/impact-windows/",
+      "destination": "/impact-windows/index.html"
+    },
+    {
+      "source": "/replacement-windows",
+      "destination": "/replacement-windows/index.html"
+    },
+    {
+      "source": "/replacement-windows/",
+      "destination": "/replacement-windows/index.html"
+    },
+    {
+      "source": "/window-company",
+      "destination": "/window-company/index.html"
+    },
+    {
+      "source": "/window-company/",
+      "destination": "/window-company/index.html"
+    },
+    {
+      "source": "/storm-windows",
+      "destination": "/storm-windows/index.html"
+    },
+    {
+      "source": "/storm-windows/",
+      "destination": "/storm-windows/index.html"
+    },
+    {
+      "source": "/usahi",
+      "destination": "/usahi/index.html"
+    },
+    {
+      "source": "/usahi/",
+      "destination": "/usahi/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/gracias",
+      "destination": "/es/gracias/index.html"
+    },
+    {
+      "source": "/es/gracias/",
+      "destination": "/es/gracias/index.html"
+    },
+    {
+      "source": "/zap-test",
+      "destination": "/zap-test/index.html"
+    },
+    {
+      "source": "/zap-test/",
+      "destination": "/zap-test/index.html"
+    },
+    {
+      "source": "/get-estimate",
+      "destination": "/get-estimate/index.html"
+    },
+    {
+      "source": "/get-estimate/",
+      "destination": "/get-estimate/index.html"
+    },
+    {
+      "source": "/broward/replacement-windows",
+      "destination": "/broward/replacement-windows/index.html"
+    },
+    {
+      "source": "/broward/replacement-windows/",
+      "destination": "/broward/replacement-windows/index.html"
+    },
+    {
+      "source": "/broward/window-company",
+      "destination": "/broward/window-company/index.html"
+    },
+    {
+      "source": "/broward/window-company/",
+      "destination": "/broward/window-company/index.html"
+    },
+    {
+      "source": "/broward/hurricane-windows",
+      "destination": "/broward/hurricane-windows/index.html"
+    },
+    {
+      "source": "/broward/hurricane-windows/",
+      "destination": "/broward/hurricane-windows/index.html"
+    },
+    {
+      "source": "/broward/impact-doors",
+      "destination": "/broward/impact-doors/index.html"
+    },
+    {
+      "source": "/broward/impact-doors/",
+      "destination": "/broward/impact-doors/index.html"
+    },
+    {
+      "source": "/broward/impact-windows",
+      "destination": "/broward/impact-windows/index.html"
+    },
+    {
+      "source": "/broward/impact-windows/",
+      "destination": "/broward/impact-windows/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/videos/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
       ]
     }
   ]
