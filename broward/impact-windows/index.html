@@ -650,6 +650,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
+        <a class="hero-rating" href="https://maps.app.goo.gl/aqAZAW2Wcq49gNTD7" target="_blank" rel="noopener" aria-label="4.9 stars from over 500 Google reviews">
+          <span class="hr-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+          <b>4.9</b><span class="hr-sep">&bull;</span><span class="hr-count">500+ Google reviews</span>
+        </a>
         <h1><span>Impact Windows</span> for Broward Homes</h1>
         <p class="hero-sub">Hurricane-rated protection that lowers your energy and insurance bills. Licensed, insured, and fitted by our own crews &mdash; 15+ years across South Florida.</p>
         <ul class="hero-checklist">
@@ -2222,6 +2226,34 @@ document.head.appendChild(mobileStyle);
   /* Reel ka crop 60px upar aur 60px neeche ka pakka tha - bare card ke
      liye bana tha. Mobile ke 480px card me wo video ka chauthai hissa
      kaat deta tha. Ab aadha crop. */
+}
+</style>
+
+<!-- HERO RATING + MOBILE IMAGE FIXES -->
+<style>
+.hero-rating{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);
+  padding:7px 14px;border-radius:99px;margin-bottom:16px;
+  transition:background .25s,border-color .25s}
+.hero-rating:hover{background:rgba(255,255,255,.17);border-color:rgba(255,255,255,.34)}
+.hr-stars{color:#fbbf24;font-size:13px;letter-spacing:1.5px;display:inline-flex;gap:1px}
+.hero-rating b{color:var(--white);font-family:'Poppins',sans-serif;font-size:14.5px;font-weight:800}
+.hr-sep{color:rgba(255,255,255,.45);font-size:12px}
+.hr-count{color:rgba(255,255,255,.86);font-size:13px;font-weight:600}
+
+@media(max-width:600px){
+  .hero-rating{padding:6px 12px;gap:7px;margin-bottom:14px}
+  .hr-stars{font-size:12px}
+  .hero-rating b{font-size:13.5px}
+  .hr-count{font-size:12px}
+
+  /* Projects do column par 157px ke reh gaye the aur tasveer bahut zyada
+     crop ho rahi thi. /get-estimate/ par ye ek column poori chaurai me
+     hain - wahi tareeqa. */
+  .project-grid{grid-template-columns:1fr;gap:14px}
+
+  /* Review card thora aur chaura, taake kata hua na lage */
+  .testimonial-card{width:88vw}
 }
 </style>
 </body>
