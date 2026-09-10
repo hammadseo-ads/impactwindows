@@ -420,6 +420,28 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .nav-phone i{color:#fff}
 }
 </style>
+
+<!-- HERO VIDEO -->
+<style>
+/* Video par 1.55x ka zoom laga hua tha taake YouTube ka title upar se
+   hat jaye. Zoom har taraf se barabar kaatta hai, is liye 18% daayen
+   se aur 18% baayen se bhi kat raha tha, aur video ke andar jo bara
+   likha hua text hai wo kinaron se kat jata tha.
+
+   Zoom hata diya. Uski jagah iframe ko 160px lamba kar ke 80px upar
+   khiska diya hai. YouTube video ko iframe ke beech me rakhta hai aur
+   upar neeche kaali patti chhorta hai; title usi upar wali patti me
+   baithta hai, jo ab dabbe se bahar hai. Video ki chaurai me ek pixel
+   bhi nahi katta. */
+.hero-video-row .video-wrap iframe{
+  transform:none;
+  inset:auto;
+  left:0;
+  width:100%;
+  top:-80px;
+  height:calc(100% + 160px);
+}
+</style>
 </head>
 <body>
 
