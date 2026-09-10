@@ -1151,6 +1151,34 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .iws-areas{margin-top:26px}
 }
 </style>
+
+<style>
+/* ================================================================
+   ANDROID PAR MATN BARA KYUN LAGTA HAI
+
+   Chrome on Android "font boosting" karta hai: chaure block ke matn ko
+   khud ba khud bara kar deta hai. iOS ka Safari ye nahi karta - isi liye
+   ek hi page Android par bara aur iPhone par theek lagta hai.
+
+   text-size-adjust ka default 'auto' hai, jo boosting ki ijazat deta
+   hai. 100% karne se browser wahi size dikhata hai jo CSS me likha hai.
+   ================================================================ */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+@media(max-width:600px){
+  /* Card ka padding 36px tha - 375px ki screen par har taraf 36px yaani
+     content ke liye sirf 255px bachte the, is liye unwan teen lakeeron
+     me phailta tha. */
+  .inline-form-card{padding:22px 18px}
+  .inline-form-card h3{font-size:20px;line-height:1.25}
+  .inline-form-card .sub{font-size:12.5px;margin-bottom:16px}
+  .form-group{margin-bottom:11px}
+  .install-opt{padding:11px 12px;font-size:13px}
+  .sms-consent{font-size:11px;margin-bottom:8px}
+  .form-submit{padding:14px;font-size:15.5px}
+  .form-legal{font-size:10.5px;margin-top:10px}
+}
+</style>
 </head>
 <body>
 
