@@ -1196,6 +1196,25 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .form-group input::placeholder{font-size:15px}
 }
 </style>
+
+<!-- HEADER: phone ab bhari red goli, Free Estimate navy. Pehle dono red
+     the aur aankh ko samajh nahi aata tha ke asal kaam kaun sa hai.
+     Ab red ka matlab sirf ek hai: call karo. -->
+<style>
+.nav-phone{background:var(--accent);color:var(--white)!important;padding:11px 20px;border-radius:999px}
+.nav-phone i{color:var(--white)!important}
+.nav-cta .btn-primary{background:#0f2544;box-shadow:none}
+.nav-cta .btn-primary:hover{background:#183459}
+
+/* 1150px se neeche menu pehle se toota hua tha: "Before & After" teen
+   lakeeron me bat jata tha aur phone number "Contact" par charh jata tha.
+   Wahan ab hamburger aata hai, bilkul mobile ki tarah. */
+@media(max-width:1150px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .nav-cta .btn{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -1213,7 +1232,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <ul class="nav-links">
       <li><a href="#before-after">Before & After</a></li>
       <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#installation">Installation</a></li>
+      <li><a href="#financing">Financing</a></li>
       <li><a href="#offers">Offers</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1624,7 +1643,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </section>
 
 <!-- WHY CHOOSE US -->
-<section class="financing-section">
+<section class="financing-section" id="financing">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="section-label">Financing</span>
@@ -2362,7 +2381,7 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // MOBILE NAV
 const mobileStyle=document.createElement('style');
-mobileStyle.textContent=`@media(max-width:1024px){.nav-links.show{display:flex!important;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.1);gap:12px}}`;
+mobileStyle.textContent=`@media(max-width:1150px){.nav-links.show{display:flex!important;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.1);gap:12px}}`;
 document.head.appendChild(mobileStyle);
 </script>
 
