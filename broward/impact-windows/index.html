@@ -1179,6 +1179,23 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .form-legal{font-size:10.5px;margin-top:10px}
 }
 </style>
+
+<style>
+/* ================================================================
+   FORM PAR TAP KARTE HI PAGE ZOOM KYUN HOTA HAI
+
+   iOS Safari kisi input par focus hote hi page zoom kar deta hai agar
+   us input ka font 16px se chhota ho. Yahan 14px tha.
+
+   Aam ghalat hal viewport me maximum-scale=1 lagana hai, magar us se
+   visitor ka apna pinch-zoom bhi band ho jata hai. Sahi hal yehi hai:
+   phone par form ke khaano ka font 16px.
+   ================================================================ */
+@media(max-width:900px){
+  .form-group input,.form-group select,.form-group textarea{font-size:16px}
+  .form-group input::placeholder{font-size:15px}
+}
+</style>
 </head>
 <body>
 
