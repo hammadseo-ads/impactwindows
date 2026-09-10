@@ -1117,6 +1117,40 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .inline-form-section{background:var(--white)!important;background-image:none!important}
 }
 </style>
+
+<style>
+/* ================================================================
+   MOBILE SPACING — naap kar
+   Teen sections abhi bhi 80px upar-neeche le rahe the aur baqi 52px.
+   Andar bhi: unwan aur content ke beech 48px, aur why wale grid ka
+   gap 60px — ye sab bare screen ke liye theek hai, phone ke liye nahi.
+   ================================================================ */
+@media(max-width:600px){
+  .inline-form-section,.testimonials-section,.testing-section,
+  .projects-section,.ba-section,.financing-section,.why-section,
+  .team-section,.ig-section,.map-section,.faq-section{
+    padding-top:40px!important;padding-bottom:40px!important}
+  .offers-section,.cta-section{padding-top:44px!important;padding-bottom:44px!important}
+  .trust-bar{padding-top:22px!important;padding-bottom:22px!important}
+
+  /* unwan aur content ke darmyan */
+  .testing-grid,.ba-grid,.why-grid,.map-grid,.team-grid,
+  .project-grid,.financing-cards,.offers-grid{margin-top:24px!important}
+
+  /* qatar dar qatar ka faasla */
+  .why-grid{gap:24px!important}
+  .testing-grid{gap:18px!important}
+  .ba-grid{gap:18px!important}
+  .map-grid{gap:24px!important}
+  .team-grid{gap:12px!important}
+
+  /* unwan ke apne haashiye */
+  .section-title{margin-bottom:12px}
+  .section-subtitle{margin-bottom:0}
+  .offers-head{margin-bottom:26px}
+  .iws-areas{margin-top:26px}
+}
+</style>
 </head>
 <body>
 
