@@ -1104,6 +1104,34 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .why-section,.ig-section,.faq-section{
   background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)!important}
 </style>
+
+<style>
+/* Trust bar desktop par hero ke baad chahiye aur mobile par form ke baad.
+   Body ke seedhe bachon ki tarteeb CSS se nahi badalti bagair poore body
+   ko flex banaye, jo khatarnak hai. Is liye dono jagah rakh kar ek ek
+   chhupa di gayi hai. Tasveerein wahi hain, dobara load nahi hotin. */
+.trust-mobile{display:none}
+@media(max-width:900px){
+  .trust-desktop{display:none}
+  .trust-mobile{display:block}
+
+  /* Form wale section ka matn mobile par hero ki baat dohra raha tha.
+     Wahan sirf form rehta hai. */
+  .inline-form-section .inline-form-text{display:none}
+  .inline-form-wrap{gap:0}
+  .inline-form-section{padding:34px 0}
+}
+</style>
+
+<style>
+/* Trust bar dono chauraiyon par alag jagah baithti hai, is liye zameenon
+   ki baari bhi alag hai. Mobile ki tarteeb upar wale block me tay hai;
+   yahan sirf desktop ka farq: wahan trust bar halki aur form safed. */
+@media(min-width:901px){
+  .trust-desktop{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)!important}
+  .inline-form-section{background:var(--white)!important;background-image:none!important}
+}
+</style>
 </head>
 <body>
 
@@ -1184,6 +1212,22 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
+<!-- TRUST BAR (desktop) -->
+<div class="trust-bar trust-desktop">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-halved"></i> Licensed CGC1526707</div>
+      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+
+
 
 
 <!-- IMPACT WINDOWS SERVICES (Broward) -->
@@ -1257,8 +1301,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
+<!-- TRUST BAR (mobile) -->
+<div class="trust-bar trust-mobile">
   <div class="container">
     <div class="trust-logos">
       <div class="trust-text"><i class="fas fa-shield-halved"></i> Licensed CGC1526707</div>
@@ -1271,6 +1315,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <!-- BEFORE / AFTER -->
