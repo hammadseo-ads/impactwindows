@@ -105,7 +105,7 @@ a{text-decoration:none;color:inherit}
 .topbar{background:var(--navy-d);color:#dbe7f2;font-size:12.5px;text-align:center;padding:7px 0}
 .topbar a{color:#fff;font-weight:700}
 .nav{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(16,42,67,.06)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .logo img{height:40px}
 .nav-right{display:flex;align-items:center;gap:16px}
 .nav-phone{font-weight:700;color:var(--navy);font-size:15px;white-space:nowrap}
@@ -400,6 +400,26 @@ body.quote-open .offer-modal.peek{display:none}
   .trust-row span{font-size:12px}
 }
 </style>
+
+<!-- MOBILE -->
+<style>
+/* Android Chrome chauri jagah me apni marzi se text bara kar deta hai.
+   iPhone aisa nahi karta, is liye ek hi page do phone par alag lagta tha. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+@media(max-width:560px){
+  /* iOS Safari 16px se chhote khane par focus karte hi poora page zoom
+     kar deta hai aur user ko hath se zoom out karna parta hai. */
+  .form-group input:not([type="radio"]):not([type="checkbox"]),
+  .form-group select{font-size:16px}
+
+  /* Free Quote ka button is chaurai par chhupa hua hai, to phone hi
+     akela kaam hai. Bhari red goli use header ki sabse namayan cheez
+     bana deti hai, aur ungli ke liye theek jagah bhi ban jati hai. */
+  .nav-phone{background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:7px}
+  .nav-phone i{color:#fff}
+}
+</style>
 </head>
 <body>
 
@@ -452,6 +472,11 @@ body.quote-open .offer-modal.peek{display:none}
         <form id="quoteForm" class="step-1" onsubmit="return handleZapSubmit(event)">
           <input type="hidden" name="lead_source" value="Google Ads">
           <input type="hidden" name="source" value="Google Ads">
+          <!-- Ye teen sirf Google Sheet ke liye hain. sheet-webhook.js inhi
+               naamon se parhta hai, is liye naam badalna mat. -->
+          <input type="hidden" name="00NQQ00000IJMTt" value="Website Quote Form">
+          <input type="hidden" name="00N5a00000DXmGJ" value="">
+          <input type="hidden" name="00N5a00000DWvKF" value="">
           <div class="fstep fstep-1">
             <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
             <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
@@ -777,6 +802,7 @@ body.quote-open .offer-modal.peek{display:none}
 <!-- CallRail dynamic number insertion (same as all other pages) -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/609637261/da99578ab198e251ef67/12/swap.js"></script>
 
+<script src="/assets/js/sheet-webhook.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 // YOUTUBE PLAYERS — sound on/off + play/pause controls via the IFrame API.
@@ -837,6 +863,13 @@ function handleZapSubmit(e){
   phoneEl.setCustomValidity('');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((emailEl.value||'').trim())){ emailEl.setCustomValidity('Please enter a valid email address, e.g. name@example.com.'); emailEl.reportValidity(); return false; }
   emailEl.setCustomValidity('');
+  // Sheet ko batao user ne kya chuna, phir Ads form submission tab me bhejo
+  var _pick=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+  var _svc=_pick==='with'?'Impact Windows or Doors with installation'
+        :(_pick==='without'?'Impact Windows or Doors without installation':'');
+  var _svcField=form.querySelector('input[name="00N5a00000DXmGJ"]');
+  if(_svcField) _svcField.value=_svc;
+  try{ sendToSheet(form); }catch(err){}
   sendToZapier(form);
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
   var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
