@@ -469,8 +469,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 /* MAP + REVIEWS */
 .map-section{padding:80px 0;background:var(--white)}
 .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
-.map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:450px}
-.map-wrap iframe{width:100%;height:100%;border:none}
 .review-summary{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);text-align:center;border:1px solid #f1f5f9}
 .review-score{font-size:64px;font-weight:900;color:var(--primary);line-height:1}
 .review-stars{color:#f59e0b;font-size:24px;margin:8px 0}
@@ -629,14 +627,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 @media(max-width:560px){.iws-grid{grid-template-columns:1fr}.iws-section{padding:52px 0}}
 </style>
 <style>
-.hwi-section{padding:80px 0;background:var(--white)}
-.hwi-body{max-width:820px;margin-top:24px}
-.hwi-body p{color:var(--gray);font-size:17px;margin-bottom:16px}
-.hwi-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
-.hwi-step{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid #eef2f7;box-shadow:var(--shadow)}
-.hwi-num{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-bottom:16px}
-.hwi-step h4{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px}
-.hwi-step p{font-size:15px;color:var(--gray)}
 .faq-section{padding:80px 0;background:var(--light)}
 .faq-list{max-width:860px;margin:48px auto 0}
 .faq-item{border:1px solid #eef2f7;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;background:var(--white)}
@@ -645,8 +635,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(180deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-a p{padding:0 24px 22px;color:var(--gray);font-size:16px}
-@media(max-width:900px){.hwi-steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.hwi-steps{grid-template-columns:1fr}.hwi-section,.faq-section{padding:56px 0}}
+@media(max-width:900px){}
+@media(max-width:560px){}
 </style>
 <style>
 @media(max-width:900px){}
@@ -659,7 +649,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       tha - yaani hover nazar hi nahi aata tha.
    ------------------------------------------------------------- */
 .iws-section .iws-card,
-.hwi-section .hwi-step{background:var(--light);border-color:#e4ecf4}
 .why-section .why-feature:hover{background:var(--white);border-color:#dbe4ee}
 
 /* -------------------------------------------------------------
@@ -693,17 +682,10 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 /* -------------------------------------------------------------
    5. Card ke upar accent ki patli dhaar, hover par poori kholti hai.
    ------------------------------------------------------------- */
-.iws-card,.hwi-step,.fin-card{position:relative;overflow:hidden}
-.iws-card::before,.hwi-step::before,.fin-card::before{content:'';position:absolute;
-  top:0;left:0;height:3px;width:0;border-radius:0 99px 99px 0;
-  background:linear-gradient(90deg,var(--accent),var(--accent-light));transition:width .3s ease}
-.iws-card:hover::before,.hwi-step:hover::before,.fin-card:hover::before{width:100%}
 
 /* -------------------------------------------------------------
    6. hwi ke number ab saada murabba nahi - accent gradient tile.
    ------------------------------------------------------------- */
-.hwi-num{background:linear-gradient(135deg,var(--accent),var(--accent-light));
-  color:var(--white);box-shadow:0 6px 16px rgba(216,58,46,.28)}
 
 /* -------------------------------------------------------------
    7. Raaye ke card par bara quote nishan, halka aur peeche.
@@ -717,7 +699,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 /* -------------------------------------------------------------
    8. Steps aur cards ke beech saans lene ki jagah.
    ------------------------------------------------------------- */
-.hwi-step{padding:30px 28px}
 .iws-card{padding:28px 26px}
 
 @media(max-width:560px){
@@ -769,8 +750,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
      ye akela 2700px ban jata hai */
   .iws-section,.inline-form-section,.ba-section,.testing-section,
   .projects-section,.testimonials-section,.financing-section,.why-section,
-  .hwi-section,.team-section,.services-section,.map-section,.faq-section{
-    padding-top:46px;padding-bottom:46px}
   .offers-section,.cta-section{padding-top:52px;padding-bottom:52px}
 
   .iws-card{padding:22px 20px}
@@ -778,7 +757,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .iws-areas{margin-top:30px}
   .iws-chips{gap:7px}
   .iws-chip{padding:6px 12px;font-size:12.5px}
-  .map-wrap{height:300px}
   .testing-card{max-height:none;width:272px;justify-self:center}
   .team-grid{gap:14px;margin-top:24px}
 }
@@ -858,7 +836,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 /* Ek hi jagah se tay, taake aage koi section hatne par dobara na uljhe.
    Tarteeb: trust-bar halka hai, is liye us ke baad safed se shuru. */
 .inline-form-section,.testing-section,.testimonials-section,
-.financing-section,.hwi-section,.services-section,.faq-section{background:var(--white)}
 
 .ba-section,.projects-section,.why-section,.team-section,
 .map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
@@ -972,7 +949,6 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
 
 /* Sections ki adla badli se zameenon ki baari toot gayi thi - dobara tay */
 .testimonials-section,.projects-section,.financing-section,
-.hwi-section,.ig-section,.faq-section{background:var(--white)}
 .inline-form-section,.testing-section,.ba-section,.why-section,
 .team-section,.map-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)}
 </style>
@@ -1093,6 +1069,41 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .testing-card::before,.ig-card::before{height:52px}
 }
 </style>
+
+<style>
+/* Naqsha hat gaya, to review summary ab poori chaurai leti hai. */
+.map-grid{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}
+
+@media(max-width:600px){
+  /* Financing ke card ek column me the: minmax(220px) do ke liye jagah
+     nahi chhorta. Ab pakke do column. */
+  .financing-cards{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+  .fin-card{padding:18px 12px}
+  .fin-card h3{font-size:15px}
+  .fin-card p{font-size:12.5px;line-height:1.5}
+
+  /* Google wala button do lakeeron me phail kar bara ho gaya tha. */
+  .review-summary .btn-dark{padding:12px 16px;font-size:14px}
+  .review-summary{padding:24px 18px}
+}
+</style>
+
+<style>
+/* ================================================================
+   SECTION GROUNDS — aakhri lafz
+   Tarteeb badalne se baari toot jati hai, aur pehle ki rules aapas me
+   takra rahi thin. Ab sirf yahan se tay hoti hain.
+   hero > form > trust > reviews > testing > projects > before/after >
+   offers > financing > why > team > reels > area > faq > cta
+   ================================================================ */
+.trust-bar,.testing-section,.ba-section,.financing-section,
+.team-section,.map-section{
+  background:var(--white)!important;background-image:none!important}
+
+.inline-form-section,.testimonials-section,.projects-section,
+.why-section,.ig-section,.faq-section{
+  background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)!important}
+</style>
 </head>
 <body>
 
@@ -1173,20 +1184,8 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-logos">
-      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
-      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
-      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
-      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
-      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
-      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
-      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
-    </div>
-  </div>
-</div>
+
+
 <!-- IMPACT WINDOWS SERVICES (Broward) -->
 
 
@@ -1257,6 +1256,22 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-halved"></i> Licensed CGC1526707</div>
+      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+
 
 <!-- BEFORE / AFTER -->
 <section class="testimonials-section">
@@ -1588,40 +1603,7 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="hwi-section" id="installation">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">Installation</span>
-      <h2 class="section-title">Professional Impact Windows Installation in Broward County</h2>
-      <div class="hwi-body">
-        <p>Impact glass only performs if the frame is anchored into the opening and sealed to code. We handle the measurement, the permits, the installation and the final inspection in house, with one project manager from the first visit to sign-off, on residential impact windows and replacement windows alike, from single-family houses to condos.</p>
-      </div>
-      <div class="hwi-steps">
-        <div class="hwi-step">
-          <div class="hwi-num">1</div>
-          <h4>Free In-Home Consult</h4>
-          <p>We measure every opening, review your goals and budget, and give you an itemized impact windows quote with no obligation.</p>
-        </div>
-        <div class="hwi-step">
-          <div class="hwi-num">2</div>
-          <h4>Permits &amp; Ordering</h4>
-          <p>We pull the permits and order your windows built to your exact opening sizes. Nothing is off-the-shelf.</p>
-        </div>
-        <div class="hwi-step">
-          <div class="hwi-num">3</div>
-          <h4>Professional Installation</h4>
-          <p>Our crew removes the old units, anchors and seals the new frames properly, and cleans up the same day.</p>
-        </div>
-        <div class="hwi-step">
-          <div class="hwi-num">4</div>
-          <h4>Final Inspection</h4>
-          <p>We walk the job with you and see the county inspection through to sign-off before we call it done.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <script>
 function toggleFaq(btn){
   var item = btn.parentElement;
@@ -1723,17 +1705,14 @@ window.addEventListener('resize', function(){
 <section class="map-section" id="reviews">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Find Us</span>
-      <h2 class="section-title">Visit Our Showroom</h2>
-      <p class="section-subtitle" style="margin:0 auto">Serving every city in Broward County.</p>
+      <span class="section-label">Where We Work</span>
+      <h2 class="section-title">Serving Every City in Broward County</h2>
       <div class="iws-areas" style="border:0;margin-top:22px">
         <div class="iws-chips"><span class="iws-chip">Fort Lauderdale</span><span class="iws-chip">Hollywood</span><span class="iws-chip">Pembroke Pines</span><span class="iws-chip">Coral Springs</span><span class="iws-chip">Miramar</span><span class="iws-chip">Pompano Beach</span><span class="iws-chip">Davie</span><span class="iws-chip">Plantation</span><span class="iws-chip">Sunrise</span><span class="iws-chip">Weston</span><span class="iws-chip">Deerfield Beach</span><span class="iws-chip">Coconut Creek</span><span class="iws-chip">Tamarac</span><span class="iws-chip">Margate</span><span class="iws-chip">Lauderhill</span><span class="iws-chip">Oakland Park</span><span class="iws-chip">Dania Beach</span><span class="iws-chip">Parkland</span></div>
       </div>
     </div>
     <div class="map-grid reveal">
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2839159355053!2d-80.16777002476117!3d25.991515377208295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aa142d68b835%3A0x8dcca7852146e043!2sUSA%20Home%20Improvement%20-%20Impact%20Windows%20and%20Doors%20(USAHI)!5e0!3m2!1sen!2s!4v1782906130994!5m2!1sen!2s" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="USAHI Location"></iframe>
-      </div>
+      
       <div class="review-summary">
         <div class="review-score">4.6</div>
         <div class="review-stars">
@@ -1741,11 +1720,11 @@ window.addEventListener('resize', function(){
         </div>
         <div class="review-count">Based on 500+ Google Reviews</div>
         <div style="margin-bottom:24px">
-          <a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener" class="btn btn-dark" style="width:100%;justify-content:center"><i class="fab fa-google"></i> See All Reviews on Google</a>
+          <a href="https://maps.app.goo.gl/F7u7NuG1m4gHKw1eA" target="_blank" rel="noopener" class="btn btn-dark" style="width:100%;justify-content:center"><i class="fab fa-google"></i> See All Reviews</a>
         </div>
         <div class="review-badges">
           <div class="review-badge">
-            <div class="badge-icon" style="background:#005a78"><i class="fas fa-shield-check" style="color:#fff;font-size:18px"></i></div>
+            <div class="badge-icon" style="background:#005a78"><i class="fas fa-shield-halved" style="color:#fff;font-size:18px"></i></div>
             <div><div class="badge-name">BBB A+ Rated</div><div class="badge-detail">Better Business Bureau Accredited</div></div>
           </div>
           <div class="review-badge">
@@ -1867,7 +1846,7 @@ window.addEventListener('resize', function(){
       <div class="footer-licenses">
         <span><i class="fas fa-id-card"></i> CGC1526707</span>
         <span><i class="fas fa-id-card"></i> CAC1813665</span>
-        <span><i class="fas fa-shield-check"></i> Licensed & Insured</span>
+        <span><i class="fas fa-shield-halved"></i> Licensed & Insured</span>
       </div>
     </div>
   </div>
