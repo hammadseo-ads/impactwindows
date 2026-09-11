@@ -656,6 +656,32 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .fin-card p{font-size:12.5px;line-height:1.5}
 }
 </style>
+
+<!-- VIDEO KA NAAP, GINTI KE LABEL, LOGO PATTI -->
+<style>
+/* 1. why wali video seedhi (vertical) hai, magar uska dabba 16/9 chaura
+      tha. Video beech me aa kar dono taraf kaali patti chhor deti thi.
+      Broward par ye 9/16 hai, wahi yahan. */
+.why-video{aspect-ratio:9/16;width:min(300px,100%);justify-self:center;margin-left:auto;margin-right:auto}
+
+/* 3. Logo wali patti bari screen par hero ke baad theek hai, magar phone
+      par banda pehle form dekhe. Body ke seedhe bachon ki tarteeb CSS se
+      nahi badalti, is liye patti dono jagah rakhi hai aur har naap par
+      ek hi dikhayi jati hai. */
+.trust-mobile{display:none}
+@media(max-width:900px){
+  .trust-desktop{display:none}
+  .trust-mobile{display:block}
+}
+
+/* 2. Tang phone par "Windows Installed" jaise label do lakeeron me
+      tootte the aur ginti ka band bhara bhara lagta tha. */
+@media(max-width:400px){
+  .hero-stats{padding-top:18px;margin-top:22px}
+  .stat-num{font-size:23px}
+  .stat-label{font-size:9.5px;letter-spacing:-.2px;white-space:nowrap}
+}
+</style>
 </head>
 <body>
 
@@ -742,7 +768,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </section>
 
 <!-- TRUST BAR -->
-<div class="trust-bar">
+<div class="trust-bar trust-desktop">
   <div class="container">
     <div class="trust-logos">
       <div class="trust-text"><i class="fas fa-shield-halved"></i> Licensed CGC1526707</div>
@@ -819,6 +845,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR (mobile: form ke baad) -->
+<div class="trust-bar trust-mobile">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-halved"></i> Licensed CGC1526707</div>
+      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+
 
 <!-- BEFORE / AFTER -->
 <section class="testimonials-section">
