@@ -846,6 +846,24 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .hr-sep{color:rgba(255,255,255,.45);font-size:12px}
 .hr-count{color:rgba(255,255,255,.86)}
 </style>
+
+<!-- TESTING VIDEO + SECTION 2 KA UNWAN -->
+<style>
+/* Video 338px chauri hai magar uska khana 600px ka. Bina kisi hidayat
+   ke wo khane ke bayen kinare par chipak jati thi aur daayen 262px
+   khali reh jata tha. Ab apne khane ke beech me. */
+.testing-card{width:min(338px,100%);justify-self:center}
+@media(min-width:901px){
+  /* qatar 600px ke do khane deti thi, video 338px ki. Dono ke
+     darmyan 294px ka suraakh ban jata tha. */
+  .testing-grid{max-width:760px;margin-left:auto;margin-right:auto}
+}
+
+/* Is unwan par line-height diya hi nahi gaya tha, is liye wo body wali
+   1.6 le raha tha. 42px ke unwan par ye 67px ban jati hai aur lakeerein
+   bohot door door lagti hain. Baki section ke unwan 1.15 par hain. */
+.inline-form-text h2{line-height:1.15}
+</style>
 </head>
 <body>
 
