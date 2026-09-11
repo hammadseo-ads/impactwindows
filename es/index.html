@@ -630,6 +630,32 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       the. Upar se pakadne par chehra frame me rehta hai. */
 .testimonial-photos-grid img{object-position:top center}
 </style>
+
+<!-- SECTION GROUNDS (aakhri lafz) -->
+<style>
+/* Tarteeb badalne se rangon ki baari toot jati hai aur do sections ek
+   doosre me mil jate hain. Ab baari sirf yahan se tay hoti hai.
+   Jin par apna rang hai (offers, behind the scenes, aakhri band) unhe
+   haath nahi lagaya. */
+.inline-form-section,.testing-section,.ba-section,.why-section,.team-section,.map-section{background:var(--white)!important;background-image:none!important}
+.testimonials-section,.projects-section,.financing-section,.services-section,.ig-section{background:linear-gradient(180deg,#fdfefe 0%,#f6f9fd 100%)!important}
+</style>
+
+<!-- MOBILE: reels beech me, financing do column -->
+<style>
+@media(max-width:600px){
+  /* Reel ka card lamba hai, aur uski oonchai bandhi hui hai, is liye wo
+     apne khane se patla ho jata tha aur bayen kinare se chipak jata tha.
+     Ab beech me. */
+  .ig-grid{grid-template-columns:min(282px,100%);justify-content:center}
+  /* Financing ke card ek ek kar ke aate the kyunki minmax(220px) do ke
+     liye jagah nahi chhorta. Ab pakke do column, Broward jaisa. */
+  .financing-cards{grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+  .fin-card{padding:18px 12px}
+  .fin-card h3,.fin-card h4{font-size:15px}
+  .fin-card p{font-size:12.5px;line-height:1.5}
+}
+</style>
 </head>
 <body>
 
@@ -797,307 +823,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </section>
 
 <!-- BEFORE / AFTER -->
-<section class="ba-section" id="before-after">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Transformaciones</span>
-      <h2 class="section-title">Vea la Diferencia que Hacen las Ventanas de Impacto</h2>
-      <p class="section-subtitle" style="margin:0 auto">Deslice el control para ver nuestras transformaciones de antes y después en casas reales del sur de Florida.</p>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before1.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after1.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
-      </div>
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before2.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after2.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
-      </div>
-      <div class="ba-item reveal" data-ba>
-        <img src="/assets/before-after/before3.png" alt="Before" class="ba-before">
-        <img src="/assets/before-after/after3.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="projects-section" id="projects">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Nuestro Trabajo</span>
-      <h2 class="section-title">Proyectos Completados en Todo el Sur de Florida</h2>
-      <p class="section-subtitle" style="margin:0 auto">Haga clic en cualquier proyecto para ver la galería completa con todas las fotos.</p>
-    </div>
-    <div class="project-grid">
-      <div class="project-card reveal" onclick="openLightbox('project1',0)">
-        <img src="/assets/homes/1A.jpg" alt="Residential project">
-        <span class="photo-count"><i class="fas fa-images"></i> 8 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project2',0)">
-        <img src="/assets/homes/5A.jpg" alt="Modern home">
-        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project3',0)">
-        <img src="/assets/homes/9A.jpg" alt="Luxury home">
-        <span class="photo-count"><i class="fas fa-images"></i> 7 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project4',0)">
-        <img src="/assets/homes/13A.jpg" alt="Waterfront property">
-        <span class="photo-count"><i class="fas fa-images"></i> 5 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project5',0)">
-        <img src="/assets/homes/17A.jpg" alt="Estate project">
-        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project7',0)">
-        <img src="/assets/homes/22A.jpg" alt="Completed home">
-        <span class="photo-count"><i class="fas fa-images"></i> 4 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project8',0)">
-        <img src="/assets/homes/web-2.jpg" alt="Portfolio home">
-        <span class="photo-count"><i class="fas fa-images"></i> 5 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-      <div class="project-card reveal" onclick="openLightbox('project9',0)">
-        <img src="/assets/homes/SALA V2.png" alt="Interior view">
-        <span class="photo-count"><i class="fas fa-images"></i> 3 Fotos</span>
-        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&times;</button>
-    <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-    <img id="lightboxImg" src="" alt="Project photo">
-    <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-    <div class="lightbox-counter" id="lightboxCounter"></div>
-    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
-  </div>
-</div>
-
-<!-- TEAM -->
-<section class="team-section" id="team">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Nuestro Equipo</span>
-      <h2 class="section-title">Conozca a las Personas Detrás de Cada Proyecto</h2>
-      <p class="section-subtitle" style="margin:0 auto">Nuestro equipo de gerentes de proyecto, instaladores y personal de apoyo se dedica a entregar trabajo de la más alta calidad en cada obra.</p>
-    </div>
-    <div class="team-video-wrap reveal">
-      <div class="yt-crop-fill">
-        <iframe id="teamYT" src="https://www.youtube.com/embed/mvWLE8CwT6w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=mvWLE8CwT6w&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <button class="sound-toggle" onclick="toggleYTVideoSound('teamYT',this)" aria-label="Activar o silenciar sonido">
-        <i class="fas fa-volume-xmark"></i>
-      </button>
-      <div class="team-video-overlay">
-        <h3>La Familia USAHI</h3>
-        <p>Contratistas con licencia, instaladores certificados y gerentes de proyecto dedicados, trabajando juntos para proteger su casa.</p>
-      </div>
-    </div>
-    <div class="team-grid" style="margin-top:32px">
-      <div class="team-card reveal">
-        <img src="/assets/team/project-managers.png" alt="Project Managers">
-        <h4>Nuestros Gerentes de Proyecto</h4>
-        <p>Un solo punto de contacto de principio a fin</p>
-      </div>
-      <div class="team-card reveal">
-        <img src="/assets/team/installers.png" alt="Installation Team">
-        <h4>Instaladores Expertos</h4>
-        <p>Capacitados de fábrica y certificados por ES Windows</p>
-      </div>
-      <div class="team-card reveal">
-        <img src="/assets/team/projects-map.png" alt="Projects Map">
-        <h4>Proyectos en Toda Florida</h4>
-        <p>Servimos Miami-Dade, Broward y Palm Beach</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BEHIND THE SCENES — local video background -->
-<section class="bts-section">
-  <div class="bts-bg">
-    <div class="yt-crop-bg">
-      <iframe id="btsYT" src="https://www.youtube.com/embed/_zEJOPZcwT0?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=_zEJOPZcwT0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  </div>
-  <div class="bts-overlay"></div>
-  <div class="container bts-content reveal">
-    <span class="section-label" style="color:var(--accent-light)">Detrás de Cámaras</span>
-    <h2>Vea Cómo Ponemos Calidad en Cada Instalación</h2>
-    <p>Desde las medidas exactas hasta el sellado final, cada paso sigue nuestros rigurosos estándares de calidad para que sus ventanas duren toda la vida.</p>
-    <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Ver Video Completo</a>
-  </div>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="why-section" id="why-us">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Por Qué USAHI</span>
-      <h2 class="section-title">Por Qué los Propietarios Nos Eligen</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-video reveal">
-        <div class="yt-crop-fill">
-          <iframe id="whyYT" src="https://www.youtube.com/embed/BR-WclYnlzU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=BR-WclYnlzU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pausar video">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Activar o silenciar sonido">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-      </div>
-      <div class="why-features reveal">
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
-          <div><h4>Protección Certificada contra Huracanes</h4><p>Todas nuestras ventanas de impacto cumplen con el Código de Construcción de Florida y los estándares de impacto de proyectil grande para tormentas categoría 5.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-          <div><h4>$0 de Enganche, Financiamiento del 100%</h4><p>Varias opciones de financiamiento, incluidos los programas PACE. Desde $5/mes por ventana instalada.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-certificate"></i></div>
-          <div><h4>Con Licencia y Asegurados</h4><p>Contratista general CGC1526707. Calificación A+ del BBB con más de 500 reseñas verificadas en Google.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-industry"></i></div>
-          <div><h4>Precios Directos de Fábrica</h4><p>Como distribuidor autorizado de ES Windows y Tecnoglass, eliminamos al intermediario para ahorrarle dinero.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-bolt"></i></div>
-          <div><h4>Ahorro de Energía</h4><p>El vidrio Low-E reduce el consumo de energía y bloquea hasta el 99% de los rayos UV, protegiendo el interior de su casa.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <div><h4>Gerente de Proyecto Dedicado</h4><p>Un solo punto de contacto desde la consulta hasta la instalación y la inspección final.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTING STRENGTH VIDEOS -->
-<section class="testing-section">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Pruebas de Impacto</span>
-      <h2 class="section-title">Fabricadas para Resistir lo Peor</h2>
-      <p class="section-subtitle" style="margin:0 auto">Vea nuestras ventanas de impacto puestas a prueba en condiciones extremas. Esta es la protección que su familia merece.</p>
-    </div>
-    <div class="testing-grid">
-      <div class="testing-card reveal">
-        <div class="yt-crop-fill">
-          <iframe id="test1YT" src="https://www.youtube.com/embed/fQoFEJ4LYlU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=fQoFEJ4LYlU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <button class="video-pause-btn" id="test1PauseBtn" onclick="toggleYTPause('test1YT','test1PauseBtn')" style="display:flex" aria-label="Pausar video">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button class="sound-toggle" onclick="toggleYTVideoSound('test1YT',this)" aria-label="Activar o silenciar sonido">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-        <div class="testing-label"><i class="fas fa-shield-halved"></i> Prueba de Impacto #1</div>
-      </div>
-      <div class="testing-card reveal">
-        <div class="yt-crop-fill">
-          <iframe id="test2YT" src="https://www.youtube.com/embed/YRXZw_Q-9zI?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=YRXZw_Q-9zI&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <button class="video-pause-btn" id="test2PauseBtn" onclick="toggleYTPause('test2YT','test2PauseBtn')" style="display:flex" aria-label="Pausar video">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button class="sound-toggle" onclick="toggleYTVideoSound('test2YT',this)" aria-label="Activar o silenciar sonido">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-        <div class="testing-label"><i class="fas fa-shield-halved"></i> Prueba de Impacto #2</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Nuestros Servicios</span>
-      <h2 class="section-title">Soluciones Completas para Su Hogar</h2>
-    </div>
-    <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
-      <img src="/assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <img src="/assets/homes/web-2.jpg" alt="Impact Windows">
-        <div class="svc-overlay">
-          <h4>Ventanas de Impacto</h4>
-          <p>Ventanas certificadas contra huracanes de ES Windows y Tecnoglass. Eficientes, reducen el ruido y bloquean los rayos UV.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/impact-doors.jpg" alt="Impact Doors">
-        <div class="svc-overlay">
-          <h4>Puertas de Impacto</h4>
-          <p>Puertas de impacto corredizas, francesas, de entrada y tipo acordeón. Complete la protección de su casa.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/roofing.png" alt="Roofing">
-        <div class="svc-overlay">
-          <h4>Techos</h4>
-          <p>Reemplazo y reparación completa de techos. Sistemas de teja asfáltica, teja de barro y techo plano con garantía.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/ac-service.jpg" alt="HVAC / AC">
-        <div class="svc-overlay">
-          <h4>Aire Acondicionado</h4>
-          <p>Distribuidor autorizado Rheem. Instalación, reparación y mantenimiento para su confort en todo clima.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/painting.png" alt="Painting">
-        <div class="svc-overlay">
-          <h4>Pintura</h4>
-          <p>Pintura interior y exterior. Certificados por Sherwin-Williams para resultados duraderos y hermosos.</p>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <img src="/assets/services/attic-insulation.png" alt="Attic Insulation">
-        <div class="svc-overlay">
-          <h4>Aislamiento de Ático</h4>
-          <p>Reduzca su consumo de energía y mejore el confort con servicios profesionales de aislamiento de ático.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
 <section class="testimonials-section">
   <div class="container">
     <div class="reveal" style="text-align:center">
@@ -1161,41 +886,146 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-<!-- INSTAGRAM — video-only cards, no embed, no captions -->
-<section class="ig-section" id="instagram">
+<!-- PROJECTS -->
+<section class="testing-section">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Véanos en Acción</span>
-      <h2 class="section-title">Detrás de Cámaras con USAHI</h2>
-      <p class="section-subtitle" style="margin:0 auto">Vea a nuestro equipo trabajando, proyectos reales y la calidad que nos distingue.</p>
+      <span class="section-label">Pruebas de Impacto</span>
+      <h2 class="section-title">Fabricadas para Resistir lo Peor</h2>
+      <p class="section-subtitle" style="margin:0 auto">Vea nuestras ventanas de impacto puestas a prueba en condiciones extremas. Esta es la protección que su familia merece.</p>
     </div>
-    <div class="ig-grid reveal">
-      <div class="ig-card">
+    <div class="testing-grid">
+      <div class="testing-card reveal">
         <div class="yt-crop-fill">
-          <iframe id="ig1YT" src="https://www.youtube.com/embed/C2bGsFDr5EI?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=C2bGsFDr5EI&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe id="test1YT" src="https://www.youtube.com/embed/fQoFEJ4LYlU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=fQoFEJ4LYlU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.youtube.com/shorts/C2bGsFDr5EI" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
+        <button class="video-pause-btn" id="test1PauseBtn" onclick="toggleYTPause('test1YT','test1PauseBtn')" style="display:flex" aria-label="Pausar video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleYTVideoSound('test1YT',this)" aria-label="Activar o silenciar sonido">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <div class="testing-label"><i class="fas fa-shield-halved"></i> Prueba de Impacto #1</div>
       </div>
-      <div class="ig-card">
+      <div class="testing-card reveal">
         <div class="yt-crop-fill">
-          <iframe id="ig2YT" src="https://www.youtube.com/embed/9xfzM8wp_TU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=9xfzM8wp_TU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe id="test2YT" src="https://www.youtube.com/embed/YRXZw_Q-9zI?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=YRXZw_Q-9zI&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Impact Test 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.youtube.com/shorts/9xfzM8wp_TU" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
-      </div>
-      <div class="ig-card">
-        <div class="yt-crop-fill">
-          <iframe id="ig3YT" src="https://www.youtube.com/embed/Ue32A1_6k5M?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=Ue32A1_6k5M&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="ig-play"><i class="fas fa-play"></i></div>
-        <a href="https://www.youtube.com/shorts/Ue32A1_6k5M" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
+        <button class="video-pause-btn" id="test2PauseBtn" onclick="toggleYTPause('test2YT','test2PauseBtn')" style="display:flex" aria-label="Pausar video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleYTVideoSound('test2YT',this)" aria-label="Activar o silenciar sonido">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <div class="testing-label"><i class="fas fa-shield-halved"></i> Prueba de Impacto #2</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINANCING -->
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="Project photo">
+    <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Nuestro Trabajo</span>
+      <h2 class="section-title">Proyectos Completados en Todo el Sur de Florida</h2>
+      <p class="section-subtitle" style="margin:0 auto">Haga clic en cualquier proyecto para ver la galería completa con todas las fotos.</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-card reveal" onclick="openLightbox('project1',0)">
+        <img src="/assets/homes/1A.jpg" alt="Residential project">
+        <span class="photo-count"><i class="fas fa-images"></i> 8 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project2',0)">
+        <img src="/assets/homes/5A.jpg" alt="Modern home">
+        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project3',0)">
+        <img src="/assets/homes/9A.jpg" alt="Luxury home">
+        <span class="photo-count"><i class="fas fa-images"></i> 7 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project4',0)">
+        <img src="/assets/homes/13A.jpg" alt="Waterfront property">
+        <span class="photo-count"><i class="fas fa-images"></i> 5 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project5',0)">
+        <img src="/assets/homes/17A.jpg" alt="Estate project">
+        <span class="photo-count"><i class="fas fa-images"></i> 6 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project7',0)">
+        <img src="/assets/homes/22A.jpg" alt="Completed home">
+        <span class="photo-count"><i class="fas fa-images"></i> 4 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project8',0)">
+        <img src="/assets/homes/web-2.jpg" alt="Portfolio home">
+        <span class="photo-count"><i class="fas fa-images"></i> 5 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+      <div class="project-card reveal" onclick="openLightbox('project9',0)">
+        <img src="/assets/homes/SALA V2.png" alt="Interior view">
+        <span class="photo-count"><i class="fas fa-images"></i> 3 Fotos</span>
+        <div class="overlay"><span><i class="fas fa-expand"></i> Ver Proyecto Completo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEHIND THE SCENES — local video background -->
+<section class="ba-section" id="before-after">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Transformaciones</span>
+      <h2 class="section-title">Vea la Diferencia que Hacen las Ventanas de Impacto</h2>
+      <p class="section-subtitle" style="margin:0 auto">Deslice el control para ver nuestras transformaciones de antes y después en casas reales del sur de Florida.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before1.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after1.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Antes</span>
+        <span class="ba-label after">Después</span>
+      </div>
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before2.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after2.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Antes</span>
+        <span class="ba-label after">Después</span>
+      </div>
+      <div class="ba-item reveal" data-ba>
+        <img src="/assets/before-after/before3.png" alt="Before" class="ba-before">
+        <img src="/assets/before-after/after3.png" alt="After" class="ba-after">
+        <div class="ba-slider"></div>
+        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
+        <span class="ba-label before">Antes</span>
+        <span class="ba-label after">Después</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
 <section class="financing-section">
   <div class="container">
     <div class="reveal" style="text-align:center">
@@ -1229,6 +1059,202 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene">
       <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
       <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap">
+    </div>
+  </div>
+</section>
+
+<!-- TESTING STRENGTH VIDEOS -->
+<section class="why-section" id="why-us">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Por Qué USAHI</span>
+      <h2 class="section-title">Por Qué los Propietarios Nos Eligen</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-video reveal">
+        <div class="yt-crop-fill">
+          <iframe id="whyYT" src="https://www.youtube.com/embed/BR-WclYnlzU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=BR-WclYnlzU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pausar video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Activar o silenciar sonido">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+      </div>
+      <div class="why-features reveal">
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <div><h4>Protección Certificada contra Huracanes</h4><p>Todas nuestras ventanas de impacto cumplen con el Código de Construcción de Florida y los estándares de impacto de proyectil grande para tormentas categoría 5.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <div><h4>$0 de Enganche, Financiamiento del 100%</h4><p>Varias opciones de financiamiento, incluidos los programas PACE. Desde $5/mes por ventana instalada.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <div><h4>Con Licencia y Asegurados</h4><p>Contratista general CGC1526707. Calificación A+ del BBB con más de 500 reseñas verificadas en Google.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-industry"></i></div>
+          <div><h4>Precios Directos de Fábrica</h4><p>Como distribuidor autorizado de ES Windows y Tecnoglass, eliminamos al intermediario para ahorrarle dinero.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <div><h4>Ahorro de Energía</h4><p>El vidrio Low-E reduce el consumo de energía y bloquea hasta el 99% de los rayos UV, protegiendo el interior de su casa.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <div><h4>Gerente de Proyecto Dedicado</h4><p>Un solo punto de contacto desde la consulta hasta la instalación y la inspección final.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2 class="section-title">Soluciones Completas para Su Hogar</h2>
+    </div>
+    <div class="reveal" style="margin-top:40px;margin-bottom:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
+      <img src="/assets/services/all-services.png" alt="All USAHI Services" style="width:100%;display:block;border-radius:var(--radius)">
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <img src="/assets/homes/web-2.jpg" alt="Impact Windows">
+        <div class="svc-overlay">
+          <h4>Ventanas de Impacto</h4>
+          <p>Ventanas certificadas contra huracanes de ES Windows y Tecnoglass. Eficientes, reducen el ruido y bloquean los rayos UV.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="/assets/services/impact-doors.jpg" alt="Impact Doors">
+        <div class="svc-overlay">
+          <h4>Puertas de Impacto</h4>
+          <p>Puertas de impacto corredizas, francesas, de entrada y tipo acordeón. Complete la protección de su casa.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="/assets/services/roofing.png" alt="Roofing">
+        <div class="svc-overlay">
+          <h4>Techos</h4>
+          <p>Reemplazo y reparación completa de techos. Sistemas de teja asfáltica, teja de barro y techo plano con garantía.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="/assets/services/ac-service.jpg" alt="HVAC / AC">
+        <div class="svc-overlay">
+          <h4>Aire Acondicionado</h4>
+          <p>Distribuidor autorizado Rheem. Instalación, reparación y mantenimiento para su confort en todo clima.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="/assets/services/painting.png" alt="Painting">
+        <div class="svc-overlay">
+          <h4>Pintura</h4>
+          <p>Pintura interior y exterior. Certificados por Sherwin-Williams para resultados duraderos y hermosos.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img src="/assets/services/attic-insulation.png" alt="Attic Insulation">
+        <div class="svc-overlay">
+          <h4>Aislamiento de Ático</h4>
+          <p>Reduzca su consumo de energía y mejore el confort con servicios profesionales de aislamiento de ático.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Nuestro Equipo</span>
+      <h2 class="section-title">Conozca a las Personas Detrás de Cada Proyecto</h2>
+      <p class="section-subtitle" style="margin:0 auto">Nuestro equipo de gerentes de proyecto, instaladores y personal de apoyo se dedica a entregar trabajo de la más alta calidad en cada obra.</p>
+    </div>
+    <div class="team-video-wrap reveal">
+      <div class="yt-crop-fill">
+        <iframe id="teamYT" src="https://www.youtube.com/embed/mvWLE8CwT6w?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=mvWLE8CwT6w&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <button class="sound-toggle" onclick="toggleYTVideoSound('teamYT',this)" aria-label="Activar o silenciar sonido">
+        <i class="fas fa-volume-xmark"></i>
+      </button>
+      <div class="team-video-overlay">
+        <h3>La Familia USAHI</h3>
+        <p>Contratistas con licencia, instaladores certificados y gerentes de proyecto dedicados, trabajando juntos para proteger su casa.</p>
+      </div>
+    </div>
+    <div class="team-grid" style="margin-top:32px">
+      <div class="team-card reveal">
+        <img src="/assets/team/project-managers.png" alt="Project Managers">
+        <h4>Nuestros Gerentes de Proyecto</h4>
+        <p>Un solo punto de contacto de principio a fin</p>
+      </div>
+      <div class="team-card reveal">
+        <img src="/assets/team/installers.png" alt="Installation Team">
+        <h4>Instaladores Expertos</h4>
+        <p>Capacitados de fábrica y certificados por ES Windows</p>
+      </div>
+      <div class="team-card reveal">
+        <img src="/assets/team/projects-map.png" alt="Projects Map">
+        <h4>Proyectos en Toda Florida</h4>
+        <p>Servimos Miami-Dade, Broward y Palm Beach</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM — video-only cards, no embed, no captions -->
+<section class="bts-section">
+  <div class="bts-bg">
+    <div class="yt-crop-bg">
+      <iframe id="btsYT" src="https://www.youtube.com/embed/_zEJOPZcwT0?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=_zEJOPZcwT0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="bts-overlay"></div>
+  <div class="container bts-content reveal">
+    <span class="section-label" style="color:var(--accent-light)">Detrás de Cámaras</span>
+    <h2>Vea Cómo Ponemos Calidad en Cada Instalación</h2>
+    <p>Desde las medidas exactas hasta el sellado final, cada paso sigue nuestros rigurosos estándares de calidad para que sus ventanas duren toda la vida.</p>
+    <a href="https://www.youtube.com/watch?v=Tq9obkZQ5PA" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-play"></i> Ver Video Completo</a>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="ig-section" id="instagram">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Véanos en Acción</span>
+      <h2 class="section-title">Detrás de Cámaras con USAHI</h2>
+      <p class="section-subtitle" style="margin:0 auto">Vea a nuestro equipo trabajando, proyectos reales y la calidad que nos distingue.</p>
+    </div>
+    <div class="ig-grid reveal">
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig1YT" src="https://www.youtube.com/embed/C2bGsFDr5EI?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=C2bGsFDr5EI&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.youtube.com/shorts/C2bGsFDr5EI" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig2YT" src="https://www.youtube.com/embed/9xfzM8wp_TU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=9xfzM8wp_TU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.youtube.com/shorts/9xfzM8wp_TU" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
+      </div>
+      <div class="ig-card">
+        <div class="yt-crop-fill">
+          <iframe id="ig3YT" src="https://www.youtube.com/embed/Ue32A1_6k5M?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=Ue32A1_6k5M&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USAHI Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="ig-play"><i class="fas fa-play"></i></div>
+        <a href="https://www.youtube.com/shorts/Ue32A1_6k5M" target="_blank" rel="noopener" class="ig-overlay"><span><i class="fab fa-youtube"></i> Ver en YouTube</span></a>
+      </div>
     </div>
   </div>
 </section>
