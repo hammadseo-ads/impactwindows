@@ -669,6 +669,18 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .form-legal{font-size:10.5px;margin-top:10px}
 }
 </style>
+
+<!-- SECTION 2: mobile par form pehle -->
+<style>
+/* Form ab section 2 me hai. Chhoti screen par pehle matn aur phir form
+   aata, yani banda form tak pohanchne se pehle scroll karta rehta.
+   grid-row order se zyada pakka hai; order bhi rakha hua hai. */
+@media(max-width:900px){
+  .inline-form-wrap{grid-template-rows:auto auto}
+  .inline-form-section .inline-form-card{grid-row:1;order:-1}
+  .inline-form-section .inline-form-text{grid-row:2;order:0}
+}
+</style>
 </head>
 <body>
 
@@ -739,6 +751,52 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
         </div>
       </div>
+      <div class="hero-video-side">
+        <div class="yt-crop">
+          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
+        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-logos">
+      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
+      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
+      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
+      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
+      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
+      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
+      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
+    </div>
+  </div>
+</div>
+<!-- QUOTE FORM -->
+<section class="inline-form-section" id="get-quote">
+  <div class="container">
+    <div class="inline-form-wrap">
+      <div class="inline-form-text reveal">
+        <span class="section-label">Why Hurricane Windows</span>
+        <h2>Reasons Florida Homeowners Upgrade to Hurricane Windows</h2>
+        <p>Impact glass is not only for storm season. It works on your power bill, your insurance premium and the noise off the street every day of the year. Fitted by our own crews, from $5 a month per window with $0 down.</p>
+        <ul class="inline-form-features">
+          <li><i class="fas fa-check-circle"></i> Category 5 rated hurricane protection</li>
+          <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
+          <li><i class="fas fa-check-circle"></i> Insurance premium reduction</li>
+          <li><i class="fas fa-check-circle"></i> UV protection for your furnishings</li>
+          <li><i class="fas fa-check-circle"></i> Sound reduction up to 50%</li>
+          <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
+        </ul>
+      </div>
       <div class="inline-form-card reveal" id="quoteCard">
         <h3>Request Your Free Hurricane Windows Quote</h3>
         <p class="sub">No obligation. A specialist will contact you shortly.</p>
@@ -781,52 +839,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
             <p class="form-legal">View our <a href="https://usahomeimprovement.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://usahomeimprovement.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a> to learn more about how we collect, use, and protect your information.</p>
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-logos">
-      <div class="trust-text"><i class="fas fa-shield-check"></i> Licensed CGC1526707</div>
-      <img src="/assets/logos/ESWindows-logo-1024x257.png" alt="ES Windows">
-      <img src="/assets/logos/tecnoglass-logo.png" alt="Tecnoglass">
-      <div class="trust-text"><i class="fas fa-star"></i> BBB A+ Rated</div>
-      <img src="/assets/logos/YgreneFinancing_Logo_GrnGry.png" alt="Ygrene Financing">
-      <img src="/assets/logos/Service Finance.webp" alt="Service Finance">
-      <img src="/assets/logos/Goodleap Finance.jpg" alt="GoodLeap" style="height:30px">
-    </div>
-  </div>
-</div>
-<!-- QUOTE FORM -->
-<section class="inline-form-section" id="get-quote">
-  <div class="container">
-    <div class="inline-form-wrap">
-      <div class="inline-form-text reveal">
-        <span class="section-label">See It for Yourself</span>
-        <h2>See Exactly How Your Hurricane Windows Get Installed</h2>
-        <p>Every hurricane window is fitted by our own in-house crews &mdash; no subcontractors, no shortcuts. Watch how we measure, set and seal each opening, then get an itemised quote starting at just $5/month per window, $0 down, with 100% financing through our accredited lending partners.</p>
-        <ul class="inline-form-features">
-          <li><i class="fas fa-check-circle"></i> Category 5 rated hurricane protection</li>
-          <li><i class="fas fa-check-circle"></i> Energy-efficient -lower your electric bill</li>
-          <li><i class="fas fa-check-circle"></i> Insurance premium reduction</li>
-          <li><i class="fas fa-check-circle"></i> UV protection for your furnishings</li>
-          <li><i class="fas fa-check-circle"></i> Sound reduction up to 50%</li>
-          <li><i class="fas fa-check-circle"></i> Direct manufacturer pricing</li>
-        </ul>
-      </div>
-      <div class="hero-video-side">
-        <div class="yt-crop">
-          <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <button class="sound-toggle" id="ytSoundToggle" onclick="toggleYTSound()" aria-label="Toggle sound">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-        <button class="video-pause-btn" id="ytPauseBtn" onclick="toggleYTPause()" style="display:flex" aria-label="Pause video">
-          <i class="fas fa-pause"></i>
-        </button>
       </div>
     </div>
   </div>
