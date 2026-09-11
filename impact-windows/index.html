@@ -818,7 +818,33 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <style>
 /* Us section ka naqsha nikal gaya, to saath wala haala ab akela
    poori chaurai leta hai. */
-.map-grid{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}
+/* naqsha wapis aa gaya, is liye do column phir se */
+</style>
+
+<!-- HERO: Google rating + dono column upar se -->
+<style>
+/* Hero ka text aur video alag alag lambai ke hain. align-items:center se
+   chhota wala beech me chala jata tha, is liye video text se neeche shuru
+   hoti thi. Ab dono upar se. */
+@media(min-width:1025px){ .hero-grid{align-items:start} }
+
+.hero-rating{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  padding:7px 14px;border-radius:99px;margin-bottom:16px;
+  transition:background .25s,border-color .25s}
+.hr-stars{color:#fbbf24;font-size:13px;letter-spacing:1.5px;display:inline-flex;gap:1px}
+.hero-rating b{font-family:'Poppins',sans-serif;font-size:14.5px;font-weight:800}
+.hr-count{font-size:13px;font-weight:600}
+@media(max-width:600px){
+  .hero-rating{padding:6px 12px;gap:7px;margin-bottom:14px}
+  .hr-stars{font-size:12px}
+  .hero-rating b{font-size:13.5px}
+  .hr-count{font-size:12px}
+}
+.hero-rating{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20)}
+.hero-rating:hover{background:rgba(255,255,255,.17);border-color:rgba(255,255,255,.34)}
+.hero-rating b{color:var(--white)}
+.hr-sep{color:rgba(255,255,255,.45);font-size:12px}
+.hr-count{color:rgba(255,255,255,.86)}
 </style>
 </head>
 <body>
@@ -855,6 +881,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
+        <a class="hero-rating" href="https://maps.app.goo.gl/aqAZAW2Wcq49gNTD7" target="_blank" rel="noopener" aria-label="4.6 stars from over 500 Google reviews">
+          <span class="hr-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+          <b>4.6</b><span class="hr-sep">&bull;</span><span class="hr-count">500+ Google reviews</span>
+        </a>
         <h1><span>Impact Windows</span> That Protect Your Home Every Day of the Year</h1>
         <p class="hero-sub">Impact windows do more than survive a storm. They cut your energy bill, block street noise and stop UV fade, all year round. 15+ years in South Florida.</p>
         <ul class="hero-checklist">
@@ -1554,7 +1584,10 @@ window.addEventListener('resize', function(){
       <h2 class="section-title">Serving Homeowners Across South Florida</h2>
     </div>
     <div class="map-grid reveal">
-        <div class="review-summary">
+        <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.2839159355053!2d-80.16777002476117!3d25.991515377208295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9aa142d68b835%3A0x8dcca7852146e043!2sUSA%20Home%20Improvement%20-%20Impact%20Windows%20and%20Doors%20(USAHI)!5e0!3m2!1sen!2s!4v1782906130994!5m2!1sen!2s" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="USAHI Location"></iframe>
+      </div>
+      <div class="review-summary">
         <div class="review-score">4.6</div>
         <div class="review-stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
