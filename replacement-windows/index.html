@@ -627,6 +627,48 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .hero .hero-statewide span{font-size:13px;line-height:1.45}
 }
 </style>
+
+<!-- ZAPIER FORM -->
+<style>
+.install-choice{display:grid;gap:8px;margin-bottom:12px}
+.install-opt{display:flex;align-items:center;gap:10px;border:1.5px solid #e2e8f0;border-radius:10px;
+  padding:12px 14px;cursor:pointer;font-size:13.5px;color:#334155}
+.install-opt input{flex:0 0 auto;width:17px;height:17px;accent-color:var(--primary);margin:0}
+.install-opt span{flex:1}
+.install-opt:has(input:checked){border-color:var(--primary);background:#eef5fc}
+.form-legal{font-size:11px;color:var(--gray);text-align:center;margin-top:12px;line-height:1.5}
+.form-legal a{color:var(--primary);text-decoration:underline;font-weight:600}
+.form-continue{display:none;width:100%;padding:15px;background:var(--accent);color:var(--white);
+  border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;
+  align-items:center;justify-content:center;gap:8px}
+.form-continue:hover{background:var(--accent-light)}
+.form-back{display:none;background:none;border:none;color:var(--gray);font-family:inherit;
+  font-weight:700;font-size:13px;cursor:pointer;align-items:center;gap:6px;margin-bottom:10px;padding:0}
+.form-back:hover{color:var(--primary)}
+@media(min-width:901px){
+  .form-continue{display:flex}
+  .form-back{display:inline-flex}
+  .zap-form.step-1 .fstep-2{display:none}
+  .zap-form.step-2 .fstep-1{display:none}
+}
+</style>
+<style>
+/* Android Chrome chauri jagah me apni marzi se text bara kar deta hai.
+   iPhone aisa nahi karta, is liye ek hi page do phone par alag lagta tha. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+/* Do-qadam form: chhoti screen par dono hissay ek saath dikhte hain. */
+@media(max-width:900px){
+  /* iOS Safari 16px se chhote khane par focus karte hi poora page zoom
+     kar deta hai aur user ko hath se zoom out karna parta hai. */
+  .form-group input:not([type="radio"]):not([type="checkbox"]),
+  .form-group select,.form-group textarea{font-size:16px}
+}
+@media(max-width:600px){
+  .install-opt{padding:11px 12px;font-size:13px}
+  .form-legal{font-size:10.5px;margin-top:10px}
+}
+</style>
 </head>
 <body>
 
@@ -696,38 +738,44 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
       <div class="inline-form-card reveal" id="quoteCard">
         <h3>Request Your Free Replacement Windows Quote</h3>
         <p class="sub">No obligation. A specialist will contact you shortly.</p>
-        <form id="quoteForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
-          <input type="hidden" name="oid" value="00D0b000000vM4y">
-          <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
+        <form id="quoteForm" class="zap-form step-1" onsubmit="return handleZapSubmit(event)">
           <input type="hidden" name="lead_source" value="Google Ads">
-          <input type="hidden" name="company" value="Homeowner (Web Lead)">
-          <input type="hidden" name="first_name" value="">
-          <input type="hidden" name="last_name" value="">
-          <!-- Attribution — filled by captureAttribution() on load -->
-          <input type="hidden" name="00NQQ000009my4j" value="">
-          <input type="hidden" name="url" value="">
-          <input type="hidden" name="00NQQ00000IJMVV" value="">
+          <input type="hidden" name="source" value="Google Ads">
+          <!-- Ye teen sirf Google Sheet ke liye hain. sheet-webhook.js inhi
+               naamon se parhta hai, is liye sheet ke columns pehle jaise
+               bharte rahenge. -->
           <input type="hidden" name="00NQQ00000IJMTt" value="Website Quote Form">
-          <!-- standard "description" is this org's Web Form Description field -->
-          <input type="hidden" name="description" value="Website Quote Form">
-          <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-          <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone Number *" required></div>
-          <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
-          <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
-          <div class="form-group">
-            <select name="00N5a00000DXmGJ" required>
-              <option value="" disabled selected>What are you interested in?</option>
-              <option value="Impact Windows">Impact Windows</option>
-              <option value="Impact Doors">Impact Doors</option>
-              <option value="Windows &amp; Doors">Windows & Doors</option>
-              <option value="Roofing">Roofing</option>
-              <option value="HVAC / AC">HVAC / AC</option>
-            </select>
+          <input type="hidden" name="00N5a00000DXmGJ" value="">
+          <input type="hidden" name="00N5a00000DWvKF" value="">
+
+          <div class="fstep fstep-1">
+            <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+            <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
+            <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
+            <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
+            <button type="button" class="form-continue">Continue <i class="fas fa-arrow-right"></i></button>
           </div>
-          <div class="form-group"><textarea name="00N5a00000DWvKF" placeholder="Tell us about your project (optional)"></textarea></div>
-          <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-          <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+
+          <div class="fstep fstep-2">
+            <button type="button" class="form-back"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="form-group">
+              <select name="call_time">
+                <option value="" disabled selected>Preferred time to call?</option>
+                <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+                <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
+                <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
+                <option value="Anytime">Anytime</option>
+              </select>
+            </div>
+            <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows or Doors <strong>with</strong> installation</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows or Doors <strong>without</strong> installation</span></label>
+            </div>
+            <div class="sms-consent"><input type="checkbox" name="00NQQ00000IECjh" value="1"><label>By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <div class="sms-consent"><input type="checkbox" name="00NQQ00000IECyD" value="1"><label>By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+            <p class="form-legal">View our <a href="https://usahomeimprovement.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://usahomeimprovement.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a> to learn more about how we collect, use, and protect your information.</p>
+          </div>
         </form>
       </div>
     </div>
@@ -1487,38 +1535,45 @@ window.addEventListener('resize', function(){
   <button class="form-close" onclick="toggleFloatingForm()">&times;</button>
   <h3>Get a Free Quote</h3>
   <p class="form-sub">Fast response &bull; No obligation</p>
-  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return handleSFSubmit(event)">
-    <input type="hidden" name="oid" value="00D0b000000vM4y">
-    <input type="hidden" name="retURL" value="https://quote.usahomeimprovement.com/thank-you/">
-    <input type="hidden" name="lead_source" value="Google Ads">
-    <input type="hidden" name="company" value="Homeowner (Web Lead)">
-    <input type="hidden" name="first_name" value="">
-    <input type="hidden" name="last_name" value="">
-    <!-- Attribution — filled by captureAttribution() on load -->
-    <input type="hidden" name="00NQQ000009my4j" value="">
-    <input type="hidden" name="url" value="">
-    <input type="hidden" name="00NQQ00000IJMVV" value="">
-    <input type="hidden" name="00NQQ00000IJMTt" value="Website Floating Form">
-    <!-- standard "description" is this org's Web Form Description field -->
-    <input type="hidden" name="description" value="Website Floating Form">
-    <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
-    <div class="form-group"><input type="tel" name="phone" inputmode="tel" pattern="(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" title="Enter a valid 10-digit US phone number, e.g. (954) 228-8636" placeholder="Phone *" required></div>
-    <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email *" required></div>
-    <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
-    <div class="form-group">
-      <select name="00N5a00000DXmGJ" required>
-        <option value="" disabled selected>Service Needed</option>
-        <option value="Impact Windows">Impact Windows</option>
-        <option value="Impact Doors">Impact Doors</option>
-        <option value="Windows &amp; Doors">Windows & Doors</option>
-        <option value="Roofing">Roofing</option>
-        <option value="HVAC / AC">HVAC / AC</option>
-      </select>
-    </div>
-    <div class="sms-consent"><input type="checkbox" id="smsConsentFloat" name="00NQQ00000IECjh" value="1"><label for="smsConsentFloat">By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-    <div class="sms-consent"><input type="checkbox" id="smsServicesConsentFloat" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsentFloat">By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message & data rates may apply. Reply STOP to unsubscribe.</label></div>
-    <button type="submit" class="form-submit">Get My Free Quote</button>
-  </form>
+  <form class="zap-form step-1" onsubmit="return handleZapSubmit(event)">
+          <input type="hidden" name="lead_source" value="Google Ads">
+          <input type="hidden" name="source" value="Google Ads">
+          <!-- Ye teen sirf Google Sheet ke liye hain. sheet-webhook.js inhi
+               naamon se parhta hai, is liye sheet ke columns pehle jaise
+               bharte rahenge. -->
+          <input type="hidden" name="00NQQ00000IJMTt" value="Website Floating Form">
+          <input type="hidden" name="00N5a00000DXmGJ" value="">
+          <input type="hidden" name="00N5a00000DWvKF" value="">
+
+          <div class="fstep fstep-1">
+            <div class="form-group"><input type="text" class="sf-fullname" placeholder="Full Name *" required></div>
+            <div class="form-group"><input type="tel" name="phone" inputmode="tel" placeholder="Phone Number *" required></div>
+            <div class="form-group"><input type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="Enter a valid email address, e.g. name@example.com" placeholder="Email Address *" required></div>
+            <div class="form-group"><input type="text" name="zip" placeholder="Zip Code *" required></div>
+            <button type="button" class="form-continue">Continue <i class="fas fa-arrow-right"></i></button>
+          </div>
+
+          <div class="fstep fstep-2">
+            <button type="button" class="form-back"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="form-group">
+              <select name="call_time">
+                <option value="" disabled selected>Preferred time to call?</option>
+                <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+                <option value="Afternoon (12pm-4pm)">Afternoon (12pm-4pm)</option>
+                <option value="Evening (4pm-8pm)">Evening (4pm-8pm)</option>
+                <option value="Anytime">Anytime</option>
+              </select>
+            </div>
+            <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Impact Windows or Doors <strong>with</strong> installation</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Impact Windows or Doors <strong>without</strong> installation</span></label>
+            </div>
+            <div class="sms-consent"><input type="checkbox" name="00NQQ00000IECjh" value="1"><label>By checking this box, you agree to receive marketing text messages from USA Home Improvement at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <div class="sms-consent"><input type="checkbox" name="00NQQ00000IECyD" value="1"><label>By checking this box, you agree to receive service-related text messages from USA Home Improvement about your quote, appointment, and installation at the number provided. Message &amp; data rates may apply. Reply STOP to unsubscribe.</label></div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
+            <p class="form-legal">View our <a href="https://usahomeimprovement.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://usahomeimprovement.com/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a> to learn more about how we collect, use, and protect your information.</p>
+          </div>
+        </form>
 </div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -1630,50 +1685,105 @@ function captureAttribution(){
 }
 document.addEventListener('DOMContentLoaded',captureAttribution);
 
-function handleSFSubmit(e){
-  const form=e.target;
-  captureAttribution(); // re-stamp right before the POST
-  const phone=form.querySelector('input[name="phone"]');
-  const email=form.querySelector('input[name="email"]');
+function handleZapSubmit(e){
+  e.preventDefault();
+  var form=e.target;
 
-  // Validate phone: must be a 10-digit US number (an optional leading 1 is allowed).
-  let digits=(phone.value||'').replace(/\D/g,'');
+  var phoneEl=form.querySelector('input[name="phone"]');
+  var emailEl=form.querySelector('input[name="email"]');
+
+  var digits=(phoneEl.value||'').replace(/\D/g,'');
   if(digits.length===11 && digits.charAt(0)==='1') digits=digits.slice(1);
   if(digits.length!==10){
-    e.preventDefault();
-    phone.setCustomValidity('Please enter a valid 10-digit US phone number, e.g. (954) 228-8636.');
-    phone.reportValidity();
-    return false;
+    phoneEl.setCustomValidity('Please enter a valid 10-digit US phone number, e.g. (954) 228-8636.');
+    phoneEl.reportValidity(); return false;
   }
-  phone.setCustomValidity('');
+  phoneEl.setCustomValidity('');
+  phoneEl.value='('+digits.slice(0,3)+') '+digits.slice(3,6)+'-'+digits.slice(6);
 
-  // Validate email: require name@domain.tld (type=email alone accepts "a@b").
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((email.value||'').trim())){
-    e.preventDefault();
-    email.setCustomValidity('Please enter a valid email address, e.g. name@example.com.');
-    email.reportValidity();
-    return false;
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((emailEl.value||'').trim())){
+    emailEl.setCustomValidity('Please enter a valid email address, e.g. name@example.com.');
+    emailEl.reportValidity(); return false;
   }
-  email.setCustomValidity('');
+  emailEl.setCustomValidity('');
 
-  // Normalize the validated phone to (XXX) XXX-XXXX so Salesforce gets clean data.
-  phone.value='('+digits.slice(0,3)+') '+digits.slice(3,6)+'-'+digits.slice(6);
+  if(typeof captureAttribution==='function'){ try{ captureAttribution(); }catch(err){} }
 
-  // Salesforce needs first_name + last_name; the visible field is a single "Full Name".
-  const full=(form.querySelector('.sf-fullname').value||'').trim().replace(/\s+/g,' ');
-  const parts=full.split(' ');
-  // last_name is the required Salesforce field, so a single-word name goes there.
-  form.querySelector('input[name="last_name"]').value  = parts.length>1 ? parts.slice(1).join(' ') : full;
-  form.querySelector('input[name="first_name"]').value = parts.length>1 ? parts[0] : '';
-  // No preventDefault beyond this point: the form POSTs to Salesforce, which saves
-  // the lead and redirects the visitor to retURL (/thank-you/). Show a brief
-  // "Sending" state on the button while that round-trip happens.
-  sendToSheet(form); // fire-and-forget copy to the Google Sheet, in parallel
-  const btn=form.querySelector('button[type="submit"]');
-  btn.disabled=true;
-  btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...';
-  return true;
+  /* Sheet ka "Interested In" column khali na rahe — install wala jawab
+     usi field me daal dete hain jise sheet parhti hai. */
+  var inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+  var svc = inst==='with'  ? 'Impact Windows or Doors with installation'
+          : inst==='without'? 'Impact Windows or Doors without installation' : '';
+  var svcField=form.querySelector('input[name="00N5a00000DXmGJ"]');
+  if(svcField) svcField.value=svc;
+
+  try{ sendToSheet(form); }catch(err){}   // Google Sheet — pehle jaisa
+  sendToZapier(form);
+
+  var btn=form.querySelector('button[type="submit"]');
+  if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
+
+  /* "without installation" par Google Ads ki conversion nahi ginni —
+     thank-you page ?noconv=1 dekh kar usay rok deta hai. */
+  var dest = inst==='without' ? '/thank-you/?noconv=1' : '/thank-you/';
+  setTimeout(function(){ location.href=dest; }, 600);
+  return false;
 }
+
+function sendToZapier(form){
+  try{
+    function get(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value:''; }
+    function chk(n){ var el=form.querySelector('[name="'+n+'"]'); return el?(el.checked?'on':''):''; }
+    function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+    var landing=''; try{ landing=sessionStorage.getItem('usahi_landing')||''; }catch(e){}
+    var d=new Date();
+    var full=(((form.querySelector('.sf-fullname')||{}).value)||'').trim().replace(/\s+/g,' ');
+    var p=full.split(' ');
+    var inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+    var payload={
+      full_name:full,
+      first_name:p.length>1?p[0]:'',
+      last_name:p.length>1?p.slice(1).join(' '):full,
+      email:get('email'), phone:get('phone'), zip_code:get('zip'),
+      service_type: inst==='with'?'Impact Windows or Doors with installation'
+                  :(inst==='without'?'Impact Windows or Doors without installation':''),
+      installation:inst,
+      call_time:get('call_time'),
+      consent_sms:chk('00NQQ00000IECyD'),
+      consent_promo:chk('00NQQ00000IECjh'),
+      source:get('source'), lead_source:get('lead_source'),
+      page_url:location.origin+location.pathname,
+      language:'en_US',
+      date:d.toISOString().slice(0,10), time:d.toTimeString().slice(0,8),
+      user_agent:navigator.userAgent,
+      gclid:ls('usahi_gclid'),
+      utm_source:ls('usahi_utm_source'), utm_medium:ls('usahi_utm_medium'),
+      utm_campaign:ls('usahi_utm_campaign'), utm_term:ls('usahi_utm_term'),
+      utm_content:ls('usahi_utm_content'),
+      campaign_id:ls('usahi_campaignid'), adgroup_id:ls('usahi_adgroupid'),
+      keyword:ls('usahi_keyword'), landing_url:landing
+    };
+    var data=new URLSearchParams(payload).toString();
+    var url='https://hooks.zapier.com/hooks/catch/5395603/ux7ul0a/';
+    if(navigator.sendBeacon){ navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }
+    else{ fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data,keepalive:true}).catch(function(){}); }
+  }catch(e){}
+}
+
+/* 2-step form — sirf bare screen par. Mobile par dono hisse ek saath. */
+document.querySelectorAll('.form-continue').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var form=btn.closest('form');
+    var fields=form.querySelectorAll('.fstep-1 input');
+    for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return; } }
+    form.classList.remove('step-1'); form.classList.add('step-2');
+  });
+});
+document.querySelectorAll('.form-back').forEach(function(b){
+  b.addEventListener('click',function(){
+    var form=b.closest('form'); form.classList.remove('step-2'); form.classList.add('step-1');
+  });
+});
 // Clear a custom validity message as soon as the visitor edits the field, so a
 // prior error can't block a corrected resubmit.
 document.querySelectorAll('form input[name="phone"], form input[name="email"]').forEach(function(el){
