@@ -824,6 +824,30 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
    bohot door door lagti hain. Baki section ke unwan 1.15 par hain. */
 .inline-form-text h2{line-height:1.15}
 </style>
+
+<!-- MOBILE: hero me video ginti se pehle -->
+<style>
+@media(max-width:1024px){
+  /* hero-text ko ghayab kar ke us ke bachay seedha grid ke bachay ban
+     jate hain, phir har ek ko apni tarteeb di ja sakti hai. */
+  .hero-grid{display:flex;flex-direction:column;gap:0}
+  .hero-text{display:contents}
+  /* align-items:start qatar me chaurai sikor deta hai aur video, jis ke
+     andar sab kuch absolute hai, sifar ho jati hai. Is liye chaurai
+     khud di. */
+  .hero-text h1,.hero-sub,.hero-checklist,.hero-btns,.hero-offers,
+  .hero-video-side,.hero-stats,.hero-statewide{width:100%}
+  .hero-rating{order:0;align-self:flex-start;width:auto}
+  .hero-text h1{order:1}
+  .hero-sub{order:2}
+  .hero-checklist{order:3}
+  .hero-btns{order:4}
+  .hero-offers{order:5}
+  .hero-video-side{order:6;margin:22px 0 4px}
+  .hero-stats{order:7}
+  .hero-statewide{order:8}
+}
+</style>
 </head>
 <body>
 
