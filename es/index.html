@@ -684,6 +684,25 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .stat-label{font-size:10px;line-height:1.25;padding:0 3px}
 }
 </style>
+
+<!-- HEADER: mobile par red phone -->
+<style>
+/* 1150px se neeche menu aur phone ke darmyan jagah sifar reh jati thi
+   aur dono chipak jate the. Wahan ab hamburger aata hai, jaise mobile
+   par. */
+@media(max-width:1150px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .nav-cta .btn{display:none}
+
+  /* Free Estimate ka button is chaurai par chhupa hua hai, to phone hi
+     akela kaam hai. Bhari red goli use header ki sabse namayan cheez
+     bana deti hai, aur ungli ke liye theek jagah bhi ban jati hai. */
+  .nav-phone{background:var(--accent);color:var(--white)!important;
+    padding:11px 20px;border-radius:999px}
+  .nav-phone i{color:var(--white)!important}
+}
+</style>
 </head>
 <body>
 
@@ -1873,7 +1892,7 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // MOBILE NAV
 const mobileStyle=document.createElement('style');
-mobileStyle.textContent=`@media(max-width:1024px){.nav-links.show{display:flex!important;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.1);gap:12px}}`;
+mobileStyle.textContent=`@media(max-width:1150px){.nav-links.show{display:flex!important;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.1);gap:12px}}`;
 document.head.appendChild(mobileStyle);
 </script>
 
