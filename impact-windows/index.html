@@ -778,6 +778,41 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .nav-phone i{color:var(--white)!important}
 }
 </style>
+
+<!-- MOBILE SPACING -->
+<style>
+/* Phone par sections 80px upar aur 80px neeche le rahe the, yani do
+   sections ke darmyan 160px khali. Hero ke upar bhi 64px. Ye naap bare
+   screen ke liye bane the. Wahi naap yahan lagaye jo Broward page par
+   hain. */
+@media(max-width:600px){
+  .hero{padding:24px 0 34px!important}
+
+  .inline-form-section,.testimonials-section,.testing-section,
+  .projects-section,.ba-section,.financing-section,.why-section,
+  .hwi-section,.services-section,.team-section,.ig-section,
+  .map-section,.faq-section{
+    padding-top:40px!important;padding-bottom:40px!important}
+  .offers-section,.cta-section,.bts-section{
+    padding-top:44px!important;padding-bottom:44px!important}
+  .trust-bar{padding-top:22px!important;padding-bottom:22px!important}
+
+  /* unwan aur us ke neeche wale content ke darmyan */
+  .testing-grid,.ba-grid,.why-grid,.map-grid,.team-grid,.project-grid,
+  .financing-cards,.offers-grid,.services-grid,.ig-grid{margin-top:24px!important}
+
+  /* qatar dar qatar ka faasla */
+  .why-grid{gap:24px!important}
+  .testing-grid{gap:18px!important}
+  .ba-grid{gap:18px!important}
+  .map-grid{gap:24px!important}
+  .team-grid{gap:12px!important}
+
+  /* unwan ke apne haashiye */
+  .section-title{margin-bottom:12px}
+  .section-subtitle{margin-bottom:0}
+}
+</style>
 </head>
 <body>
 
@@ -814,7 +849,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="hero-grid">
       <div class="hero-text">
         <h1><span>Impact Windows</span> That Protect Your Home Every Day of the Year</h1>
-        <p class="hero-sub">Impact windows do more than survive a storm &mdash; they cut your energy bill, block outside noise, and protect your furnishings from UV fade, 365 days a year. Backed by 15+ years in South Florida.</p>
+        <p class="hero-sub">Impact windows do more than survive a storm. They cut your energy bill, block street noise and stop UV fade, all year round. 15+ years in South Florida.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 rated impact glass, engineered for daily use</li>
           <li><span class="check-icon"><i class="fas fa-user-tie"></i></span> Dedicated project manager on every installation</li>

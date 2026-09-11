@@ -703,6 +703,41 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .nav-phone i{color:var(--white)!important}
 }
 </style>
+
+<!-- MOBILE SPACING -->
+<style>
+/* Phone par sections 80px upar aur 80px neeche le rahe the, yani do
+   sections ke darmyan 160px khali. Hero ke upar bhi 64px. Ye naap bare
+   screen ke liye bane the. Wahi naap yahan lagaye jo Broward page par
+   hain. */
+@media(max-width:600px){
+  .hero{padding:24px 0 34px!important}
+
+  .inline-form-section,.testimonials-section,.testing-section,
+  .projects-section,.ba-section,.financing-section,.why-section,
+  .hwi-section,.services-section,.team-section,.ig-section,
+  .map-section,.faq-section{
+    padding-top:40px!important;padding-bottom:40px!important}
+  .offers-section,.cta-section,.bts-section{
+    padding-top:44px!important;padding-bottom:44px!important}
+  .trust-bar{padding-top:22px!important;padding-bottom:22px!important}
+
+  /* unwan aur us ke neeche wale content ke darmyan */
+  .testing-grid,.ba-grid,.why-grid,.map-grid,.team-grid,.project-grid,
+  .financing-cards,.offers-grid,.services-grid,.ig-grid{margin-top:24px!important}
+
+  /* qatar dar qatar ka faasla */
+  .why-grid{gap:24px!important}
+  .testing-grid{gap:18px!important}
+  .ba-grid{gap:18px!important}
+  .map-grid{gap:24px!important}
+  .team-grid{gap:12px!important}
+
+  /* unwan ke apne haashiye */
+  .section-title{margin-bottom:12px}
+  .section-subtitle{margin-bottom:0}
+}
+</style>
 </head>
 <body>
 
@@ -739,7 +774,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="hero-grid">
       <div class="hero-text">
         <h1>Proteja Su Casa con <span>Ventanas de Impacto</span> y Puertas</h1>
-        <p class="hero-sub">Protección certificada contra huracanes que le ahorra dinero en energía y seguros. Con licencia, asegurados y respaldados por más de 15 años de experiencia en todo el sur de Florida.</p>
+        <p class="hero-sub">Protecci&oacute;n certificada contra huracanes que le ahorra en energ&iacute;a y seguros. Con licencia y asegurados, m&aacute;s de 15 a&ntilde;os en el sur de Florida.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Protección de impacto certificada para huracanes categoría 5</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 de enganche, desde $5/mes por ventana</li>
