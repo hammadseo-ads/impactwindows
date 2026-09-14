@@ -1645,6 +1645,16 @@ function captureAttribution(){
 }
 document.addEventListener('DOMContentLoaded',captureAttribution);
 
+// GA4: "Form initiate" — fires once per form, on the visitor's first interaction
+// with any of its fields (this page has no step-1/step-2 split, straight to submit).
+document.querySelectorAll('form[onsubmit*="handleZapSubmit"]').forEach(function(f){
+  f.addEventListener('focusin',function(){
+    if(f.dataset.gaStarted) return;
+    f.dataset.gaStarted='1';
+    if(window.gtag) gtag('event','form_start_step1',{form_id: f.id||'quote_form'});
+  });
+});
+
 function handleZapSubmit(e){
   e.preventDefault();
   var form=e.target;
@@ -1656,6 +1666,17 @@ function handleZapSubmit(e){
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((emailEl.value||'').trim())){ emailEl.setCustomValidity('Please enter a valid email address, e.g. name@example.com.'); emailEl.reportValidity(); return false; }
   emailEl.setCustomValidity('');
   if(typeof captureAttribution==='function'){ try{ captureAttribution(); }catch(err){} }
+  // GA4: standard lead event on every valid submit, plus a separate event only
+  // when this is the visitor's first-ever GA4 session — so a "converted on the
+  // very first visit" lead can be segmented from a repeat-visit submit.
+  if(window.gtag){
+    try{
+      gtag('event','generate_lead',{form_id: form.id||'quote_form'});
+      gtag('get','G-CG54K79DS0','session_number',function(sessionNumber){
+        if(sessionNumber===1) gtag('event','first_session_lead',{form_id: form.id||'quote_form'});
+      });
+    }catch(err){}
+  }
   sendToZapier(form);
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
   var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
