@@ -2666,7 +2666,7 @@ document.querySelectorAll('.form-continue').forEach(function(btn){
     // GA4: "Form initiate" — once per form, only after step-1 actually validates.
     if(!form.dataset.gaStarted){
       form.dataset.gaStarted='1';
-      if(window.gtag) gtag('event','form_start',{form_id: form.id||'quote_form'});
+      if(window.gtag) gtag('event','form_start_step1',{form_id: form.id||'quote_form'});
     }
   });
 });

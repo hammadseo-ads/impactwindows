@@ -1693,7 +1693,7 @@ document.querySelectorAll('form[action*="WebToLead"]').forEach(function(f){
   f.addEventListener('focusin',function(){
     if(f.dataset.gaStarted) return;
     f.dataset.gaStarted='1';
-    if(window.gtag) gtag('event','form_start',{form_id: f.id||'quote_form'});
+    if(window.gtag) gtag('event','form_start_step1',{form_id: f.id||'quote_form'});
   });
 });
 
