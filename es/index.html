@@ -1688,6 +1688,17 @@ function captureAttribution(){
 }
 document.addEventListener('DOMContentLoaded',captureAttribution);
 
+// GA4: "Form initiate" — fires once per form, on the visitor's first interaction
+// with any of its fields (this page posts straight to Salesforce, so there's no
+// step-1/step-2 "Continue" click to hook into like the other landing pages).
+document.querySelectorAll('form[action*="WebToLead"]').forEach(function(f){
+  f.addEventListener('focusin',function(){
+    if(f.dataset.gaStarted) return;
+    f.dataset.gaStarted='1';
+    if(window.gtag) gtag('event','form_start',{form_id: f.id||'quote_form'});
+  });
+});
+
 function handleSFSubmit(e){
   const form=e.target;
   captureAttribution(); // re-stamp right before the POST
@@ -1723,6 +1734,12 @@ function handleSFSubmit(e){
   // last_name is the required Salesforce field, so a single-word name goes there.
   form.querySelector('input[name="last_name"]').value  = parts.length>1 ? parts.slice(1).join(' ') : full;
   form.querySelector('input[name="first_name"]').value = parts.length>1 ? parts[0] : '';
+  // GA4 lead event. No session-gated "first_session_lead" split here: this page
+  // does a real navigation to Salesforce right after this function returns, and
+  // reading the session number needs an async gtag('get',...) round-trip that
+  // could easily lose the race — better to skip it than delay a Salesforce POST
+  // this pipeline has silently dropped leads on before.
+  if(window.gtag){ try{ gtag('event','generate_lead',{form_id: form.id||'quote_form'}); }catch(err){} }
   // No preventDefault beyond this point: the form POSTs to Salesforce, which saves
   // the lead and redirects the visitor to retURL (/thank-you/). Show a brief
   // "Sending" state on the button while that round-trip happens.

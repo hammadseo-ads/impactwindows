@@ -1688,6 +1688,18 @@ function handleZapSubmit(e){
 
   if(typeof captureAttribution==='function'){ try{ captureAttribution(); }catch(err){} }
 
+  // GA4: standard lead event on every valid submit, plus a separate event only
+  // when this is the visitor's first-ever GA4 session — so a "converted on the
+  // very first visit" lead can be segmented from a repeat-visit submit.
+  if(window.gtag){
+    try{
+      gtag('event','generate_lead',{form_id: form.id||'quote_form'});
+      gtag('get','G-CG54K79DS0','session_number',function(sessionNumber){
+        if(sessionNumber===1) gtag('event','first_session_lead',{form_id: form.id||'quote_form'});
+      });
+    }catch(err){}
+  }
+
   /* Sheet ka "Interested In" column khali na rahe — install wala jawab
      usi field me daal dete hain jise sheet parhti hai. */
   var inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
@@ -1756,6 +1768,11 @@ document.querySelectorAll('.form-continue').forEach(function(btn){
     var fields=form.querySelectorAll('.fstep-1 input');
     for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return; } }
     form.classList.remove('step-1'); form.classList.add('step-2');
+    // GA4: "Form initiate" — once per form, only after step-1 actually validates.
+    if(!form.dataset.gaStarted){
+      form.dataset.gaStarted='1';
+      if(window.gtag) gtag('event','form_start',{form_id: form.id||'quote_form'});
+    }
   });
 });
 document.querySelectorAll('.form-back').forEach(function(b){
