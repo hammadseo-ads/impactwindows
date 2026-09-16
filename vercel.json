@@ -140,6 +140,14 @@
       "destination": "/broward/impact-windows/index.html"
     },
     {
+      "source": "/broward/storm-windows",
+      "destination": "/broward/storm-windows/index.html"
+    },
+    {
+      "source": "/broward/storm-windows/",
+      "destination": "/broward/storm-windows/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
