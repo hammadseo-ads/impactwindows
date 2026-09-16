@@ -643,6 +643,25 @@ body{font-family:'Poppins',sans-serif;color:#1e293b;line-height:1.6;overflow-x:h
   .hero .hero-statewide span{font-size:13px;line-height:1.45}
 }
 </style>
+<style>
+/* Neela offers band bilkul saada tha. Broward wali patli tirchi lakeeren aur
+   narm roshni - itni halki ke text ke saamne na aayein, sirf zameen jeevit lage. */
+.offers-section{position:relative;overflow:hidden}
+
+.offers-section::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:repeating-linear-gradient(115deg,
+    rgba(255,255,255,.045) 0 1px, transparent 1px 44px)}
+
+.offers-section::after{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(58% 62% at 84% 8%, rgba(216,58,46,.11), transparent 62%),
+    radial-gradient(48% 55% at 8% 96%, rgba(255,255,255,.05), transparent 60%)}
+
+/* content lakeeron ke upar rahe */
+.offers-section > .container{position:relative;z-index:1}
+</style>
 </head>
 <body>
 
