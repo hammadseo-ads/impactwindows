@@ -1304,6 +1304,15 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .hero .hr-count{font-size:11.5px}
 }
 </style>
+<!-- MOBILE: form section ka text column chhupa -->
+<style>
+/* Mobile par form wale section me sirf form; heading, paragraph aur points
+   desktop par hi dikhte hain. */
+@media(max-width:767px){
+  .inline-form-section .inline-form-text{display:none!important}
+  .inline-form-section .inline-form-wrap{gap:0!important}
+}
+</style>
 </head>
 <body>
 
