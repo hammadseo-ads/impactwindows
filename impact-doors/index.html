@@ -951,7 +951,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <span class="hr-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <b>4.6</b><span class="hr-sep">&bull;</span><span class="hr-count">500+ Google reviews</span>
         </a>
-        <h1><span>Impact Doors</span> That Lock Down Your Home Before the Storm Does</h1>
+        <h1><span>Impact Doors</span> That Lock Down Your Home</h1>
         <p class="hero-sub">Sliding glass, French and entry impact doors, rated for Category 5 winds and easier on your energy and insurance bills. 15+ years in South Florida.</p>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 rated impact doors &amp; laminated glass</li>
@@ -961,7 +961,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         </ul>
                 <div class="hero-btns">
           <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consult</a>
-          <a href="tel:8664813679" class="btn btn-outline-white"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
+          <a href="tel:8664813679" class="btn btn-outline-dark"><i class="fas fa-phone"></i> Call (866) 481-3679</a>
         </div>
 <div class="hero-offers">
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
@@ -2335,5 +2335,44 @@ document.head.appendChild(mobileStyle);
 <!-- CallRail dynamic number insertion -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/609637261/da99578ab198e251ef67/12/swap.js"></script>
 <script src="/assets/js/sheet-webhook.js"></script>
+
+<!-- HERO WHITE (Broward jaisa) -->
+<style>
+/* Navy tasveer wala hero ab Broward pages ki tarah safed. */
+.hero{background:var(--white)!important;color:var(--dark);border-bottom:none}
+.hero::before,.hero::after{content:none!important;display:none!important}
+
+.hero .hero-text h1{color:#000;text-shadow:none}
+.hero .hero-text h1 span{color:var(--accent)}
+.hero .hero-sub{color:#333}
+.hero .hero-checklist li{color:#333}
+.hero .hero-checklist li .check-icon{background:var(--accent-soft)}
+.hero .hero-checklist li .check-icon i{color:var(--accent-light)}
+
+/* offer chips: safed zameen par halka laal pill, bhaari saaya nahi */
+.hero .hero-offer{background:var(--accent-soft);border:1px solid rgba(226,71,78,.18);color:#374151;box-shadow:none}
+.hero .hero-offer:hover{background:rgba(226,71,78,.12);box-shadow:none}
+
+.hero .hero-stats{border-top-color:#dbe4ee}
+.hero .hero-stat:not(:last-child)::after{background:#dbe4ee}
+.hero .hero-stat .stat-num{color:var(--primary)}
+.hero .hero-stat .stat-num span{color:var(--accent)}
+.hero .hero-stat .stat-label{color:#333}
+
+.hero .hero-statewide{background:linear-gradient(135deg,var(--accent-soft),rgba(36,91,143,.06));border-color:rgba(226,71,78,.1)}
+.hero .hero-statewide i{color:var(--accent)}
+.hero .hero-statewide span{color:var(--dark)}
+
+.hero .hero-trust-item{color:#64748b}
+.hero .hero-trust-sep{background:#dbe4ee}
+.hero .hero-video-side{box-shadow:0 18px 50px rgba(16,46,77,.16)}
+
+/* Google rating pill: halka */
+.hero-rating{background:var(--white);border:1px solid #e4ecf4;box-shadow:0 4px 14px rgba(16,46,77,.08)}
+.hero-rating:hover{background:var(--white);border-color:rgba(226,71,78,.34)}
+.hero-rating b{color:#000}
+.hr-sep{color:#94a3b8}
+.hr-count{color:#333}
+</style>
 </body>
 </html>
