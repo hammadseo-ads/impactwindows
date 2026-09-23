@@ -2665,8 +2665,10 @@ function handleZapSubmit(e){
   var svcField=form.querySelector('input[name="00N5a00000DXmGJ"]');
   if(svcField) svcField.value=svc;
 
-  try{ sendToSheet(form); }catch(err){}   // Google Sheet — pehle jaisa
-  sendToZapier(form);
+  /* dono bhejo aur dono ka natija sambhal kar rakho */
+  var jobs=[];
+  try{ jobs.push(Promise.resolve(sendToSheet(form))); }catch(err){}
+  try{ jobs.push(Promise.resolve(sendToZapier(form))); }catch(err){}
 
   var btn=form.querySelector('button[type="submit"]');
   if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
@@ -2674,7 +2676,12 @@ function handleZapSubmit(e){
   /* "without installation" par Google Ads ki conversion nahi ginni —
      thank-you page ?noconv=1 dekh kar usay rok deta hai. */
   var dest = inst==='without' ? '/thank-you/?noconv=1' : '/thank-you/';
-  setTimeout(function(){ location.href=dest; }, 600);
+  /* Sheet aur Zapier dono ke poore hone tak ruko, magar 2.5 second se zyada nahi.
+     keepalive ki wajah se request page badalne ke baad bhi mukammal hoti hai. */
+  var gone=false, go=function(){ if(gone) return; gone=true; location.href=dest; };
+  Promise.all(jobs.map(function(p){ return p && p.catch ? p.catch(function(){}) : p; }))
+    .then(function(){ setTimeout(go,120); }).catch(function(){ go(); });
+  setTimeout(go, 2500);
   return false;
 }
 
@@ -2713,8 +2720,15 @@ function sendToZapier(form){
     };
     var data=new URLSearchParams(payload).toString();
     var url='https://hooks.zapier.com/hooks/catch/5395603/ux7ul0a/';
-    if(navigator.sendBeacon){ navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }
-    else{ fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data,keepalive:true}).catch(function(){}); }
+    /* fetch + keepalive pehle: page badalne ke baad bhi poora hota hai aur
+       jawab deta hai. Na chale to sendBeacon. */
+    if(window.fetch){
+      try{
+        return fetch(url,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
+          .catch(function(){ try{ navigator.sendBeacon && navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }catch(e){} });
+      }catch(e){}
+    }
+    try{ navigator.sendBeacon && navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }catch(e){}
   }catch(e){}
 }
 

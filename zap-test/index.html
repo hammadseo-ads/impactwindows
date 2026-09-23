@@ -1715,12 +1715,20 @@ function handleZapSubmit(e){
       });
     }catch(err){}
   }
-  sendToZapier(form);
+  /* dono bhejo aur dono ka natija sambhal kar rakho */
+  var jobs=[];
+  try{ jobs.push(Promise.resolve(sendToSheet(form))); }catch(err){}
+  try{ jobs.push(Promise.resolve(sendToZapier(form))); }catch(err){}
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
   var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
   var _base = location.pathname.indexOf('/es/')!==-1 ? '/es/gracias/' : '/thank-you/';
   var _dest = (_inst==='without') ? _base+'?noconv=1' : _base;  // without-installation: no Google Ads conversion
-  setTimeout(function(){ location.href=_dest; }, 600);
+  /* Sheet aur Zapier dono ke poore hone tak ruko, magar 2.5 second se zyada nahi.
+     keepalive ki wajah se request page badalne ke baad bhi mukammal hoti hai. */
+  var gone=false, go=function(){ if(gone) return; gone=true; location.href=_dest; };
+  Promise.all(jobs.map(function(p){ return p && p.catch ? p.catch(function(){}) : p; }))
+    .then(function(){ setTimeout(go,120); }).catch(function(){ go(); });
+  setTimeout(go, 2500);
   return false;
 }
 function sendToZapier(form){
@@ -1766,8 +1774,15 @@ function sendToZapier(form){
     };
     var data=new URLSearchParams(payload).toString();
     var url='https://hooks.zapier.com/hooks/catch/5395603/ux7ul0a/';
-    if(navigator.sendBeacon){ navigator.sendBeacon(url, new Blob([data],{type:'application/x-www-form-urlencoded'})); }
-    else{ fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data,keepalive:true}).catch(function(){}); }
+    /* fetch + keepalive pehle: page badalne ke baad bhi poora hota hai aur
+       jawab deta hai. Na chale to sendBeacon. */
+    if(window.fetch){
+      try{
+        return fetch(url,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
+          .catch(function(){ try{ navigator.sendBeacon && navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }catch(e){} });
+      }catch(e){}
+    }
+    try{ navigator.sendBeacon && navigator.sendBeacon(url,new Blob([data],{type:'application/x-www-form-urlencoded'})); }catch(e){}
   }catch(e){}
 }
 function handleSFSubmit(e){
