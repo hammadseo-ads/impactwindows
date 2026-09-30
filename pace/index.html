@@ -465,6 +465,16 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:900px){ .steps-grid{grid-template-columns:1fr 1fr;gap:12px} }
 @media(max-width:560px){ .steps-grid{grid-template-columns:1fr} }
 </style>
+<!-- MOBILE: hero me form pehle, baqi baatein uske baad -->
+<style>
+/* Mobile par ye block chhupa hua tha (display:none). Ab dikhta hai,
+   magar form ke baad. */
+@media(max-width:900px){
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-grid .form-card{order:1}
+  .hero-grid .hero-copy{display:block;order:2;margin-top:6px}
+}
+</style>
 </head>
 <body>
 
