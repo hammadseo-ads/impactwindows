@@ -148,6 +148,22 @@
       "destination": "/broward/storm-windows/index.html"
     },
     {
+      "source": "/pace",
+      "destination": "/pace/index.html"
+    },
+    {
+      "source": "/pace/",
+      "destination": "/pace/index.html"
+    },
+    {
+      "source": "/es/pace",
+      "destination": "/es/pace/index.html"
+    },
+    {
+      "source": "/es/pace/",
+      "destination": "/es/pace/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
