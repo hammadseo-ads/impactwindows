@@ -467,6 +467,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </style>
 <!-- MOBILE: hero me form pehle, baqi baatein uske baad -->
 <style>
+/* H1 ke neeche teen ahem baatein, points ki soorat me */
+.hero-points{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:16px 0 0}
+.hero-points li{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #e8ebef;
+  border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:600;color:#334155;
+  box-shadow:0 2px 10px rgba(16,42,67,.05)}
+.hero-points li i{color:var(--accent);font-size:14px}
+@media(max-width:600px){
+  .hero-points{gap:8px;margin-top:14px}
+  .hero-points li{padding:8px 13px;font-size:13.5px;gap:8px}
+}
+
 /* Hero ke points: icon halke laal box ke andar, jaisa baqi pages par hai */
 .hero-copy .hero-checklist{gap:14px}
 .hero-copy .hero-checklist li{align-items:center;gap:13px;line-height:1.5;color:#334155}
@@ -522,7 +533,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="hero-head">
       <span class="eyebrow"><i class="fas fa-bolt"></i> Florida PACE Program</span>
       <h1>Impact Windows, Doors <span>&amp; Roofing</span> With $0 Down</h1>
-      <p class="hero-sub">PACE is a Florida program that pays for storm protection upfront. Approval is based on your property, not your credit score &bull; $0 down &bull; repaid through your property tax assessment, and payments may not be due until March 2029.</p>
+      <p class="hero-sub">A Florida program that pays for your storm protection upfront.</p>
+      <ul class="hero-points">
+        <li><i class="fas fa-id-card"></i> No credit score required</li>
+        <li><i class="fas fa-dollar-sign"></i> $0 down</li>
+        <li><i class="fas fa-calendar-days"></i> Payments may not be due until March 2029</li>
+      </ul>
     </div>
 <div class="hero-video-row">
       <div class="video-wrap">
