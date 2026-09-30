@@ -7,7 +7,10 @@ var SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyBrG7JbdUMc2sA
    3) phir bhi na gaya to payload localStorage me pada rehta hai aur agli
       page load par dobara jata hai (retry=1 ke saath). */
 
-var SHEET_PENDING_KEY = 'usahi_sheet_pending';
+var SHEET_PENDING_KEY = 'usahi_sheet_pending2';
+/* Purani key ki copy kabhi kabhi pehle hi ja chuki hoti thi - use bhejna
+   nahi, sirf mita dena hai, warna ek aur duplicate banega. */
+try{ localStorage.removeItem('usahi_sheet_pending'); }catch(e){}
 var SHEET_RETRY_AFTER_MS = 5 * 60 * 1000;   /* itni purani pending hi dobara bhejni hai,
                                                warna usi submit ki dobara chali jati */
 
@@ -71,14 +74,31 @@ function sendToSheet(form){
     };
     var data = new URLSearchParams(payload).toString();
 
+    /* Pending copy SIRF us waqt bachti hai jab request browser se nikal hi
+       na sake (jaise net band ho). Jaise hi request nikal jati hai, copy
+       mita di jati hai - warna jawab aane se pehle page badal jata tha,
+       copy pari reh jati thi, aur banda dobara site par aata to wohi lead
+       doosri dafa chali jati thi (sheet me duplicate row). */
+
     sheetPendingSet(data);
-    return sheetPost(data).then(function(r){
-      sheetPendingClear();
-      return r;
-    }).catch(function(){
-      if(sheetBeacon(data)){ sheetPendingClear(); return 'beacon-fallback'; }
-      return 'pending';   /* pending pada rahega, agli page load par jayega */
-    });
+
+    if(window.fetch){
+      try{
+        var p = fetch(SHEET_WEBHOOK_URL, {
+          method:'POST', mode:'no-cors', keepalive:true,
+          headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data
+        });
+        sheetPendingClear();            /* request nikal gayi */
+        return p.catch(function(){
+          /* network par mar gayi - beacon se ek aur koshish */
+          if(!sheetBeacon(data)) { sheetPendingSet(data); }
+          return 'retried';
+        });
+      }catch(e){}
+    }
+
+    if(sheetBeacon(data)){ sheetPendingClear(); return Promise.resolve('beacon'); }
+    return Promise.resolve('pending');   /* kuch na nikal saka - agli load par jayega */
   }catch(e){ return Promise.resolve(); }
 }
 
