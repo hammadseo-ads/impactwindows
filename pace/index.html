@@ -467,6 +467,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </style>
 <!-- MOBILE: hero me form pehle, baqi baatein uske baad -->
 <style>
+/* Banner: phone par chhoti tehreer, taake 2 line me aa jaye */
+.tb-short{display:none}
+@media(max-width:700px){
+  .tb-long{display:none}
+  .tb-short{display:inline}
+  .topbar{font-size:12px;line-height:1.5;padding:8px 0}
+}
+
 /* Hero ke do button: is class ki koi CSS nahi thi, is liye beech me
    faasla hi nahi aa raha tha aur dono alag alag chaurai ke lagte the. */
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
@@ -485,7 +493,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </head>
 <body>
 
-<div class="topbar"><div class="container"><i class="fas fa-shield-halved"></i> Florida PACE program: $0 down on impact windows, doors &amp; roofing. <a href="tel:8664813679">Call (866) 481-3679</a> to see if you qualify.</div></div>
+<div class="topbar"><div class="container"><i class="fas fa-shield-halved"></i> <span class="tb-long">Florida PACE program: $0 down on impact windows, doors &amp; roofing. <a href="tel:8664813679">Call (866) 481-3679</a> to see if you qualify.</span><span class="tb-short">Florida PACE: $0 down on windows, doors &amp; roofing. <a href="tel:8664813679">Call (866) 481-3679</a></span></div></div>
 
 <nav class="nav">
   <div class="container nav-inner">
