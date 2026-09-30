@@ -462,7 +462,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .faq-item{background:#fff;border:1px solid #eef2f7;border-radius:12px;margin-bottom:12px;overflow:hidden}
 .faq-item h3{font-family:'Poppins',sans-serif;font-size:15.5px;font-weight:800;color:var(--dark);padding:18px 20px 0}
 .faq-item p{font-size:14.5px;line-height:1.7;color:var(--gray);padding:8px 20px 18px}
-.own-label{font-size:14px;font-weight:700;color:var(--dark);margin:2px 0 8px}
 @media(max-width:900px){ .steps-grid{grid-template-columns:1fr 1fr;gap:12px} }
 @media(max-width:560px){ .steps-grid{grid-template-columns:1fr} }
 </style>
@@ -533,19 +532,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           </div>
           <div class="fstep fstep-2">
             <button type="button" class="form-back"><i class="fas fa-arrow-left"></i> Atr&aacute;s</button>
-            <p class="own-label">&iquest;Es usted el due&ntilde;o de esta propiedad? *</p>
-            <div class="form-group install-choice">
-              <label class="install-opt"><input type="radio" name="own_property" value="Yes" required><span><strong>S&iacute;</strong>, soy el due&ntilde;o</span></label>
-              <label class="install-opt"><input type="radio" name="own_property" value="No"><span><strong>No</strong>, soy inquilino</span></label>
-            </div>
-            <div class="form-group">
-              <select name="pace_need" required>
-                <option value="" disabled selected>&iquest;Qu&eacute; necesita? *</option>
-                <option value="windows">Ventanas y puertas de impacto</option>
-                <option value="roof">Techo</option>
-                <option value="both">Ambos</option>
-              </select>
-            </div>
             <div class="form-group">
               <select name="call_time">
                 <option value="" disabled selected>&iquest;Mejor hora para llamarle?</option>
@@ -554,6 +540,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
                 <option value="Evening (4pm-8pm)">Noche (4pm-8pm)</option>
                 <option value="Anytime">Cualquier hora</option>
               </select>
+            </div>
+            <div class="form-group install-choice">
+              <label class="install-opt"><input type="radio" name="install_option" value="with" required><span>Ventanas o puertas de impacto <strong>con</strong> instalaci&oacute;n</span></label>
+              <label class="install-opt"><input type="radio" name="install_option" value="without"><span>Ventanas o puertas de impacto <strong>sin</strong> instalaci&oacute;n</span></label>
             </div>
             <div class="sms-consent"><input type="checkbox" id="smsConsent" name="00NQQ00000IECjh" value="1"><label for="smsConsent">Al marcar esta casilla, acepta recibir mensajes de texto promocionales de USA Home Improvement al n&uacute;mero indicado. Pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar.</label></div>
             <div class="sms-consent"><input type="checkbox" id="smsServicesConsent" name="00NQQ00000IECyD" value="1"><label for="smsServicesConsent">Al marcar esta casilla, acepta recibir mensajes de texto sobre su estimado, su cita y su instalaci&oacute;n de USA Home Improvement al n&uacute;mero indicado. Pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar.</label></div>
@@ -845,17 +835,12 @@ function handleZapSubmit(e){
   phoneEl.setCustomValidity('');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test((emailEl.value||'').trim())){ emailEl.setCustomValidity('Please enter a valid email address, e.g. name@example.com.'); emailEl.reportValidity(); return false; }
   emailEl.setCustomValidity('');
-  /* PACE page: kaam hamesha installation ke sath hota hai, is liye
-     "Interested In" me wahi value jati hai jo Salesforce ki list me mojood
-     hai. Ghar ki milkiyat aur zaroorat Message field me likh dete hain. */
-  var _own=((form.querySelector('input[name="own_property"]:checked')||{}).value)||'';
-  var _need=((form.querySelector('select[name="pace_need"]')||{}).value)||'';
-  var _svc=(_need==='roof')?'Roofing':'Windows & Doors';
-  var _needText=_need==='roof'?'Roof':(_need==='both'?'Windows, doors and roof':'Impact windows & doors');
+  // Sheet ko batao user ne kya chuna, phir Ads form submission tab me bhejo
+  var _pick=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+  var _svc=_pick==='with'?'Impact Windows or Doors with installation'
+        :(_pick==='without'?'Impact Windows or Doors without installation':'');
   var _svcField=form.querySelector('input[name="00N5a00000DXmGJ"]');
   if(_svcField) _svcField.value=_svc;
-  var _msgField=form.querySelector('input[name="00N5a00000DWvKF"]');
-  if(_msgField) _msgField.value='PACE | Owns property: '+(_own||'-')+' | Needs: '+_needText;
   // GA4: standard lead event on every valid submit, plus a separate event only
   // when this is the visitor's first-ever GA4 session — so a "converted on the
   // very first visit" lead can be segmented from a repeat-visit submit.
@@ -872,7 +857,9 @@ function handleZapSubmit(e){
   try{ jobs.push(Promise.resolve(sendToSheet(form))); }catch(err){}
   try{ jobs.push(Promise.resolve(sendToZapier(form))); }catch(err){}
   var btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> Sending...'; }
-  var _dest = location.pathname.indexOf('/es/')!==-1 ? '/es/gracias/' : '/thank-you/';
+  var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+  var _base = location.pathname.indexOf('/es/')!==-1 ? '/es/gracias/' : '/thank-you/';
+  var _dest = (_inst==='without') ? _base+'?noconv=1' : _base;  // without-installation: no Google Ads conversion
   /* Sheet aur Zapier dono ke poore hone tak ruko, magar 2.5 second se zyada nahi.
      keepalive ki wajah se request page badalne ke baad bhi mukammal hoti hai. */
   var gone=false, go=function(){ if(gone) return; gone=true; location.href=_dest; };
@@ -890,9 +877,8 @@ function sendToZapier(form){
     var d=new Date();
     var _full=(((form.querySelector('.sf-fullname')||{}).value)||get('full_name')||'').trim().replace(/\s+/g,' ');
     var _p=_full.split(' ');
-    var _own=((form.querySelector('input[name="own_property"]:checked')||{}).value)||'';
-    var _need=((form.querySelector('select[name="pace_need"]')||{}).value)||'';
-    var _serviceType=(_need==='roof')?'Roofing':'Windows & Doors';
+    var _inst=((form.querySelector('input[name="install_option"]:checked')||{}).value)||'';
+    var _serviceType=_inst==='with'?'Impact Windows or Doors with installation':(_inst==='without'?'Impact Windows or Doors without installation':'');
     var payload={
       full_name:_full,
       first_name:_p.length>1?_p[0]:'',
@@ -901,10 +887,7 @@ function sendToZapier(form){
       phone:get('phone'),
       zip_code:get('zip'),
       service_type:_serviceType,
-      installation:'with',
-      program:'PACE',
-      owns_property:_own,
-      pace_need:_need,
+      installation:_inst,
       call_time:get('call_time'),
       consent_sms:chk('00NQQ00000IECyD'),      // service-related SMS (snippet: consent_sms)
       consent_promo:chk('00NQQ00000IECjh'),    // marketing texts (snippet: consent_promo)
