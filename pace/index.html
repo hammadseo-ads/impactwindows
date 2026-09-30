@@ -467,6 +467,17 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </style>
 <!-- MOBILE: hero me form pehle, baqi baatein uske baad -->
 <style>
+/* Hero ke points: icon halke laal box ke andar, jaisa baqi pages par hai */
+.hero-copy .hero-checklist{gap:14px}
+.hero-copy .hero-checklist li{align-items:center;gap:13px;line-height:1.5;color:#334155}
+.hero-copy .hero-checklist li i{width:36px;height:36px;margin-top:0;border-radius:10px;
+  background:rgba(226,71,78,.09);color:var(--accent);font-size:15px;
+  display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:600px){
+  .hero-copy .hero-checklist li{gap:11px;font-size:14.5px}
+  .hero-copy .hero-checklist li i{width:32px;height:32px;font-size:14px}
+}
+
 /* Banner: phone par chhoti tehreer, taake 2 line me aa jaye */
 .tb-short{display:none}
 @media(max-width:700px){
