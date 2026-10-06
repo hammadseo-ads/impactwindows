@@ -164,6 +164,14 @@
       "destination": "/es/pace/index.html"
     },
     {
+      "source": "/miami-dade",
+      "destination": "/miami-dade/index.html"
+    },
+    {
+      "source": "/miami-dade/",
+      "destination": "/miami-dade/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
