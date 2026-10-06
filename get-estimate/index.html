@@ -14,14 +14,14 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xnzl94h7lc");
 </script>
-<!-- Google tag (gtag.js) — Google Ads -->
+<!-- Google tag (gtag.js) - Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-709144889"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-709144889');   // Google Ads
-  gtag('config', 'G-CG54K79DS0');   // GA4 — Quote Landing
+  gtag('config', 'G-CG54K79DS0');   // GA4 - Quote Landing
 </script>
 <!-- Meta Pixel Code -->
 <script>
@@ -162,7 +162,7 @@ a{text-decoration:none;color:inherit}
 .form-submit:hover{filter:brightness(1.05)}
 .form-legal{font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
 .form-legal a{color:var(--navy);text-decoration:underline;font-weight:600}
-/* 2-step form (desktop only) — mobile shows everything as one form */
+/* 2-step form (desktop only) - mobile shows everything as one form */
 .form-continue{display:none;width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;align-items:center;justify-content:center;gap:8px;margin-top:4px;transition:.2s}
 .form-continue:hover{background:var(--navy-d)}
 .form-back{display:none;background:none;border:none;color:var(--muted);font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;align-items:center;gap:6px;margin-bottom:10px;padding:0}
@@ -226,7 +226,7 @@ a{text-decoration:none;color:inherit}
 .foot-logo{height:38px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.9}
 .foot .copy{margin-top:6px;font-size:12px;opacity:.7}
 
-/* ===== OFFER POPUP — desktop image cards | mobile bottom sheet ===== */
+/* ===== OFFER POPUP - desktop image cards | mobile bottom sheet ===== */
 .offer-modal{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(10,10,10,.72);backdrop-filter:blur(5px)}
 .offer-modal.open{display:flex}
 .offer-modal-box{position:relative;width:100%;max-width:760px;max-height:94dvh;background:var(--white);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 90px rgba(0,0,0,.45)}
@@ -837,7 +837,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <script src="/assets/js/sheet-webhook.js?v=3"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-// YOUTUBE PLAYERS — sound on/off + play/pause controls via the IFrame API.
+// YOUTUBE PLAYERS - sound on/off + play/pause controls via the IFrame API.
 var ytPlayers={},ytMutedState={},ytPausedState={};
 var ytIDs=['heroYT','test1YT','test2YT'];
 var ytApiReady=false, ytPending=[];
@@ -878,7 +878,7 @@ function toggleYTPause(id,btnId){
   else{p.pauseVideo();ytPausedState[id]=true;if(btn)btn.innerHTML='<i class="fas fa-play"></i>';}
 }
 
-// ATTRIBUTION — remember the ad click and landing page (feeds gclid/utm to Zapier).
+// ATTRIBUTION - remember the ad click and landing page (feeds gclid/utm to Zapier).
 // Captured immediately (not on DOMContentLoaded) so a click ID is never missed.
 (function(){
   try{
@@ -921,7 +921,7 @@ function handleZapSubmit(e){
   var _svcField=form.querySelector('input[name="00N5a00000DXmGJ"]');
   if(_svcField) _svcField.value=_svc;
   // GA4: standard lead event on every valid submit, plus a separate event only
-  // when this is the visitor's first-ever GA4 session — so a "converted on the
+  // when this is the visitor's first-ever GA4 session - so a "converted on the
   // very first visit" lead can be segmented from a repeat-visit submit.
   if(window.gtag){
     try{
@@ -1002,14 +1002,14 @@ function sendToZapier(form){
   }catch(e){}
 }
 
-// 2-STEP FORM (desktop only) — Continue validates step 1, Back returns
+// 2-STEP FORM (desktop only) - Continue validates step 1, Back returns
 document.querySelectorAll('.form-continue').forEach(function(btn){
   btn.addEventListener('click',function(){
     var form=btn.closest('form');
     var fields=form.querySelectorAll('.fstep-1 input');
     for(var i=0;i<fields.length;i++){ if(!fields[i].checkValidity()){ fields[i].reportValidity(); return; } }
     form.classList.remove('step-1'); form.classList.add('step-2');
-    // GA4: "Form initiate" — once per form, only after step-1 actually validates.
+    // GA4: "Form initiate" - once per form, only after step-1 actually validates.
     if(!form.dataset.gaStarted){
       form.dataset.gaStarted='1';
       if(window.gtag) gtag('event','form_start_step1',{form_id: form.id||'quote_form'});
@@ -1110,7 +1110,7 @@ document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight')navigateLightbox(1);
 });
 
-// OFFER POPUP — desktop modal | mobile bottom sheet that collapses to a peek strip.
+// OFFER POPUP - desktop modal | mobile bottom sheet that collapses to a peek strip.
 document.addEventListener('DOMContentLoaded',function(){
   var modal=document.getElementById('offerModal');
   if(!modal) return;
