@@ -172,6 +172,14 @@
       "destination": "/miami-dade/index.html"
     },
     {
+      "source": "/palm-beach",
+      "destination": "/palm-beach/index.html"
+    },
+    {
+      "source": "/palm-beach/",
+      "destination": "/palm-beach/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
