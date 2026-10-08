@@ -895,6 +895,64 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .inline-form-section .inline-form-wrap{gap:0!important}
 }
 </style>
+
+<!-- ZABAAN BADALNE KA BUTTON -->
+<style>
+/* EN | ES toggle: mojooda zabaan safed khane me, doosri par click. */
+.lang-toggle{display:inline-flex;align-items:center;gap:2px;background:#eef3f8;
+  border:1px solid #e2e8f0;border-radius:999px;padding:3px}
+.lang-opt{display:inline-flex;align-items:center;justify-content:center;min-width:34px;
+  padding:6px 10px;border-radius:999px;font-size:12.5px;font-weight:800;line-height:1;
+  color:#64748b;text-decoration:none;transition:color .2s,background .2s}
+.lang-opt.is-on{background:#fff;color:var(--primary);box-shadow:0 1px 3px rgba(16,42,67,.18)}
+a.lang-opt:hover{color:var(--accent)}
+
+/* Nav me ab ek cheez zyada hai, aur Spanish ke lafz lambe hain. Is liye
+   items ko tootne se roka, aur links thora pehle hamburger me daal diye. */
+.nav-inner{gap:16px}
+.nav-links{gap:22px}
+.nav-links a{white-space:nowrap}
+.nav-cta{flex-wrap:nowrap}
+.nav-cta .btn{white-space:nowrap}
+.nav-phone{white-space:nowrap}
+@media(max-width:1250px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+}
+@media(max-width:600px){
+  .nav-inner{gap:8px}
+  .nav-cta{gap:7px}
+  .nav-phone{font-size:13px;padding:9px 14px}
+  .lang-opt{min-width:30px;padding:5px 8px;font-size:12px}
+}
+@media(max-width:430px){
+  /* phone par jagah tang hai: pill, logo aur padding chhote */
+  .navbar .nav-inner{gap:6px;padding-left:16px;padding-right:16px}
+  .nav-logo img{height:32px}
+  .nav-phone{font-size:12.5px;padding:8px 12px;gap:5px}
+  .lang-opt{min-width:27px;padding:5px 6px;font-size:11.5px}
+  .lang-toggle{padding:2px}
+}
+@media(max-width:380px){
+  .nav-logo img{height:29px}
+  .nav-phone{font-size:12px;padding:7px 10px}
+  .navbar .nav-inner{gap:5px;padding-left:12px;padding-right:12px}
+}
+</style>
+<style>
+.lang-switch{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:1px solid #dfe6ee;
+  border-radius:999px;background:#fff;color:#334155;font-size:13.5px;font-weight:700;text-decoration:none;
+  transition:border-color .2s,color .2s}
+.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
+.lang-switch i{font-size:13px;color:var(--accent)}
+.lang-short{display:none}
+@media(max-width:1150px){
+  .lang-full{display:none}
+  .lang-short{display:inline}
+  .lang-switch{padding:8px 12px;font-size:13px;gap:6px}
+}
+@media(max-width:380px){ .lang-switch{padding:7px 10px} .lang-switch i{display:none} }
+</style>
 </head>
 <body>
 
@@ -919,6 +977,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="nav-cta">
       <a href="tel:8664813679" class="nav-phone"><i class="fas fa-phone-volume"></i> (866) 481-3679</a>
       <a href="#quoteCard" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
+      <div class="lang-toggle" role="group" aria-label="Language"><span class="lang-opt is-on" aria-current="true">EN</span><a href="/es/" id="langSwitch" class="lang-opt" hreflang="es" aria-label="Ver esta p&aacute;gina en espa&ntilde;ol">ES</a></div>
     </div>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </div>
@@ -2115,5 +2174,16 @@ document.head.appendChild(mobileStyle);
 <!-- CallRail dynamic number insertion -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/609637261/da99578ab198e251ef67/12/swap.js"></script>
 <script src="/assets/js/sheet-webhook.js?v=3"></script>
+
+<script>
+/* Zabaan badalte waqt URL ke tracking parameters (gclid waghera) saath le jao,
+   warna Spanish page par attribution gum ho jati hai. */
+(function(){
+  try{
+    var a=document.getElementById('langSwitch');
+    if(a && location.search){ a.href = a.getAttribute('href') + location.search; }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
