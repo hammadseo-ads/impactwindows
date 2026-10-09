@@ -180,6 +180,14 @@
       "destination": "/palm-beach/index.html"
     },
     {
+      "source": "/parkland",
+      "destination": "/parkland/index.html"
+    },
+    {
+      "source": "/parkland/",
+      "destination": "/parkland/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
