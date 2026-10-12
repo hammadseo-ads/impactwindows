@@ -188,20 +188,36 @@
       "destination": "/parkland/index.html"
     },
     {
+      "source": "/miami-dade/impact-windows",
+      "destination": "/miami-dade/impact-windows/index.html"
+    },
+    {
+      "source": "/miami-dade/impact-windows/",
+      "destination": "/miami-dade/impact-windows/index.html"
+    },
+    {
       "source": "/miami-dade-impact-windows",
-      "destination": "/miami-dade-impact-windows/index.html"
+      "destination": "/miami-dade/impact-windows/index.html"
     },
     {
       "source": "/miami-dade-impact-windows/",
-      "destination": "/miami-dade-impact-windows/index.html"
+      "destination": "/miami-dade/impact-windows/index.html"
+    },
+    {
+      "source": "/miami-dade/impact-doors",
+      "destination": "/miami-dade/impact-doors/index.html"
+    },
+    {
+      "source": "/miami-dade/impact-doors/",
+      "destination": "/miami-dade/impact-doors/index.html"
     },
     {
       "source": "/miami-dade-impact-doors",
-      "destination": "/miami-dade-impact-doors/index.html"
+      "destination": "/miami-dade/impact-doors/index.html"
     },
     {
       "source": "/miami-dade-impact-doors/",
-      "destination": "/miami-dade-impact-doors/index.html"
+      "destination": "/miami-dade/impact-doors/index.html"
     },
     {
       "source": "/(.*)",
