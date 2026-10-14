@@ -488,6 +488,24 @@ a.lang-opt:hover{color:var(--accent)}
   .nav-phone{font-size:12px;padding:7px 10px}
   .navbar .nav-inner,.nav .nav-inner{gap:5px;padding-left:12px;padding-right:12px}
 }
+
+/* Why Choose Us: is page ke apne tokens par bana hua card grid.
+   Mobile par do kam ahem points chhup jate hain, baqi site ki tarah. */
+.why-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+  gap:16px;margin-top:34px}
+.why-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(226,71,78,.26)}
+.why-card .wc-ic{width:44px;height:44px;border-radius:12px;background:rgba(226,71,78,.08);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.why-card .wc-ic i{color:var(--accent);font-size:18px}
+.why-card h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.3}
+.why-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
+@media(max-width:620px){
+  .why-cards{grid-template-columns:1fr;gap:12px;margin-top:26px}
+  .why-card{padding:18px 16px}
+  .wc-hide-sm{display:none}
+}
 </style>
 </head>
 <body>
@@ -743,6 +761,63 @@ a.lang-opt:hover{color:var(--accent)}
         <img src="/assets/homes/SALA V2.png" alt="Interior view" loading="lazy">
         <span class="photo-count"><i class="fas fa-images"></i> 3 Photos</span>
         <div class="overlay"><span><i class="fas fa-expand"></i> View Full Project</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="sec" id="whyus">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Why USAHI</span>
+      <h2>Why Homeowners Choose Us</h2>
+    </div>
+    <div class="why-cards">
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-shield-halved"></i></div>
+        <h4>Hurricane-Rated Protection</h4>
+        <p>All our impact windows meet Florida Building Code and large missile impact standards for Category 5 storms.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-hand-holding-dollar"></i></div>
+        <h4>$0 Down, 100% Financing</h4>
+        <p>Multiple financing options including PACE programs. As low as $5/month per window installed.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-certificate"></i></div>
+        <h4>Licensed &amp; Insured</h4>
+        <p>General Contractor CGC1526707. BBB A+ rated with 500+ verified Google reviews.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-industry"></i></div>
+        <h4>Direct Manufacturer Pricing</h4>
+        <p>As an authorized ES Windows dealer we buy direct, so there is no middleman in the price.</p>
+      </div>
+      <div class="why-card wc-hide-sm">
+        <div class="wc-ic"><i class="fas fa-bolt"></i></div>
+        <h4>Energy Savings</h4>
+        <p>Low-E glass reduces energy costs and blocks up to 99% of UV rays, protecting your home&#39;s interior.</p>
+      </div>
+      <div class="why-card wc-hide-sm">
+        <div class="wc-ic"><i class="fas fa-headset"></i></div>
+        <h4>Dedicated Project Manager</h4>
+        <p>One point of contact from consultation through installation and final inspection.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-file-signature"></i></div>
+        <h4>Permits &amp; HOA Coordination</h4>
+        <p>Whether your project requires city, county, or HOA approval, we help manage the necessary permitting and documentation.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-award"></i></div>
+        <h4>15+ Year Warranty</h4>
+        <p>On most jobs the windows and doors carry a 15+ year warranty, and our labor is covered for 1 year. The warranty is transferable to the next owner if you sell the home.</p>
+      </div>
+      <div class="why-card">
+        <div class="wc-ic"><i class="fas fa-screwdriver-wrench"></i></div>
+        <h4>Expert Installers</h4>
+        <p>Factory-trained and ES Windows certified.</p>
       </div>
     </div>
   </div>
