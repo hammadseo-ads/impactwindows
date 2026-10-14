@@ -1354,6 +1354,19 @@ a.lang-opt:hover{color:var(--accent)}
   .navbar .nav-inner,.nav .nav-inner{gap:5px;padding-left:12px;padding-right:12px}
 }
 </style>
+<!-- WHY US: desktop par points do column, mobile par do kam ahem points chhupe.
+     Dono baatein (energy aur project manager) page me kahin aur bhi likhi hui hain. -->
+<style>
+@media(min-width:992px){
+  .why-grid{grid-template-columns:320px minmax(0,1fr)!important;gap:44px!important;align-items:start!important}
+  .why-video{width:320px;justify-self:start;margin-left:0;margin-right:0}
+  .why-features{grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px 24px}
+}
+@media(max-width:620px){
+  .why-hide-sm{display:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -1369,7 +1382,6 @@ a.lang-opt:hover{color:var(--accent)}
   <div class="container nav-inner">
     <a href="#" class="nav-logo"><img loading="lazy" decoding="async" src="/assets/logo.webp" alt="USA Home Improvement"></a>
     <ul class="nav-links">
-      <li><a href="#before-after">Before & After</a></li>
       <li><a href="#why-us">Why Us</a></li>
       <li><a href="#financing">Financing</a></li>
       <li><a href="#offers">Offers</a></li>
@@ -1400,6 +1412,7 @@ a.lang-opt:hover{color:var(--accent)}
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 impact glass windows, engineered for daily use</li> <li><span class="check-icon"><i class="fas fa-house-chimney-window"></i></span> Impact windows and doors Miami-Dade homeowners rely on, permit ready</li>
           <li><span class="check-icon"><i class="fas fa-certificate"></i></span> Licensed CGC1526707 &bull; BBB A+ Rated</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down financing &bull; direct manufacturer pricing</li>
+          <li><span class="check-icon"><i class="fas fa-award"></i></span> 15+ year warranty, transferable if you sell</li>
         </ul>
                 <div class="hero-btns">
           <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Get Free Estimate</a>
@@ -1709,37 +1722,63 @@ a.lang-opt:hover{color:var(--accent)}
 
 <!-- TEAM -->
 <!-- TESTIMONIALS -->
-<section class="ba-section" id="before-after">
+<section class="why-section" id="why-us">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Transformations</span>
-      <h2 class="section-title">See the Difference Impact Windows Make</h2>
-      <p class="section-subtitle" style="margin:0 auto">Drag the slider to see real impact window installation results on Florida homes, before and after.</p>
+      <span class="section-label">Why USAHI</span>
+      <h2 class="section-title">Why Homeowners Choose Our Impact Windows Contractors</h2>
     </div>
-    <div class="ba-grid">
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before1.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after1.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
+    <div class="why-grid">
+      <div class="why-video reveal">
+        <div class="yt-crop-fill">
+          <iframe id="whyYT" data-src="https://www.youtube.com/embed/OrIHJR8W7ok?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=OrIHJR8W7ok&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pause video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Toggle sound">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
       </div>
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before2.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after2.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
-      </div>
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before3.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after3.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Before</span>
-        <span class="ba-label after">After</span>
+      <div class="why-features reveal">
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <div><h4>Hurricane-Rated Protection</h4><p>All our impact rated windows meet Florida Building Code and large missile impact standards for Category 5 storms.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <div><h4>$0 Down, 100% Financing</h4><p>Multiple financing options including PACE programs. As low as $5/month per window installed.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <div><h4>Licensed & Insured</h4><p>A licensed residential window company. General Contractor CGC1526707, BBB A+ rated with 500+ verified Google reviews.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-industry"></i></div>
+          <div><h4>Direct Manufacturer Pricing</h4><p>Factory direct, straight from ES Windows, so you pay an impact window company and not a middleman.</p></div>
+        </div>
+        <div class="why-feature why-hide-sm">
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <div><h4>Energy Savings</h4><p>Low-E glass reduces energy costs and blocks up to 99% of UV rays, protecting your home's interior.</p></div>
+        </div>
+        <div class="why-feature why-hide-sm">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <div><h4>Dedicated Project Manager</h4><p>One point of contact from consultation through installation and final inspection.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-file-signature"></i></div>
+          <div><h4>Permits &amp; HOA Coordination</h4><p>Whether your project requires city, county, or HOA
+            approval, we help manage the necessary permitting and documentation.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-award"></i></div>
+          <div><h4>15+ Year Warranty</h4><p>On most jobs the windows and doors carry a 15+ year warranty, and our
+            labor is covered for 1 year. The warranty is transferable to the next owner if you sell the home.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <div><h4>Expert Installers</h4><p>Factory-trained and ES Windows certified.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1823,53 +1862,6 @@ a.lang-opt:hover{color:var(--accent)}
 
 <!-- IMPACT WINDOW INSTALLATION -->
 
-<section class="why-section" id="why-us">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Why USAHI</span>
-      <h2 class="section-title">Why Homeowners Choose Our Impact Windows Contractors</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-video reveal">
-        <div class="yt-crop-fill">
-          <iframe id="whyYT" data-src="https://www.youtube.com/embed/OrIHJR8W7ok?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=OrIHJR8W7ok&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pause video">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Toggle sound">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-      </div>
-      <div class="why-features reveal">
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
-          <div><h4>Hurricane-Rated Protection</h4><p>All our impact rated windows meet Florida Building Code and large missile impact standards for Category 5 storms.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-          <div><h4>$0 Down, 100% Financing</h4><p>Multiple financing options including PACE programs. As low as $5/month per window installed.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-certificate"></i></div>
-          <div><h4>Licensed & Insured</h4><p>A licensed residential window company. General Contractor CGC1526707, BBB A+ rated with 500+ verified Google reviews.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-industry"></i></div>
-          <div><h4>Direct Manufacturer Pricing</h4><p>Factory direct, straight from ES Windows and Tecnoglass, so you pay an impact window company and not a middleman.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-bolt"></i></div>
-          <div><h4>Energy Savings</h4><p>Low-E glass reduces energy costs and blocks up to 99% of UV rays, protecting your home's interior.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <div><h4>Dedicated Project Manager</h4><p>One point of contact from consultation through installation and final inspection.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <script>

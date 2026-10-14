@@ -918,6 +918,19 @@ a.lang-opt:hover{color:var(--accent)}
 }
 @media(max-width:380px){ .lang-switch{padding:7px 10px} .lang-switch i{display:none} }
 </style>
+<!-- WHY US: desktop par points do column, mobile par do kam ahem points chhupe.
+     Dono baatein (energy aur project manager) page me kahin aur bhi likhi hui hain. -->
+<style>
+@media(min-width:992px){
+  .why-grid{grid-template-columns:320px minmax(0,1fr)!important;gap:44px!important;align-items:start!important}
+  .why-video{width:320px;justify-self:start;margin-left:0;margin-right:0}
+  .why-features{grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px 24px}
+}
+@media(max-width:620px){
+  .why-hide-sm{display:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -933,7 +946,6 @@ a.lang-opt:hover{color:var(--accent)}
   <div class="container nav-inner">
     <a href="#" class="nav-logo"><img loading="lazy" decoding="async" src="/assets/logo.webp" alt="USA Home Improvement"></a>
     <ul class="nav-links">
-      <li><a href="#before-after">Antes y Después</a></li>
       <li><a href="#projects">Proyectos</a></li>
       <li><a href="#why-us">Por Qué Nosotros</a></li>
       <li><a href="#services">Servicios</a></li>
@@ -965,6 +977,7 @@ a.lang-opt:hover{color:var(--accent)}
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 de enganche, desde $5/mes por ventana</li>
           <li><span class="check-icon"><i class="fas fa-certificate"></i></span> Licencia CGC1526707 &bull; Calificación A+ del BBB</li>
           <li><span class="check-icon"><i class="fas fa-bolt"></i></span> Facturas de luz y primas de seguro más bajas</li>
+          <li><span class="check-icon"><i class="fas fa-award"></i></span> Garant&iacute;a de 15+ a&ntilde;os, transferible si vende la casa</li>
         </ul>
         <div class="hero-btns">
           <a href="#quoteCard" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agende Estimado Gratis</a>
@@ -1265,37 +1278,65 @@ a.lang-opt:hover{color:var(--accent)}
 </section>
 
 <!-- BEHIND THE SCENES - local video background -->
-<section class="ba-section" id="before-after">
+<section class="why-section" id="why-us">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <span class="section-label">Transformaciones</span>
-      <h2 class="section-title">Vea la Diferencia que Hacen las Ventanas de Impacto</h2>
-      <p class="section-subtitle" style="margin:0 auto">Deslice el control para ver nuestras transformaciones de antes y después en casas reales del sur de Florida.</p>
+      <span class="section-label">Por Qué USAHI</span>
+      <h2 class="section-title">Por Qué los Propietarios Nos Eligen</h2>
     </div>
-    <div class="ba-grid">
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before1.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after1.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
+    <div class="why-grid">
+      <div class="why-video reveal">
+        <div class="yt-crop-fill">
+          <iframe id="whyYT" data-src="https://www.youtube.com/embed/BR-WclYnlzU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=BR-WclYnlzU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pausar video">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Activar o silenciar sonido">
+          <i class="fas fa-volume-xmark"></i>
+        </button>
       </div>
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before2.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after2.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
-      </div>
-      <div class="ba-item reveal" data-ba>
-        <img loading="lazy" decoding="async" src="/assets/before-after/before3.png" alt="Before" class="ba-before">
-        <img loading="lazy" decoding="async" src="/assets/before-after/after3.png" alt="After" class="ba-after">
-        <div class="ba-slider"></div>
-        <div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div>
-        <span class="ba-label before">Antes</span>
-        <span class="ba-label after">Después</span>
+      <div class="why-features reveal">
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <div><h4>Protección Certificada contra Huracanes</h4><p>Todas nuestras ventanas de impacto cumplen con el Código de Construcción de Florida y los estándares de impacto de proyectil grande para tormentas categoría 5.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <div><h4>$0 de Enganche, Financiamiento del 100%</h4><p>Varias opciones de financiamiento, incluidos los programas PACE. Desde $5/mes por ventana instalada.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <div><h4>Con Licencia y Asegurados</h4><p>Contratista general CGC1526707. Calificación A+ del BBB con más de 500 reseñas verificadas en Google.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-industry"></i></div>
+          <div><h4>Precios Directos de Fábrica</h4><p>Como distribuidor autorizado de ES Windows, compramos directo y eliminamos al intermediario.</p></div>
+        </div>
+        <div class="why-feature why-hide-sm">
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <div><h4>Ahorro de Energía</h4><p>El vidrio Low-E reduce el consumo de energía y bloquea hasta el 99% de los rayos UV, protegiendo el interior de su casa.</p></div>
+        </div>
+        <div class="why-feature why-hide-sm">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <div><h4>Gerente de Proyecto Dedicado</h4><p>Un solo punto de contacto desde la consulta hasta la instalación y la inspección final.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-file-signature"></i></div>
+          <div><h4>Permisos y Coordinaci&oacute;n con la HOA</h4><p>Ya sea que su proyecto requiera la
+            aprobaci&oacute;n de la ciudad, el condado o la HOA, le ayudamos a gestionar los permisos y la
+            documentaci&oacute;n necesarios.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-award"></i></div>
+          <div><h4>Garant&iacute;a de 15+ A&ntilde;os</h4><p>En la mayor&iacute;a de los trabajos las ventanas y
+            puertas tienen una garant&iacute;a de 15+ a&ntilde;os, y la mano de obra est&aacute; cubierta por 1
+            a&ntilde;o. La garant&iacute;a es transferible al siguiente propietario si vende la casa.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <div><h4>Instaladores Expertos</h4><p>Capacitados en f&aacute;brica y certificados por ES Windows.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1340,53 +1381,6 @@ a.lang-opt:hover{color:var(--accent)}
 </section>
 
 <!-- TESTING STRENGTH VIDEOS -->
-<section class="why-section" id="why-us">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Por Qué USAHI</span>
-      <h2 class="section-title">Por Qué los Propietarios Nos Eligen</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-video reveal">
-        <div class="yt-crop-fill">
-          <iframe id="whyYT" data-src="https://www.youtube.com/embed/BR-WclYnlzU?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=BR-WclYnlzU&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Why Choose USAHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <button class="video-pause-btn" id="whyPauseBtn" onclick="toggleYTPause('whyYT','whyPauseBtn')" style="display:flex" aria-label="Pausar video">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button class="sound-toggle" onclick="toggleYTVideoSound('whyYT',this)" aria-label="Activar o silenciar sonido">
-          <i class="fas fa-volume-xmark"></i>
-        </button>
-      </div>
-      <div class="why-features reveal">
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
-          <div><h4>Protección Certificada contra Huracanes</h4><p>Todas nuestras ventanas de impacto cumplen con el Código de Construcción de Florida y los estándares de impacto de proyectil grande para tormentas categoría 5.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-          <div><h4>$0 de Enganche, Financiamiento del 100%</h4><p>Varias opciones de financiamiento, incluidos los programas PACE. Desde $5/mes por ventana instalada.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-certificate"></i></div>
-          <div><h4>Con Licencia y Asegurados</h4><p>Contratista general CGC1526707. Calificación A+ del BBB con más de 500 reseñas verificadas en Google.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-industry"></i></div>
-          <div><h4>Precios Directos de Fábrica</h4><p>Como distribuidor autorizado de ES Windows y Tecnoglass, eliminamos al intermediario para ahorrarle dinero.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-bolt"></i></div>
-          <div><h4>Ahorro de Energía</h4><p>El vidrio Low-E reduce el consumo de energía y bloquea hasta el 99% de los rayos UV, protegiendo el interior de su casa.</p></div>
-        </div>
-        <div class="why-feature">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <div><h4>Gerente de Proyecto Dedicado</h4><p>Un solo punto de contacto desde la consulta hasta la instalación y la inspección final.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SERVICES -->
 <section class="services-section" id="services">
@@ -1403,7 +1397,7 @@ a.lang-opt:hover{color:var(--accent)}
         <img loading="lazy" decoding="async" src="/assets/homes/web-2.jpg" alt="Impact Windows">
         <div class="svc-overlay">
           <h4>Ventanas de Impacto</h4>
-          <p>Ventanas certificadas contra huracanes de ES Windows y Tecnoglass. Eficientes, reducen el ruido y bloquean los rayos UV.</p>
+          <p>Ventanas certificadas contra huracanes de ES Windows. Eficientes, reducen el ruido y bloquean los rayos UV.</p>
         </div>
       </div>
       <div class="service-card reveal">
