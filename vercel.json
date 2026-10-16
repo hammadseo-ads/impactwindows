@@ -220,6 +220,22 @@
       "destination": "/miami-dade/impact-doors/index.html"
     },
     {
+      "source": "/palm-beach/impact-windows",
+      "destination": "/palm-beach/impact-windows/index.html"
+    },
+    {
+      "source": "/palm-beach/impact-windows/",
+      "destination": "/palm-beach/impact-windows/index.html"
+    },
+    {
+      "source": "/palm-beach/impact-doors",
+      "destination": "/palm-beach/impact-doors/index.html"
+    },
+    {
+      "source": "/palm-beach/impact-doors/",
+      "destination": "/palm-beach/impact-doors/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
