@@ -1,11 +1,18 @@
 var SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyBrG7JbdUMc2sAY75928tIfD2_VGbvuJmgK_Sgd5Ss8XCBW_qJKH8zb3leLLCgwiMZ/exec';
 
-/* Sheet me row har haal me jani chahiye.
-   1) fetch + keepalive: page badalne ke baad bhi chalta rehta hai aur poora
-      hone par jawab deta hai, is liye pata chal jata hai ke chala gaya.
-   2) na chale to sendBeacon.
-   3) phir bhi na gaya to payload localStorage me pada rehta hai aur agli
-      page load par dobara jata hai (retry=1 ke saath). */
+/* Sheet me row har haal me jani chahiye - magar SIRF EK dafa.
+
+   1) sendBeacon pehle: browser is request ko khud queue karta hai aur page
+      badal jane ke baad bhi poora bhejta hai. Is liye "gayi ya nahi" ka
+      sawal hi nahi uthta aur dobara bhejne ki zarurat nahi padti.
+   2) beacon na ho (purana browser, ya queue bhari) to fetch + keepalive.
+   3) dono na chalen to payload localStorage me pada rehta hai aur agli page
+      load par jata hai - usi sid ke saath.
+
+   Har submit ka apna sid (submission id) jata hai. Agar wohi sid dobara
+   pohanch jaye to receiver ko nayi row nahi banani - duplicate ka pakka
+   ilaj yehi hai, kyunke retry jaan kar rakhi gayi hai (lead khona duplicate
+   se buri baat hai). */
 
 var SHEET_PENDING_KEY = 'usahi_sheet_pending2';
 /* Purani key ki copy kabhi kabhi pehle hi ja chuki hoti thi - use bhejna
@@ -14,6 +21,11 @@ try{ localStorage.removeItem('usahi_sheet_pending'); }catch(e){}
 var SHEET_RETRY_AFTER_MS = 5 * 60 * 1000;   /* itni purani pending hi dobara bhejni hai,
                                                warna usi submit ki dobara chali jati */
 
+function sheetSid(){
+  try{ if(window.crypto && crypto.randomUUID) return crypto.randomUUID(); }catch(e){}
+  return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+}
+
 function sheetBeacon(data){
   try{
     return !!(navigator.sendBeacon &&
@@ -21,16 +33,19 @@ function sheetBeacon(data){
   }catch(e){ return false; }
 }
 
+function sheetFetch(data){
+  return fetch(SHEET_WEBHOOK_URL, {
+    method:'POST', mode:'no-cors', keepalive:true,
+    headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data
+  });
+}
+
 function sheetPost(data){
-  if(window.fetch){
-    try{
-      return fetch(SHEET_WEBHOOK_URL, {
-        method:'POST', mode:'no-cors', keepalive:true,
-        headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data
-      });
-    }catch(e){}
-  }
+  /* beacon pehle - page badal jane par bhi mukammal hoti hai */
   if(sheetBeacon(data)) return Promise.resolve('beacon');
+  if(window.fetch){
+    try{ return sheetFetch(data); }catch(e){}
+  }
   return Promise.reject(new Error('koi tareeqa na chala'));
 }
 
@@ -48,6 +63,7 @@ function sendToSheet(form){
     function ls(key){ try{ return localStorage.getItem(key)||''; }catch(e){ return ''; } }
     var landing=''; try{ landing=sessionStorage.getItem('usahi_landing')||''; }catch(e){}
     var payload = {
+      sid: sheetSid(),                  /* ek submit = ek sid, retry par bhi wohi */
       page: location.pathname,
       form_type: get('00NQQ00000IJMTt'),
       full_name: (form.querySelector('.sf-fullname')||{}).value || '',
@@ -74,31 +90,31 @@ function sendToSheet(form){
     };
     var data = new URLSearchParams(payload).toString();
 
-    /* Pending copy SIRF us waqt bachti hai jab request browser se nikal hi
-       na sake (jaise net band ho). Jaise hi request nikal jati hai, copy
-       mita di jati hai - warna jawab aane se pehle page badal jata tha,
-       copy pari reh jati thi, aur banda dobara site par aata to wohi lead
-       doosri dafa chali jati thi (sheet me duplicate row). */
+    /* 1) beacon. Pehle fetch chalta tha, aur jab banda /thank-you/ par chala
+          jata tha to wohi fetch "fail" ho kar DOBARA beacon bhej deta tha -
+          halanke pehli request Google tak pohanch chuki hoti thi. Isi se
+          sheet me ek hi submit ki do rows banti thin, ek doosri se ek do
+          second peechay. Beacon ko browser khud queue karta hai, is liye
+          ab resend ki zarurat hi nahi. */
+    if(sheetBeacon(data)){
+      sheetPendingClear();
+      return Promise.resolve('beacon');
+    }
 
-    sheetPendingSet(data);
-
+    /* 2) beacon na chala to fetch. Fail hone par DOBARA NAHI bhejte - payload
+          pending reh jata hai aur agli load par usi sid ke saath jata hai. */
     if(window.fetch){
+      sheetPendingSet(data);
       try{
-        var p = fetch(SHEET_WEBHOOK_URL, {
-          method:'POST', mode:'no-cors', keepalive:true,
-          headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data
-        });
-        sheetPendingClear();            /* request nikal gayi */
-        return p.catch(function(){
-          /* network par mar gayi - beacon se ek aur koshish */
-          if(!sheetBeacon(data)) { sheetPendingSet(data); }
-          return 'retried';
-        });
+        return sheetFetch(data)
+          .then(function(r){ sheetPendingClear(); return r; })
+          .catch(function(){ return 'pending'; });
       }catch(e){}
     }
 
-    if(sheetBeacon(data)){ sheetPendingClear(); return Promise.resolve('beacon'); }
-    return Promise.resolve('pending');   /* kuch na nikal saka - agli load par jayega */
+    /* 3) kuch na nikal saka - agli load par jayega */
+    sheetPendingSet(data);
+    return Promise.resolve('pending');
   }catch(e){ return Promise.resolve(); }
 }
 
@@ -110,6 +126,7 @@ function sendToSheet(form){
     var p = JSON.parse(raw);
     if(!p || !p.d){ sheetPendingClear(); return; }
     if(Date.now() - (p.t || 0) < SHEET_RETRY_AFTER_MS) return;
-    sheetPost(p.d + '&retry=1').then(function(){ sheetPendingClear(); }).catch(function(){});
+    sheetPendingClear();                /* ek hi dafa koshish, warna har load par jata rahega */
+    sheetPost(p.d + '&retry=1').catch(function(){});
   }catch(e){}
 })();
