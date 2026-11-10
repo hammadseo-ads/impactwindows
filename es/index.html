@@ -931,6 +931,24 @@ a.lang-opt:hover{color:var(--accent)}
 }
 </style>
 
+
+<!-- HERO BUTTONS: equal width + centred -->
+<style>
+/* HERO BUTTONS: equal width + centred.
+   .btn is inline-flex with symmetric padding, so each button was sized to its
+   own label - "Get Free Estimate" came out narrower than "Call (xxx) ...".
+   Stacked on a phone they also sat flush left at two different widths, which
+   reads as misalignment. A grid with equal tracks makes both the same width at
+   every size; auto-fit drops to one column when there is no room for two. */
+.hero-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;max-width:560px;align-items:stretch}
+.hero-btns .btn{width:100%;justify-content:center;padding-left:20px;padding-right:20px;
+  white-space:nowrap}
+@media(max-width:1024px){
+  /* full bleed on mobile - the hero column is already the page width there */
+  .hero-btns{max-width:none}
+}
+</style>
 </head>
 <body>
 
