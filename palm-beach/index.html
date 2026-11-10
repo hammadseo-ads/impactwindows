@@ -2431,7 +2431,7 @@ document.addEventListener('DOMContentLoaded',function(){
     if(!e.relatedTarget && e.clientY<=0) openModal();
   });
   // touch/fallback: show after a short read, once per session
-  setTimeout(function(){openModal()},7000);
+  setTimeout(function(){openModal()},10000);
   // ?offers=1 forces it open - handy for previewing
   if(/[?&]offers=1/.test(location.search)) setTimeout(function(){openModal(true)},300);
   // dismiss: backdrop tap, Escape, or acting on an offer

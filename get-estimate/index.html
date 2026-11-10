@@ -1249,7 +1249,7 @@ document.addEventListener('DOMContentLoaded',function(){
   window.toggleOfferSheet=function(){ modal.classList.contains('open') ? collapse() : expand(); };
   window.openOfferModal=function(e){ if(e && e.preventDefault) e.preventDefault(); expand(); return false; };
   document.addEventListener('mouseout',function(e){ if(!e.relatedTarget && e.clientY<=0) openModal(); });
-  setTimeout(function(){openModal()},7000);
+  setTimeout(function(){openModal()},10000);
   if(/[?&]offers=1/.test(location.search)) setTimeout(function(){openModal(true)},300);
   modal.addEventListener('click',function(e){ if(e.target===modal) collapse(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('open')) collapse(); });
