@@ -236,6 +236,14 @@
       "destination": "/palm-beach/impact-doors/index.html"
     },
     {
+      "source": "/impact-windows-doors",
+      "destination": "/impact-windows-doors/index.html"
+    },
+    {
+      "source": "/impact-windows-doors/",
+      "destination": "/impact-windows-doors/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
