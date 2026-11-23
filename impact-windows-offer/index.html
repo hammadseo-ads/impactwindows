@@ -996,11 +996,11 @@ a.lang-opt:hover{color:var(--accent)}
 </style>
 <style>
 /* VARIANT: HERO REVIEW */
-.hero-review{margin:0 0 26px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--light);border-radius:0 10px 10px 0;max-width:560px}
-.hero-review-stars{color:#fbbc04;font-size:12px;letter-spacing:2px;display:block}
-.hero-review-q{font-size:14.5px;line-height:1.55;color:#374151;margin:6px 0 0;font-style:italic}
-.hero-review-by{display:block;margin-top:7px;font-size:12.5px;font-weight:700;color:var(--gray);font-style:normal}
-@media(max-width:1024px){.hero-review{order:6;max-width:none;margin-bottom:18px}.hero-review-q{font-size:13.5px}}
+.hero-review{display:flex;gap:12px;align-items:flex-start;margin:0 0 24px;padding-left:15px;border-left:3px solid var(--accent);max-width:620px}
+.hero-review-stars{color:#fbbc04;font-size:11.5px;letter-spacing:1px;white-space:nowrap;padding-top:4px;flex-shrink:0}
+.hero-review-q{margin:0;font-size:14.5px;line-height:1.6;color:#374151}
+.hero-review-by{color:var(--gray);font-weight:700;font-size:13px}
+@media(max-width:1024px){.hero-review{order:3;max-width:none;margin-bottom:18px}.hero-review-q{font-size:13.5px}}
 /* VARIANT: POPUP REVIEW */
 .offer-review{margin:0 22px 14px;padding:13px 16px;background:var(--light);border:1px solid #e6ebf1;border-radius:12px;text-align:center}
 .offer-review-stars{color:#fbbc04;font-size:11px;letter-spacing:2px}
@@ -1050,6 +1050,11 @@ a.lang-opt:hover{color:var(--accent)}
         </a>
         <h1>75% Off <span>Impact Window &amp; Door</span> Installation</h1>
         <p class="hero-sub">Save 75% on installation, and up to $10,000 more through the My Safe Florida Home grant. Impact windows and doors fitted by factory-trained installers &mdash; lower energy bills, lower insurance, less noise off the street. 15+ years across South Florida.</p>
+        <!-- VARIANT: HERO REVIEW -->
+        <div class="hero-review">
+          <span class="hero-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+          <p class="hero-review-q">&ldquo;The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo; <span class="hero-review-by">Carlos M., Palm Beach County</span></p>
+        </div>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 hurricane-rated impact protection</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down, as low as $5/month per window</li>
@@ -1063,12 +1068,6 @@ a.lang-opt:hover{color:var(--accent)}
         <div class="hero-offers">
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
-        </div>
-        <!-- VARIANT: HERO REVIEW -->
-        <div class="hero-review">
-          <span class="hero-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-          <p class="hero-review-q">&ldquo;The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo;</p>
-          <span class="hero-review-by">Carlos M. &middot; Palm Beach County</span>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -1107,11 +1106,13 @@ a.lang-opt:hover{color:var(--accent)}
 <section class="obanner" aria-label="Current offers">
   <div class="container obanner-in">
     <div class="obanner-card">
+      <span class="obanner-badge">Limited Time</span>
       <div class="obanner-amt">75% Off</div>
       <div class="obanner-k">Impact windows &amp; doors installation</div>
       <p class="obanner-d">Save 75% on installation when you upgrade your windows and doors.</p>
     </div>
     <div class="obanner-card is-grant">
+      <span class="obanner-badge">State of Florida</span>
       <div class="obanner-amt">Up to $10,000</div>
       <div class="obanner-k">My Safe Florida Home grant</div>
       <p class="obanner-d">State grant funding toward impact windows and doors for your home.</p>
@@ -1122,12 +1123,15 @@ a.lang-opt:hover{color:var(--accent)}
 </section>
 <style>
 .obanner{background:var(--light);padding:56px 0 40px;border-top:1px solid #eef2f6;border-bottom:1px solid #eef2f6}
-.obanner-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:18px;align-items:stretch}
-.obanner-card{background:var(--white);border:1px solid #e6ebf1;border-radius:14px;padding:24px 22px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.obanner-in{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.obanner-card{background:var(--white);border:1px solid #e6ebf1;border-radius:14px;padding:28px 28px 26px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
 .obanner-amt{font-family:'Poppins',sans-serif;font-size:clamp(26px,3.2vw,34px);font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.5px}
 .obanner-k{font-size:14px;font-weight:800;color:var(--dark);margin-top:8px;line-height:1.35}
 .obanner-d{margin:9px 0 0;font-size:13.5px;color:var(--gray);line-height:1.55}
 .obanner-cta{grid-column:1/-1;justify-self:center;width:100%;max-width:400px;white-space:normal;margin-top:4px}
+.obanner-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:50px;margin-bottom:14px}
+.obanner-card.is-grant .obanner-badge{color:var(--primary);background:rgba(36,91,143,.08)}
+@media(max-width:760px){.obanner-in{grid-template-columns:1fr}}
 .obanner-fine{max-width:1200px;margin:18px auto 0;padding:0 20px;font-size:12px;color:var(--gray);text-align:center}
 @media(max-width:700px){.obanner{padding:38px 0 28px}.obanner-cta{max-width:none}}
 </style>
