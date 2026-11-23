@@ -996,11 +996,20 @@ a.lang-opt:hover{color:var(--accent)}
 </style>
 <style>
 /* VARIANT: HERO REVIEW */
-.hero-review{display:flex;gap:12px;align-items:flex-start;margin:0 0 24px;padding-left:15px;border-left:3px solid var(--accent);max-width:620px}
-.hero-review-stars{color:#fbbc04;font-size:11.5px;letter-spacing:1px;white-space:nowrap;padding-top:4px;flex-shrink:0}
-.hero-review-q{margin:0;font-size:14.5px;line-height:1.6;color:#374151}
-.hero-review-by{color:var(--gray);font-weight:700;font-size:13px}
-@media(max-width:1024px){.hero-review{order:3;max-width:none;margin-bottom:18px}.hero-review-q{font-size:13.5px}}
+.hero-media-col{display:flex;flex-direction:column;gap:18px}
+.hero-review{background:var(--light);border:1px solid #e6ebf1;border-radius:14px;padding:18px 20px}
+.hero-review-stars{color:#fbbc04;font-size:12px;letter-spacing:2px;display:block}
+.hero-review-q{margin:9px 0 0;font-size:14.5px;line-height:1.6;color:#374151}
+.hero-review-by{display:block;margin-top:10px;font-size:12.5px;color:var(--gray)}
+.hero-review-by strong{color:var(--dark)}
+/* mobile: hero-text ki tarah media-col bhi display:contents, warna video ka order:6 toot jata hai */
+@media(max-width:1024px){
+.hero-media-col{display:contents}
+.hero-review{order:7;margin:0 0 18px}
+.hero-stats{order:8}
+.hero-statewide{order:9}
+.hero-review-q{font-size:13.5px}
+}
 /* VARIANT: POPUP REVIEW */
 .offer-review{margin:0 22px 14px;padding:13px 16px;background:var(--light);border:1px solid #e6ebf1;border-radius:12px;text-align:center}
 .offer-review-stars{color:#fbbc04;font-size:11px;letter-spacing:2px}
@@ -1050,11 +1059,6 @@ a.lang-opt:hover{color:var(--accent)}
         </a>
         <h1>75% Off <span>Impact Window &amp; Door</span> Installation</h1>
         <p class="hero-sub">Save 75% on installation, and up to $10,000 more through the My Safe Florida Home grant. Impact windows and doors fitted by factory-trained installers &mdash; lower energy bills, lower insurance, less noise off the street. 15+ years across South Florida.</p>
-        <!-- VARIANT: HERO REVIEW -->
-        <div class="hero-review">
-          <span class="hero-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-          <p class="hero-review-q">&ldquo;The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo; <span class="hero-review-by">Carlos M., Palm Beach County</span></p>
-        </div>
         <ul class="hero-checklist">
           <li><span class="check-icon"><i class="fas fa-shield-halved"></i></span> Category 5 hurricane-rated impact protection</li>
           <li><span class="check-icon"><i class="fas fa-dollar-sign"></i></span> $0 down, as low as $5/month per window</li>
@@ -1088,6 +1092,7 @@ a.lang-opt:hover{color:var(--accent)}
           <span>Proudly Serving All of Florida -From Miami to Jacksonville</span>
         </div>
       </div>
+      <div class="hero-media-col">
       <div class="hero-video-side">
         <div class="yt-crop">
           <iframe id="heroYT" src="https://www.youtube.com/embed/lyaCmo64yeQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=lyaCmo64yeQ&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="USA Home Improvement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
@@ -1099,6 +1104,13 @@ a.lang-opt:hover{color:var(--accent)}
           <i class="fas fa-pause"></i>
         </button>
       </div>
+      <!-- VARIANT: HERO REVIEW -->
+      <div class="hero-review">
+        <span class="hero-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+        <p class="hero-review-q">&ldquo;Best investment we ever made. The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo;</p>
+        <span class="hero-review-by"><strong>Carlos M.</strong> &middot; Palm Beach County</span>
+      </div>
+    </div>
     </div>
   </div>
 </section>
