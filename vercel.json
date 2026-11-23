@@ -244,6 +244,14 @@
       "destination": "/impact-windows-doors/index.html"
     },
     {
+      "source": "/impact-windows-offer",
+      "destination": "/impact-windows-offer/index.html"
+    },
+    {
+      "source": "/impact-windows-offer/",
+      "destination": "/impact-windows-offer/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
