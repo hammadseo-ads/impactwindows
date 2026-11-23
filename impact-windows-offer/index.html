@@ -994,6 +994,21 @@ a.lang-opt:hover{color:var(--accent)}
   .hero-btns{max-width:none}
 }
 </style>
+<style>
+/* VARIANT: HERO REVIEW */
+.hero-review{margin:0 0 26px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--light);border-radius:0 10px 10px 0;max-width:560px}
+.hero-review-stars{color:#fbbc04;font-size:12px;letter-spacing:2px;display:block}
+.hero-review-q{font-size:14.5px;line-height:1.55;color:#374151;margin:6px 0 0;font-style:italic}
+.hero-review-by{display:block;margin-top:7px;font-size:12.5px;font-weight:700;color:var(--gray);font-style:normal}
+@media(max-width:1024px){.hero-review{order:6;max-width:none;margin-bottom:18px}.hero-review-q{font-size:13.5px}}
+/* VARIANT: POPUP REVIEW */
+.offer-review{margin:0 22px 14px;padding:13px 16px;background:var(--light);border:1px solid #e6ebf1;border-radius:12px;text-align:center}
+.offer-review-stars{color:#fbbc04;font-size:11px;letter-spacing:2px}
+.offer-review-q{font-size:12.5px;line-height:1.5;color:#374151;margin:5px 0 0;font-style:italic}
+.offer-review-by{display:block;margin-top:6px;font-size:11px;color:var(--gray);font-style:normal}
+.offer-review-by strong{color:var(--dark)}
+@media(max-height:760px){.offer-review-q{display:none}.offer-review{padding:9px 14px}}
+</style>
 </head>
 <body>
 
@@ -1048,6 +1063,12 @@ a.lang-opt:hover{color:var(--accent)}
         <div class="hero-offers">
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-bolt"></i><span><strong>75% Off</strong> Installation</span></a>
           <a href="#get-quote" class="hero-offer" onclick="return window.openOfferModal ? openOfferModal(event) : true"><i class="fas fa-shield-halved"></i><span><strong>Up to $10,000</strong> State Grant</span></a>
+        </div>
+        <!-- VARIANT: HERO REVIEW -->
+        <div class="hero-review">
+          <span class="hero-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+          <p class="hero-review-q">&ldquo;The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo;</p>
+          <span class="hero-review-by">Carlos M. &middot; Palm Beach County</span>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -2283,6 +2304,11 @@ document.head.appendChild(mobileStyle);
       </div>
       <div class="offer-modal-action">
         <a href="#quoteCard" class="btn btn-primary">Get My Free Estimate</a>
+      </div>
+      <div class="offer-review">
+        <span class="offer-review-stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+        <p class="offer-review-q">&ldquo;Best investment we ever made. The noise reduction alone is worth it &mdash; we live near a busy road and the difference is night and day.&rdquo;</p>
+        <span class="offer-review-by"><strong>Carlos M.</strong> &middot; Palm Beach County &middot; 4.6 from 500+ Google reviews</span>
       </div>
       <p class="offer-modal-foot">Discount applies to installation; restrictions apply. Grant subject to eligibility and available program funding.</p>
     </div>
