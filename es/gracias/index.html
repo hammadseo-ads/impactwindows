@@ -53,6 +53,10 @@
 <!-- after Salesforce saves the lead, so it's the reliable trigger.       -->
 <!-- =================================================================== -->
 <!-- Google tag (gtag.js) - Google Ads -->
+<!-- Microsoft Advertising (Bing) UET tag - added 24 Nov 2026. Separate from Google Ads; does not touch gtag. -->
+<script>
+try{(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187192244"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");}catch(e){}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-709144889"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -124,6 +128,15 @@ document.addEventListener('click',function(e){
   });
   // OpenAI (ChatGPT Ads) lead conversion
   if (window.oaiq) oaiq('measure', 'lead_created', { type: 'customer_action' });
+</script>
+<!-- Microsoft Advertising (Bing) lead conversion - same ?noconv=1 rule as Google Ads above -->
+<script>
+  try {
+    if (new URLSearchParams(location.search).get('noconv') !== '1') {
+      window.uetq = window.uetq || [];
+      window.uetq.push('event', 'submit_lead_form', {});
+    }
+  } catch (e) {}
 </script>
 
 <style>
