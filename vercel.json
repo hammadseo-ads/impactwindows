@@ -252,6 +252,22 @@
       "destination": "/impact-windows-offer/index.html"
     },
     {
+      "source": "/broward-florida/impact-windows",
+      "destination": "/broward-florida/impact-windows/index.html"
+    },
+    {
+      "source": "/broward-florida/impact-windows/",
+      "destination": "/broward-florida/impact-windows/index.html"
+    },
+    {
+      "source": "/broward-florida/impact-doors",
+      "destination": "/broward-florida/impact-doors/index.html"
+    },
+    {
+      "source": "/broward-florida/impact-doors/",
+      "destination": "/broward-florida/impact-doors/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
