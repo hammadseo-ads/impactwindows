@@ -84,6 +84,14 @@
       "destination": "/es/gracias/index.html"
     },
     {
+      "source": "/es/florida",
+      "destination": "/es/florida/index.html"
+    },
+    {
+      "source": "/es/florida/",
+      "destination": "/es/florida/index.html"
+    },
+    {
       "source": "/zap-test",
       "destination": "/zap-test/index.html"
     },

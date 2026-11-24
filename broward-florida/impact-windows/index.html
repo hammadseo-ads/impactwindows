@@ -1414,7 +1414,7 @@ a.lang-opt:hover{color:var(--accent)}
     <div class="nav-cta">
       <a href="tel:8664813679" class="nav-phone"><i class="fas fa-phone-volume"></i> (866) 481-3679</a>
       <a href="#quoteCard" class="btn btn-primary" style="padding:12px 24px;font-size:14px">Free Estimate</a>
-      <div class="lang-toggle" role="group" aria-label="Language"><span class="lang-opt is-on" aria-current="true">EN</span><a href="/es/" id="langSwitch" class="lang-opt" hreflang="es" aria-label="Ver esta p&aacute;gina en espa&ntilde;ol">ES</a></div>
+      <div class="lang-toggle" role="group" aria-label="Language"><span class="lang-opt is-on" aria-current="true">EN</span><a href="/es/florida/" id="langSwitch" class="lang-opt" hreflang="es" aria-label="Ver esta p&aacute;gina en espa&ntilde;ol">ES</a></div>
     </div>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </div>
@@ -2865,7 +2865,7 @@ document.querySelectorAll('.form-back').forEach(function(b){
   try{
     var a=document.getElementById('langSwitch'); if(!a) return;
     var base=a.getAttribute('href');
-    if(base==='/es/' && location.pathname!=='/' ){
+    if(base==='/es/florida/' && location.pathname!=='/' ){
       a.href = base + '?from=' + encodeURIComponent(location.pathname);
     }
   }catch(e){}
